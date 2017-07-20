@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>商赢集团</title>
+    <link rel="stylesheet" href="./css/common.css" />
+	<link rel="stylesheet" href="./css/swiper.min.css" />
+	<link rel="stylesheet" href="./css/animate.css" />
+	<style>
+		.swiper-container {
+			width: 100%;
+			height: 100%;
+		}
+		.custom-page {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.hide {
+			display: none;
+			opacity: 0;
+		}
+		.card-jobs {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: #ccc;
+			overflow: hidden;
+		}
+		.card-slide {
+			position: absolute;
+			width: 80%;
+			height: 300px;
+			top: 50%;
+			left: 50%;
+			margin-top: -150px;
+			background: #fff;
+			border-radius: 5px;
+			overflow: hidden;
+			-webkit-transition: margin 0.25s ease-in-out;
+			transition: margin 0.25s ease-in-out;
+		}
+		.card-slide.past {
+			margin-left: -125%;
+		}
+		.card-slide.current {
+			margin-left: -40%;
+		}
+		.card-slide.future {
+			margin-left: 45%;
+		}
+		.card-slide.far-future {
+			margin-left: 130%;
+		}
+
+
+		/**********************************demo*************************/
+		.page1 {
+			background: #ccc;
+			z-index: 3;
+		}
+		.page2 {
+			background: blue;
+			z-index: 2;
+		}
+		.page3 {
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+    <div class="swiper-container" id="main-page">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide main-slide">
+				<div class="card-jobs">
+					<div class="swiper-container" id="jobs-page">
+						<div class="swiper-wrapper jobs-wrapper">
+							<!--<div class="card-slide past"></div>-->
+							<div class="swiper-slide card-slide current"></div>
+							<div class="swiper-slide card-slide future"></div>
+							<div class="swiper-slide card-slide far-future"></div>
+							<div class="swiper-slide card-slide far-future"></div>
+							<div class="swiper-slide card-slide far-future"></div>
+							<div class="swiper-slide card-slide far-future"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide main-slide">
+				<div class="custom-page page1">
+					<button id="changeJobs">集团</button>
+					<button>电商</button>
+					<button>金服</button>
+				</div>
+				<div class="custom-page page2">
+					<ul>
+						<li class="jobItem">职位一</li>
+						<li class="jobItem">职位二</li>
+						<li class="jobItem">职位三</li>
+					</ul>
+				</div>
+				<div class="custom-page page3 hide">
+					<div class="swiper-container" id="jpbs">
+						<div class="swiper-wrapper">
+							<div class="card-jobs">
+								<div class="card-slide">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide main-slide">
+				page5
+			</div>
+		</div>
+	</div>
+	<script src="./js/zepto.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
+	<script>
+
+		$(function() {
+
+			var windowHeight = document.documentElement.clientHeight,
+				windowWidth = document.documentElement.clientWidth,
+				mainSlides = $(".main-slide");
+				mainSlides.css('height', windowHeight),
+				jobPagesState = 0;
+
+			var mySwiper = new Swiper("#main-page", {
+				direction: 'vertical',
+				onSlideChangeStart: function(swiper) {
+					console.log(swiper.activeIndex);
+					console.log("jobPagesState:" + jobPagesState);
+					if(swiper.activeIndex == 1 && jobPagesState != 3) {
+						jobPagesState = 1;
+						mySwiper.disableTouchControl();
+					}
+				}
+			});
+
+			$("#changeJobs").click(function() {
+				$(".page1").addClass('animated fadeOut');
+				$(".page2").addClass('animated fadeIn slideInUp');
+				setTimeout(function() {
+					$(".page1").hide();
+				}, 1000);
+				jobPagesState = 2;
+			});
+
+			$(".jobItem").click(function() {
+				$(".page2").addClass('animated fadeOut slideOutLeft');
+				$(".page3").removeClass('hide').addClass("animated fadeIn slideInRight");
+				jobPagesState = 3;
+				mySwiper.enableTouchControl();
+			});
+
+			var jobsSwiper = new Swiper("#jobs-page", {
+				spaceBetween: -55,
+				onInit: function() {
+					$(".card-slide ").css("width", windowWidth-80);
+					console.log("初始化了");
+				}
+			});
+		});
+
+
+	</script>
+</body>
+</html>
