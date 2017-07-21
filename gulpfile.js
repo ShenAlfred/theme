@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var server = require('gulp-server-livereload');
+var uglify = require('gulp-uglify');
+var uglifyCss = require('gulp-uglifycss');
 
 
 gulp.task('webserver', function() {
@@ -13,16 +15,18 @@ gulp.task('webserver', function() {
 		}));
 });
 
-gulp.task("buildHtml", function() {
+gulp.task("buildHtml", function() { 
 	gulp.src(['index.html', 'invite.html'])
         .pipe(gulp.dest('dist'));
 });
 gulp.task("buildCss", function() {
     gulp.src('css/**')
+        .pipe(uglifyCss())
         .pipe(gulp.dest('dist/css'));
 });
 gulp.task("buildJs", function() {
     gulp.src('js/**')
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
 gulp.task("buildImages", function() {

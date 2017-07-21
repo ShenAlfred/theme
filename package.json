@@ -1,14 +1,27 @@
 {
-  "name": "test2",
+  "name": "theme(new)",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShenAlfred/theme.git"
+  },
+  "author": "alfred",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShenAlfred/theme/issues"
+  },
+  "homepage": "https://github.com/ShenAlfred/theme#readme",
   "devDependencies": {
-    "gulp-server-livereload": "^1.9.2"
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.0.8"
   }
 }
