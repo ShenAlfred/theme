@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="./images/shangying.ico"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>商赢集团</title>
+    <title>商赢集团招聘</title>
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
-	<link rel="stylesheet" href="./css/animate.css" />
 	<style>
 		.swiper-container {
 			width: 100%;
@@ -18,12 +18,16 @@
 		.custom-page {
 			position: absolute;
 			left: 0;
-			top: 0;
 			width: 100%;
 			height: 100%;
 		}
 		.translate-out-x {
+			-webkit-transform: translate3d(-100%,0,0);
 			transform: translate3d(-100%,0,0);
+		}
+		.translate-out-y {
+			-webkit-transform: translate3d(0,-100%,0);
+			transform: translate3d(0,-100%,0);
 		}
 		.card-jobs {
 			position: relative;
@@ -52,6 +56,16 @@
 			margin: 0 auto;
 			background: #fff;
 		}
+		.over-wrap {
+			position: relative;
+			overflow: hidden; 
+		}
+		#music {
+			position: fixed;
+			right: 20px;
+			top: 20px;
+			z-index: 10;
+		}
 
 
 		/**********************************demo*************************/
@@ -73,20 +87,47 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				page1
+				<audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio>
 			</div>
-			<div class="swiper-slide main-slide">
+			<!-- 切换公司对应岗位模块 -->
+			<div class="swiper-slide over-wrap">
+				<!-- 公司集合模块 step1-->
 				<div class="custom-page page1">
-					<button id="changeJobs">集团</button>
-					<button>电商</button>
-					<button>金服</button>
+					<button id="Group-company" class="changeJobItems" data-index=0 >集团</button>
+					<button id="EB-company" class="changeJobItems" data-index=1 >电商</button>
+					<button id="Finance-company" class="changeJobItems" data-index=2 >金服</button>
 				</div>
-				<div class="custom-page page2">
+				<!-- 公司集合模块 -->
+				<!-- 公司对应的岗位列表模块 step2-->
+				<div class="custom-page page2 translate-out-y" id="Group-jobs">
 					<ul>
-						<li class="jobItem">职位一</li>
-						<li class="jobItem">职位二</li>
-						<li class="jobItem">职位三</li>
+						<li class="jobItem">集团一</li>
+						<li class="jobItem">集团二</li>
+						<li class="jobItem">集团三</li>
 					</ul>
+					<button id="EB-company-1" class="changeJobItems-btn" data-index=1 >电商招聘</button>
+					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
 				</div>
+				<div class="custom-page page2 translate-out-y" id="EB-jobs">
+					<ul>
+						<li class="jobItem">电商一</li>
+						<li class="jobItem">电商二</li>
+						<li class="jobItem">电商三</li>
+					</ul>
+					<button id="Group-company-0" class="changeJobItems-btn" data-index=0 >集团招聘</button>
+					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
+				</div>
+				<div class="custom-page page2 translate-out-y" id="Finance-jobs">
+					<ul>
+						<li class="jobItem">金控一</li>
+						<li class="jobItem">金控二</li>
+						<li class="jobItem">金控三</li>
+					</ul>
+					<button id="EB-company-1" class="changeJobItems-btn" data-index=1 >电商招聘</button>
+					<button id="Group-company-0" class="changeJobItems-btn" data-index=0 >集团招聘</button>
+				</div>
+				<!-- 公司对应的岗位列表模块 -->
+				<!-- 岗位详情模块 step3 -->
 				<div class="custom-page page3 translate-out-x">
 					<div class="card-jobs">
 						<div class="swiper-container jobs-page" id="jobs-page">
@@ -104,114 +145,18 @@
 						</div>
 					</div>
 				</div>
+				<!-- 岗位详情模块 -->
 			</div>
-			<div class="swiper-slide main-slide">
+			<!-- 切换公司对应岗位模块 -->
+			<div class="swiper-slide">
 				<button id="backFirstPage">返回首页</button>
 			</div>
 		</div>
 	</div>
+	<button id="music">音乐</button>
+	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
-	<script>
-
-		var jobsAttr = {
-			jobPagesState: 0
-		};
-
-		var mainSwiper = {
-			domName: '#main-page',
-			direction:	'vertical',
-			swiper: null,
-			newSwiper: function() {
-				this.swiper = new Swiper(this.domName, {
-					direction: this.direction,
-					onSlideChangeStart: this.onSlideChangeStart
-				});
-				return this;
-			},
-			onSlideChangeStart: function(swiper) {
-				if(swiper.activeIndex == 1 && jobsAttr.jobPagesState != 3) {
-					jobsAttr.jobPagesState = 1;
-					swiper.disableTouchControl();
-				}
-			},
-			jumpSildeTo: function(index) {
-				this.swiper.slideTo(index, 0 ,false);
-			}	
-		};
-
-		var jobsSwiper = {
-			domName: '#jobs-page',
-			swiper: null,
-			newSwiper: function() {
-				this.swiper = new Swiper(this.domName, {
-					centeredSlides: true,
-					watchSlidesProgress: true,
-					slidesPerView: 'auto',
-					spaceBetween: 40,
-					onSlideChangeStart: this.onSlideChangeStart,
-					onSetTransition: this.onSetTransition,
-					onProgress: this.onProgress
-				});
-				return this;
-			},
-			onProgress: function(swiper) {
-				var i, slide, progress;
-				for (i = 0; i < swiper.slides.length; i++) {
-					slide = swiper.slides[i];
-					progress = slide.progress;
-					slide.style.opacity = 1 - Math.min(Math.abs(progress / 2), 1);
-					slide.style.webkitTransform = slide.style.transform = "translate3d(0,0," + -Math.abs(150 * progress) + "px)";
-				}
-			},
-			onSetTransition: function(swiper, transition) {
-				var slide;
-				for (var i = 0; i < swiper.slides.length; i++){
-					slide = swiper.slides[i].style;
-					slide.webkitTransitionDuration = slide.transitionDuration = transition + "ms";
-				}
-			},
-			jumpSildeTo: function(index) {
-				this.swiper.slideTo(index, 0 ,false);
-			}	
-		};
-
-		$(function() {
-
-			var windowHeight = document.documentElement.clientHeight,
-				windowWidth = document.documentElement.clientWidth,
-				mainSlides = $(".main-slide");
-				mainSlides.css('height', windowHeight);
-
-			mainSwiper.newSwiper();
-			jobsSwiper.newSwiper();
-
-
-			$("#changeJobs").click(function() {
-				$(".page1").addClass('animated fadeOut');
-				$(".page2").addClass('animated fadeInUp');
-				setTimeout(function() {
-					$(".page1").hide();
-				}, 1000);
-				jobsAttr.jobPagesState = 2;
-			});
-
-			$(".jobItem").click(function() {
-				$(".page2").removeClass('fadeInUp').addClass('animated fadeOutLeft');
-				$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
-				jobsAttr.jobPagesState = 3;
-				var index = $(this).index();
-				jobsSwiper.jumpSildeTo(index);
-				mainSwiper.swiper.enableTouchControl();
-			});
-
-			$("#backFirstPage").on('click', function() {
-				mainSwiper.jumpSildeTo(0)
-			});
-
-		});
-
-
-	</script>
+	<script src="./js/h5.js"></script>
 </body>
 </html>
