@@ -1,12 +1,19 @@
 (function() {
 
 	/**
+	 * 顺序  集团->电商->金控
+	 */
+
+	/**
 	 * 页面定义属性
 	 * @jobPagesState 用来记录切换岗位模块状态值
+	 * @oldIndex	  用来记录前一个公司岗位列表切换模块下标
+	 * @currentIndex  记录当前公司岗位列表模块
 	 */
 	var jobsAttr = {
 		jobPagesState: 0,
-		controllerPoint: 1500
+		oldIndex: 0,
+		currentIndex: 0
 	};
 
 	/**
@@ -84,66 +91,64 @@
 			windowWidth = document.documentElement.clientWidth,
 			mainSlides = $(".main-slide");
 			mainSlides.css('height', windowHeight);
+		var audio = $("#audio")[0];
 
 		mainSwiper.newSwiper();
 		jobsSwiper.newSwiper();
 
-		function changeJobs(id, index) {
-			var idName = id.split('-')[0];
-			$("#"+ idName + "-jobs").removeClass('translate-out-y').addClass('animated fadeInUp');
-			setTimeout(function() {
-				$("#"+ idName + "-jobs").removeClass('animated fadeInUp');
-				oldIndex = parseInt(id.split('-')[2]) >= 0 ? parseInt(id.split('-')[2]) : index;
-				isChange = true;
-			}, jobsAttr.controllerPoint);
+		function transferJob(index) {
+			$(".page2").eq(index).css({
+				'opacity': 1,
+				'transform': 'translate3d(0,0%,0)',
+				'-webkit-transform': 'translate3d(0,0%,0)',
+				'transition': 'all .5s ease',
+				'-webkit-transition': 'all .5s ease'
+			});
+			jobsAttr.oldIndex = index;
 			jobsAttr.jobPagesState = 2;
 		}
 
-		var oldIndex = 0;
-		var isChange = true;
-		var audio = $("#audio")[0];
+		function transferCompanyAboutUs(index) {
+			var logo_group = $("#company-logo-group"),
+				aboutUs = $("#company-aboutUs");
+			
+			logo_group.children().addClass('hide').eq(index).removeClass('hide');
+			aboutUs.html(index)
+		}
 
 		$(".changeJobItems").click(function() {
-			if(isChange) {
-				isChange = false;
-				var id = $(this).attr('id');
-				oldIndex = $(this).attr("data-index");
-				$(".page1").addClass('animated fadeOut');
-				setTimeout(function() {
-					$(".page1").hide();
-				}, 1000);
-				changeJobs(id, oldIndex);
-			}
+			jobsAttr.currentIndex = jobsAttr.oldIndex = $(this).attr("data-index"); 
+			$(".page1").addClass('animated fadeOut');
+			setTimeout(function() {
+				$(".page1").hide();
+			}, 1000);
+			transferJob(jobsAttr.oldIndex);
+			transferCompanyAboutUs(jobsAttr.currentIndex)
 		});
 
 		$(".changeJobItems-btn").click(function() {
-			if(isChange) {
-				isChange = false;
-				$(".page2").eq(oldIndex).removeClass('translate-out-y').addClass('animated fadeOutDown');
-				setTimeout(function() {
-					$(".page2").eq(oldIndex).removeClass('animated fadeOutDown').addClass('translate-out-y');
-				}, jobsAttr.controllerPoint);
-				var id = $(this).attr('id');
-				changeJobs(id);
-			}
+			$(".page2").eq(jobsAttr.oldIndex).css({
+				'opacity': 0,
+				'transform': 'translate3d(0,100%,0)',
+				'-webkit-transform': 'translate3d(0,100%,0)',
+				'transition': 'all .5s ease',
+				'-webkit-transition': 'all .5s ease'
+			});
+			var index = parseInt($(this).attr('data-index'));
+			jobsAttr.currentIndex = index;
+			transferJob(index);
+			transferCompanyAboutUs(index);
 		});
 
 		$(".jobItem").click(function() {
-			if(isChange) {
-				$(".page2").eq(oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
-				$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
-				jobsAttr.jobPagesState = 3;
-				var index = $(this).index();
-				jobsSwiper.jumpSildeTo(index);
-				mainSwiper.swiper.enableTouchControl();
-			}
+			$(".page2").eq(jobsAttr.oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
+			$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
+			jobsAttr.jobPagesState = 3;
+			var index = $(this).index();
+			jobsSwiper.jumpSildeTo(index);
+			mainSwiper.swiper.enableTouchControl();
 		});
 
-		audio.oncanplay = function() {
-			document.addEventListener('touchstart', function() {
-				audio.play();
-			});
-		}
 
 		$("#music").on('click', function() {
 			if(audio != null) {

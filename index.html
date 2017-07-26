@@ -25,10 +25,6 @@
 			-webkit-transform: translate3d(-100%,0,0);
 			transform: translate3d(-100%,0,0);
 		}
-		.translate-out-y {
-			-webkit-transform: translate3d(0,-100%,0);
-			transform: translate3d(0,-100%,0);
-		}
 		.card-jobs {
 			position: relative;
 			width: 100%;
@@ -74,8 +70,11 @@
 			z-index: 3;
 		}
 		.page2 {
+			opacity: 0;
 			background: blue;
 			z-index: 2;
+			-webkit-transform: translate3d(0,100%,0);
+			transform: translate3d(0,100%,0);
 		}
 		.page3 {
 			z-index: 1;
@@ -87,7 +86,7 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				page1
-				<audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio>
+				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
 			</div>
 			<!-- 切换公司对应岗位模块 -->
 			<div class="swiper-slide over-wrap">
@@ -99,7 +98,7 @@
 				</div>
 				<!-- 公司集合模块 -->
 				<!-- 公司对应的岗位列表模块 step2-->
-				<div class="custom-page page2 translate-out-y" id="Group-jobs">
+				<div class="custom-page page2" id="Group-jobs">
 					<ul>
 						<li class="jobItem">集团一</li>
 						<li class="jobItem">集团二</li>
@@ -108,7 +107,7 @@
 					<button id="EB-company-1" class="changeJobItems-btn" data-index=1 >电商招聘</button>
 					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
 				</div>
-				<div class="custom-page page2 translate-out-y" id="EB-jobs">
+				<div class="custom-page page2" id="EB-jobs">
 					<ul>
 						<li class="jobItem">电商一</li>
 						<li class="jobItem">电商二</li>
@@ -117,7 +116,7 @@
 					<button id="Group-company-0" class="changeJobItems-btn" data-index=0 >集团招聘</button>
 					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
 				</div>
-				<div class="custom-page page2 translate-out-y" id="Finance-jobs">
+				<div class="custom-page page2" id="Finance-jobs">
 					<ul>
 						<li class="jobItem">金控一</li>
 						<li class="jobItem">金控二</li>
@@ -147,6 +146,19 @@
 				</div>
 				<!-- 岗位详情模块 -->
 			</div>
+			<!-- 关于我们 -->
+			<div class="swiper-slide">
+				<h1>关于我们</h1>
+				<div id="company-logo-group">
+					<div class="hide">集团</div>
+					<div class="hide">电商</div>
+					<div class="hide">金控</div>
+				</div>
+				<div id="company-aboutUs">
+					关于我们的一些详细说明
+				</div>
+			</div>
+			<!-- 关于我们 -->
 			<!-- 切换公司对应岗位模块 -->
 			<div class="swiper-slide">
 				<button id="backFirstPage">返回首页</button>
