@@ -34,13 +34,13 @@
 			return this;
 		},
 		onSlideChangeStart: function(swiper) {
-			if(swiper.activeIndex == 1 && jobsAttr.jobPagesState != 3) {
+			if(swiper.activeIndex == 2 && jobsAttr.jobPagesState != 4) {
 				jobsAttr.jobPagesState = 1;
 				swiper.disableTouchControl();
 			}
 		},
-		jumpSildeTo: function(index) {
-			this.swiper.slideTo(index, 0 ,false);
+		jumpSildeTo: function(index, speed) {
+			this.swiper.slideTo(index, speed ,true);
 		}	
 	};
 
@@ -80,8 +80,8 @@
 				slide.webkitTransitionDuration = slide.transitionDuration = transition + "ms";
 			}
 		},
-		jumpSildeTo: function(index) {
-			this.swiper.slideTo(index, 0 ,false);
+		jumpSildeTo: function(index, speed) {
+			this.swiper.slideTo(index, speed ,true);
 		}	
 	};
 
@@ -108,6 +108,11 @@
 			jobsAttr.jobPagesState = 2;
 		}
 
+		/**
+		 * 切换公司关于我们的内容
+		 * 
+		 * @param {any} index     公司下标 
+		 */
 		function transferCompanyAboutUs(index) {
 			var logo_group = $("#company-logo-group"),
 				aboutUs = $("#company-aboutUs");
@@ -115,7 +120,7 @@
 			logo_group.children().addClass('hide').eq(index).removeClass('hide');
 			aboutUs.html(index)
 		}
-
+		
 		$(".changeJobItems").click(function() {
 			jobsAttr.currentIndex = jobsAttr.oldIndex = $(this).attr("data-index"); 
 			$(".page1").addClass('animated fadeOut');
@@ -143,7 +148,7 @@
 		$(".jobItem").click(function() {
 			$(".page2").eq(jobsAttr.oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
 			$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
-			jobsAttr.jobPagesState = 3;
+			jobsAttr.jobPagesState = 4;
 			var index = $(this).index();
 			jobsSwiper.jumpSildeTo(index);
 			mainSwiper.swiper.enableTouchControl();
@@ -158,11 +163,18 @@
 					audio.pause();
 				}
 			}
+		});
+
+		/**
+		 * 社會招聘點擊跳轉到page3
+		 */
+		$("#community-invite").on('click', function() {
+			mainSwiper.jumpSildeTo(2);
 
 		});
 
 		$("#backFirstPage").on('click', function() {
-			mainSwiper.jumpSildeTo(0)
+			mainSwiper.jumpSildeTo(0, 1000)
 		});
 
 	});
