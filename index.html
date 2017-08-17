@@ -3,11 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="./images/shangying.ico"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title>商赢集团招聘</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> 
+	<title>商赢集团招聘</title>
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
+		@font-face {
+			font-family: mjl;
+			src: url('./font/blxqx.ttf');
+		}
+		body {
+			font-family: mjl;
+		}
 		img {
 			vertical-align: middle;
 		}
@@ -16,7 +23,7 @@
 			height: 100%;
 		}
 		.swiper-container.jobs-page {
-			margin-top: 20%;
+			margin-top: 8%;
 		}
 		.custom-page {
 			position: absolute;
@@ -42,18 +49,16 @@
 			perspective: 1200px;	
 		}
 		.card-slide {
-			width: 80%;
+			width: 78%;
 			-webkit-transform-style: preserve-3d;
 			-moz-transform-style: preserve-3d;
 			-ms-transform-style: preserve-3d;
 			transform-style: preserve-3d;
 		}
-		.card-slide .card{
+		.card-slide .card {
+			position: relative;
 			width: 100%;
 			height: 100%;
-			overflow: hidden;
-			margin: 0 auto;
-			background: #fff;
 		}
 		.over-wrap {
 			position: relative;
@@ -70,7 +75,8 @@
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
-            background: url('./images/bg.png') repeat;
+			background: url('./images/bg.png') repeat;
+			background-size: 375px 15px;
 		}
 		.img-logo {
 			position: absolute;
@@ -111,8 +117,48 @@
 		.img-focus {
 			position: absolute;
 			width: 15%;
-			top: 54%;
+			top: 55%;
 			right: 15%;
+		}
+		.focusFadeIn {
+			-webkit-animtaion-name: focusFadeIn;
+    		animation-name: focusFadeIn;
+		}
+		@-webkit-keyframes focusFadeIn {
+			0% {
+				opacity: 0;
+				transform: scale(1.2);
+			}
+			20% {
+				opacity: 0;
+				transform: scale(1.2);
+			}
+			50% {
+				opacity: 0.5;
+				transform: scale(1.1);
+			}
+			80% {
+				opacity: 1;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+		@keyframes focusFadeIn {
+			0% {
+				opacity: 0;
+				transform: scale(1.2);
+			}
+			50% {
+				opacity: 0.5;
+				transform: scale(1.1);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
 		.img-ex-paper {
 			width: 100%
@@ -201,6 +247,27 @@
 			left: 19%;
 			width: 37px;	
 		}
+		.rRibbonMove {
+			-webkit-animtaion-name: rRibbonMove;
+    		animation-name: rRibbonMove;
+		}
+		@keyframes rRibbonMove {
+			0% {
+				transform: translate3d(0 ,0, 0);
+			}
+			30% {
+				transform: translate3d(5px, -5px, 0);
+			}
+			50% {
+				transform: translate3d(0, 0, 0);
+			}
+			80% {
+				transform: translate3d(5px, -5px, 0);
+			}
+			100% {
+				transform: translate3d(0, 0,0)
+			}
+		} 
 		.img-r-scraps {
 			top: 92%;
 			right: 35%;
@@ -268,6 +335,52 @@
 			width: 100%;
 			/* height: 27%; */
 		}
+		.man-select .select_start1 {
+			position: absolute;
+			width: 6%;
+			top: 16%;
+			left: 13%;
+		}
+		.man-select .select_start2 {
+			position: absolute;
+			width: 8%;
+			top: 41%;
+			left: 21%;
+		}
+		.man-select .select_start3{
+			position: absolute;
+			width: 8%;
+			top: 36%;
+			right: 17%;
+		}
+		.female-select .select_start1 {
+			position: absolute;
+			top: 8%;
+			left: 10%;
+			-webkit-transform: scale(.6);
+			transform: scale(.6);
+		}
+		.female-select .select_start2 {
+			position: absolute;
+			top: 42%;
+			left: 18%;
+			-webkit-transform: scale(.4);
+			transform: scale(.4);
+		}
+		.female-select .select_start3 {
+			position: absolute;
+			top: 12%;
+			right: 12%;
+			-webkit-transform: scale(.6);
+			transform: scale(.6);
+		}
+		.female-select .select_start4 {
+			position: absolute;
+			top: 45%;
+			right: 15%;
+			-webkit-transform: scale(.7);
+			transform: scale(.7);
+		}
 		.man-line {
 			position: absolute;
 			width: 75%;
@@ -280,72 +393,116 @@
 			left: 15%;
 			top: 8%;
 		}
-		.img-wel-text {
+		.wel-text-warp {
+			position: absolute;
 			width: 68%;
-			padding-top: 15%;
-			padding-left: 7%;
+			top: 5%;
+			left: 6%;
 		}
+		.img-wel-text {
+			width: 100%;
+		}
+		.wel-warp {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 57%;
+		}	
 		.img-wel-persons {
 			position: absolute;
 			left: 0;
 			bottom: 0;
 			width: 100%;
+			height: 83%;
 		}
 		.img-wel-start1 {
 			position: absolute;
-			top: 48%;
+			top: 10%;
 			left: 17%;
 			width: 5%;
 		}
 		.img-wel-start2 {
 			position: absolute;
-			top: 74%;
+			top: 54%;
 			left: 1%;
 			width: 3%;
 		}
 		.img-wel-money {
 			position: absolute;
-			top: 62%;
+			top: 33%;
 			right: 2%;
 			width: 6%;
 		}
 		.img-wel-money2 {
 			position: absolute;
-			top: 83%;
+			top: 70%;
 			right: 17%;
 			width: 7%;
 		}
 		.img-wel-hand {
 			position: absolute;
-			top: 57%;
-			right: 19%;
+			top: 23%;
+			right: 18%;
 			width: 10%;
 		}
 		.img-wel-bubble {
 			position: absolute;
 			width: 48%;
-			top: 43%;
+			top: 1%;
 			left: 44%;
 		}
 		.wel-desc-warp {
 			position: relative;
-			width: 94%;
-			height: 43%;
-			margin: 0 auto;
-			margin-top: 16%;
+			width: 100%;
 			/* padding-top: 16%; */
+		}
+		.wel_desc_xc {
+			width: 64%;
+		}
+		.desc-cp-warp {
+			position: relative;
+			width: 66%;
+			text-align: center;
+			margin: 3% auto 0;
+		}
+		.desc-cp-warp .img-desc-cp{
+			width: 74%;
 		}
 		.wel-desc-desc {
 			width: 100%;
-			/* display: block;
-			width: 94%;
-			margin: 0 auto;
-			padding-top: 16%; */
+		}
+		.wel_desc_jp {
+			width: 41%;
+		}
+		.wel_desc_tj {
+			position: absolute;
+			right: 0;
+			top: -1%;
+			width: 52%;
+		}
+		.wel_desc_tjj {
+			width: 58%;
+		}
+		.wel_desc_sr {
+			position: absolute;
+			right: 0;
+			top: 12%;
+			width: 38%;
+		}
+		.wel_desc_nh {
+			width: 58%;
+		}
+		.wel_gift_warp {
+			position: absolute;
+			bottom: 8%;
+			width: 100%;
+			height: 30%;
 		}
 		.wel-desc-muscle {
 			position: absolute;
 			width: 9%;
-			right: 3%;
+			right: 5%;
 			top: 42%;
 		}
 		.wel-desc-cake {
@@ -356,32 +513,282 @@
 		}
 		.wel-desc-scraps {
 			position: absolute;
-			width: 65%;
-			top: 24%;
-			left: 20%;
+			width: 100%;
+			top: 5%;
+			left: 0;
 		}
 		.wel-desc-gift {
 			position: absolute;
 			width: 74%;
+			height: 52%;
 			bottom: 13%;
 			left: 13%;
 		}
 		.wel-desc-popstarts {
 			position: absolute;
-			width: 61%;
-			top: 62%;
-			left: 29%;
+			width: 41%;
+			top: 0;
+			left: 50%;
+			margin-left: -20%;
 		}
 		.wel-desc-text {
 			position: absolute;
 			width: 63%;
-			bottom: 9%;
+			bottom: 1%;
 			left: 19%;
+		}
+		.wel-desc-start {
+			position: absolute;
+			top: 33%;
+			right: 20%;
+			width: 5%;
+		}
+		.wel-desc-start2 {
+			position: absolute;
+			top: 60%;
+			right: 10%;
+			width: 2%;
+		}
+		.company-text {
+			margin-top: 4%;
+			margin-left: 5%;
+			width: 59%;
+		}
+		.company-mid-text {
+			margin-top: 4%;
+			margin-left: 2%;
+			width: 96%;
+		}
+		.company-btn-group {
+			margin-top: 8%;
+			margin-left: 4%;
+			width: 84%;
+		}
+		.company-btn {
+			width: 100%;
+			margin-top: 8%;
+		}
+		.invite-word {
+			margin-top: 4%;
+			margin-left: 4%;
+			width: 54%;
+		}
+		.paper-warp {
+			position: relative;
+			width: 92%;
+			height: 65%;
+			margin: 5% auto 0;
+		}
+		.invite_paper {
+			width: 100%;
+			height: 100%;
+		}
+		.jobs-content-warp {
+			position: absolute;
+			top: 10%;
+			left: 8%;
+			width: 86%;
+			height: 79%;
+			overflow: scroll;
+		}
+		.jobs-list li {
+			padding: 5% 0 6%;
+			width: 91%;
+			font-size: 20px;
+			margin: 0 auto;
+			background: url('./images/item_line.png') left bottom no-repeat;
+			background-size: 100% 10%;
+		}
+		.jobs-list li:last-child {
+			background: none;
+		}
+		.arrow {
+			display: block;
+			float: right;
+			width: 5%;
+		}
+		.btn-group {
+			margin: 7% auto 0;
+			width: 90%;
+			overflow: hidden;
+		}
+		.l-btn {
+			float: left;
+		}
+		.r-btn {
+			float: right;
+		}
+		.btn-size {
+			width: 45%;
+		}
+		.job-desc .job-desc-item:first-child {
+			margin-top: 6%;
+		}
+		.mark {
+			float: left;
+			width: 5%;
+			margin-top: 2%;
+		}
+		.job-desc-item {
+			margin-top: 5%;
+			line-height: 1.5;
+			overflow: hidden;
+		}
+		.job-desc-item span {
+			float: left;
+			font-size: 18px;
+			padding-left: 2%;
+			width: 93%;
+		}
+		.job-desc-warp {
+			width: 100%;
+			height: 100%;
+		}
+		.card-content-warp {
+			position: absolute;
+			top: 7%;
+			left: 6%;
+			width: 87%;
+			height: 82%;
+			overflow: scroll;
+		}
+		.job-name {
+			font-size: 22px;
+			color: #e94227;
+		}
+		.mail-warp {
+			width: 100%;
+			margin-top: 20%;
+			text-align: center;
+		}
+		.mail {
+			vertical-align: middle;
+			width: 6%;
+		}
+		.contact-method {
+			font-size: 14px;
+		}
+		#company-logo-group {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.group-logo {
+			margin-top: 5%;
+			margin-left: 6%;
+			width: 66%;
+		}
+		.introduct-warp {
+			position: relative;
+			width: 84%;
+			height: 56%;
+			margin: 8% auto 0;
+		}
+		.introduct-logo {
+			width: 100%;
+			height: 100%;
+		}
+		.ill-pic_warp {
+			position: absolute;
+			width: 100%;
+			height: 16%;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+		}
+		.group_ill-pic {
+			width: 80%;
+		}
+		.introduct-clound1 {
+			position: absolute;
+			width: 15%;
+			top: 17%;
+			left: 4%;
+		}
+		.introduct-clound2 {
+			position: absolute;
+			width: 17%;
+			left: 54%;
+			top: -20%;
+		}
+		.introduct-clound3 {
+			position: absolute;
+			width: 14%;
+			top: 45%;
+			right: -5%;
+		}
+		.introduct-content {
+			position: absolute;
+			width: 88%;
+			height: 81%;
+			top: 7%;
+			left: 6%;
+		}
+		.introduct-cn {
+			font-size: 17px;
+		}
+		.introduct-content p {
+			margin-top: 2%;
+			font-size: 16px;
+			line-height: 1.6875;
+		}
+		@media screen and (max-width: 320px) {
+			.job-desc-item span {
+				font-size: 14px;
+			}
+			.job-name {
+				font-size: 18px;
+			}
+			.contact-method {
+				font-size: 12px;
+			}
+			.introduct-cn {
+				font-size: 14px;
+			}
+			.introduct-content p {
+				font-size: 12px;
+			}
+		}
+		@media screen and (min-width: 540px) {
+			.job-desc-item span {
+				font-size: 22px;
+			}
+			.job-name {
+				font-size: 26px;
+			}
+			.contact-method {
+				font-size: 20px;
+			}
+			.introduct-cn {
+				font-size: 21px;
+			}
+			.introduct-content p {
+				font-size: 24px;
+			}
+		}
+
+
+		/**********************************swiper***********************/
+		.swiper-container {
+			overflow: visible;
+		}
+		.swiper-container-horizontal>.swiper-pagination {
+			bottom: -10%;
+		}
+		.swiper-pagination-bullet {
+			width: 12px;
+			height: 12px;
+			background: #fff;
+			border: 1px solid #000;
+			opacity: 1;
+		}
+		.swiper-pagination-bullet-active {
+			background: #e94227;
 		}
 
 		/**********************************demo*************************/
 		.page1 {
-			background: #ccc;
 			z-index: 3;
 		}
 		.page2 {
@@ -408,7 +815,7 @@
 			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="ex-paper-warp">
-						<img src="./images/focus.png" class="img-focus" alt="">
+						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" alt="">
 						<img src="./images/ex_paper.png" class="img-ex-paper" />
 					</div>
 					<div class="person-warp">
@@ -428,7 +835,7 @@
 					<div class="emb-warp">
 						<img src="./images/cengceng.png" class="img-cengceng" />
 						<img src="./images/b_scraps.png" class="img-b-scraps" alt="">
-						<img src="./images/r_ribbon.png" class="img-r-ribbon" alt="">
+						<img src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove" alt="">
 						<img src="./images/r_scraps.png" class="img-r-scraps" alt="">
 						<img src="./images/start1.png" class="img-start1" alt="">
 						<img src="./images/start2.png" class="img-start2" alt="">
@@ -440,100 +847,235 @@
 				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
 			</div>
 			<!--page2 選擇 -->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="man-select" id="community-invite" >
 						<img src="./images/select1.png" class="img-select" alt=""/>
 						<img src="./images/select_invite.png" class="img-btn" alt="">
 						<img src="./images/man_line.png"  class="man-line" alt="">
+						<img src="./images/select_start1.png" class="select_start1" alt="">
+						<img src="./images/select_start2.png" class="select_start2" alt="">
+						<img src="./images/select_start3.png" class="select_start3" alt="">
 					</div>
 					<div class="female-select">
 						<img src="./images/select2.png" class="img-select" alt="" />
 						<img src="./images/select_gps.png"  class="img-btn" alt="">
 						<img src="./images/female_line.png" class="female-line" alt="">
+						<img src="./images/select_start3.png" class="select_start1" alt="">
+						<img src="./images/select_start3.png" class="select_start2" alt="">
+						<img src="./images/select_start2.png" class="select_start3" alt="">
+						<img src="./images/select_start3.png" class="select_start4" alt="">
 					</div>
 				</div>
 			</div>
 			<!-- page3 福利 -->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
-					<img src="./images/welfare_text.png" class="img-wel-text" alt="">
-					<img src="./images/welfare_bubble.png" class="img-wel-bubble" alt="">
-					<img src="./images/welfare_persons.png" class="img-wel-persons" alt="">
-					<img src="./images/welfare_shake_hand.png" class="img-wel-hand" alt="">
-					<img src="./images/welfare_start1.png" class="img-wel-start1" alt="">
-					<img src="./images/welfare_start2.png" class="img-wel-start2" alt="">
-					<img src="./images/welfare_money.png" class="img-wel-money" alt="">
-					<img src="./images/welfare_money2.png" class="img-wel-money2" alt="">
+					<div class="wel-text-warp">
+						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
+					</div>
+					<div class="wel-warp">
+						<img src="./images/welfare_bubble.png" class="img-wel-bubble" alt="">
+						<img src="./images/welfare_persons.png" class="img-wel-persons" alt="">
+						<img src="./images/welfare_shake_hand.png" class="img-wel-hand" alt="">
+						<img src="./images/welfare_start1.png" class="img-wel-start1" alt="">
+						<img src="./images/welfare_start2.png" class="img-wel-start2" alt="">
+						<img src="./images/welfare_money.png" class="img-wel-money" alt="">
+						<img src="./images/welfare_money2.png" class="img-wel-money2" alt="">
+					</div>
 				</div>
 			</div>
 			<!-- page4 福利描述 -->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="wel-desc-warp">
-						<img src="./images/wel_desc_descrption.png" class="wel-desc-desc" alt="">
+						<div style="text-align: center; margin: 6% auto 0;">
+							<img src="./images/wel_desc_xc.png" class="wel_desc_xc" alt="">
+						</div>
+						<div class="desc-cp-warp">
+							<img src="./images/wel_desc_cp.png" class="img-desc-cp" alt="">
+							<img src="./images/wel_desc_scraps.png" class="wel-desc-scraps" alt="">
+						</div>
+						<div style="position: relative; margin: 4% auto 0;width: 86%;">
+							<img src="./images/wel_desc_jp.png" class="wel_desc_jp" alt="">
+							<img src="./images/wel_desc_tj.png" class="wel_desc_tj" alt="">
+						</div>
+						<div style="position: relative; margin: 4% auto 0;width: 95%;">
+							<img src="./images/wel_desc_tjj.png" class="wel_desc_tjj" alt="">
+							<img src="./images/wel_desc_sr.png" class="wel_desc_sr" alt="">
+						</div>
+						<div style="position: relative; margin: 4% auto 0; text-align:center">
+							<img src="./images/wel_desc_nh.png" class="wel_desc_nh" alt="">
+						</div>
 						<img src="./images/wel_desc_cake.png" class="wel-desc-cake" alt="">
 						<img src="./images/wel-desc-muscle.png" class="wel-desc-muscle" alt="">
-						<img src="./images/wel_desc_scraps.png" class="wel-desc-scraps" alt="">
 					</div>
-					<img src="./images/wel-desc-gift.png" class="wel-desc-gift" alt="">
-					<img src="./images/wel_desc_popstarts.png" class="wel-desc-popstarts" alt="">
-					<img src="./images/wel_desc_text.png" class="wel-desc-text" alt="">
+					<div class="wel_gift_warp">
+						<img src="./images/wel-desc-gift.png" class="wel-desc-gift" alt="">
+						<img src="./images/wel_desc_popstarts.png" class="wel-desc-popstarts" alt="">
+						<img src="./images/wel_desc_text.png" class="wel-desc-text" alt="">
+						<img src="./images/gift_start.png" class="wel-desc-start" alt="">
+						<img src="./images/gift_start2.png" class="wel-desc-start2" alt="">
+					</div>
 				</div>
 			</div>
 			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide over-wrap">
+			<div class="swiper-slide over-wrap hide">
 				<!-- 公司集合模块 step1-->
 				<div class="custom-page page1">
-					<button id="Group-company" class="changeJobItems" data-index=0 >集团</button>
-					<button id="EB-company" class="changeJobItems" data-index=1 >电商</button>
-					<button id="Finance-company" class="changeJobItems" data-index=2 >金服</button>
-				</div>
+					<div class="page">
+						<img src="./images/company_text.png" class="company-text" alt="">
+						<img src="./images/company_mid_text.png" class="company-mid-text" alt="">
+						<div class="company-btn-group">
+							<img src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems" data-index=0>
+							<img src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems" data-index=1>
+							<img src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems" data-index=2>
+						</div>
+					</div> 
+				</div> 
 				<!-- 公司集合模块 -->
 				<!-- 公司对应的岗位列表模块 step2-->
-				<div class="custom-page page2" id="Group-jobs">
-					<ul>
-						<li class="jobItem">集团一</li>
-						<li class="jobItem">集团二</li>
-						<li class="jobItem">集团三</li>
-					</ul>
-					<button id="EB-company-1" class="changeJobItems-btn" data-index=1 >电商招聘</button>
-					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
+				<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
+				<div class="custom-page " id="Group-jobs">
+					<div class="page">
+						<img src="./images/group_invite.png" class="invite-word" alt="">
+						<div class="paper-warp">
+							<img src="./images/invite_paper.png" class="invite_paper" alt="">
+							<div class="jobs-content-warp">
+								<ul class="jobs-list">
+									<li class="jobItem">
+										<span>总裁办秘书</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+									<li class="jobItem">
+										<span>投融资副总监</span>
+										<span class="arrow"></span>
+									</li>
+									<li class="jobItem">
+										<span>审计经理</span>
+										<span class="arrow"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group">
+							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
+							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
+						</div>
+					</div>
 				</div>
-				<div class="custom-page page2" id="EB-jobs">
-					<ul>
-						<li class="jobItem">电商一</li>
-						<li class="jobItem">电商二</li>
-						<li class="jobItem">电商三</li>
-					</ul>
-					<button id="Group-company-0" class="changeJobItems-btn" data-index=0 >集团招聘</button>
-					<button id="Finance-company-2" class="changeJobItems-btn" data-index=2 >金控招聘</button>
+				<!-- 电商岗位列表 -->
+				<div class="custom-page " id="EB-jobs">
+					<div class="page">
+						<img src="./images/e-commerce-invite.png" class="invite-word" alt="">
+						<div class="paper-warp">
+							<img src="./images/invite_paper.png" class="invite_paper" alt="">
+							<div class="jobs-content-warp">
+								<ul class="jobs-list">
+									<li class="jobItem">
+										<span>总裁办秘书</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+									<li class="jobItem">
+										<span>投融资副总监</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+									<li class="jobItem">
+										<span>审计经理</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group">
+							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size" data-index=0>
+							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
+						</div>
+					</div>
 				</div>
-				<div class="custom-page page2" id="Finance-jobs">
-					<ul>
-						<li class="jobItem">金控一</li>
-						<li class="jobItem">金控二</li>
-						<li class="jobItem">金控三</li>
-					</ul>
-					<button id="EB-company-1" class="changeJobItems-btn" data-index=1 >电商招聘</button>
-					<button id="Group-company-0" class="changeJobItems-btn" data-index=0 >集团招聘</button>
+				<!-- 金服岗位列表 -->
+				<div class="custom-page " id="Finance-jobs">
+					<div class="page">
+						<img src="./images/finance-invite.png" class="invite-word" alt="">
+						<div class="paper-warp">
+							<img src="./images/invite_paper.png" class="invite_paper" alt="">
+							<div class="jobs-content-warp">
+								<ul class="jobs-list">
+									<li class="jobItem">
+										<span>总裁办秘书</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+									<li class="jobItem">
+										<span>投融资副总监</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+									<li class="jobItem">
+										<span>审计经理</span>
+										<img src="./images/arrow.png" class="arrow" alt="">
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group">
+							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
+							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size" data-index=0>
+						</div>
+					</div>
 				</div>
 				<!-- 公司对应的岗位列表模块 -->
-				<!-- 岗位详情模块 step3 -->
-				<div class="custom-page page3 translate-out-x">
-					<div class="card-jobs">
+				<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
+				<div class="custom-page page3 ">
+					<div class="page">
 						<div class="swiper-container jobs-page" id="jobs-page">
 							<div class="swiper-wrapper jobs-wrapper">
 								<div class="swiper-slide card-slide">
-									<div class="card">111</div>
+									<div class="card">
+										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
+										<div class="card-content-warp">
+											<h2 class="job-name ellipsis">总裁办秘书</h2>
+											<ul class="job-desc">
+												<li class="job-desc-item">
+													<img src="./images/mark.png" class="mark" >
+													<span>好文笔、好身手、好头脑！</span>
+												</li>
+												<li class="job-desc-item">
+													<img src="./images/mark.png" class="mark" >
+													<span>来吧，欢迎和我们聊聊！</span>
+												</li>
+												<li class="job-desc-item">
+													<img src="./images/mark.png" class="mark" >
+													<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
+												</li>
+												<li class="job-desc-item">
+													<img src="./images/mark.png" class="mark" >
+													<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
+												</li>
+												<li class="job-desc-item">
+													<img src="./images/mark.png" class="mark" >
+													<span>请任性的说：放心把你们总裁交给我吧！</span>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
 								<div class="swiper-slide card-slide">
-									<div class="card">222</div>
+									<div class="card">
+										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
+									</div>
 								</div>
 								<div class="swiper-slide card-slide">
-									<div class="card">333</div>
+									<div class="card">
+										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
+									</div>
 								</div>
 							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="mail-warp">
+							<img src="./images/mail.png" class="mail" alt="">
+							<span class="contact-method">
+								简历投至:&nbsp;&nbsp;zhaopin@mail.xusenintl.com
+							</span>
 						</div>
 					</div>
 				</div>
@@ -541,15 +1083,40 @@
 			</div>
 			<!-- 关于我们 -->
 			<div class="swiper-slide">
-				<h1>关于我们</h1>
 				<div id="company-logo-group">
+					<div class="page">
+						<img src="./images/group_logo.png" class="group-logo" alt="">
+						<div class="introduct-warp">
+							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
+							<div class="introduct-content">
+								<h2 class="introduct-cn">商赢控股集团有限公司</h2>
+								<p>
+									( 以下简称“ 商赢集团 ”) 成立于2014年9月，总部位于上海。
+									集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，
+									构建了全球布局、多地联动的A股上市公司商赢环球（股票代码: 600146）、
+									“让投融资更简单更全面更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，
+									形成全球化布局、多平台共进的发展模式。
+								</p>
+							</div>
+						</div>
+						<div class="ill-pic_warp">
+							<img src="./images/group_ill-pic.png" class="group_ill-pic" alt="">
+							<img src="./images/introduct-clound1.png" class="introduct-clound1" >
+							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
+							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
+						</div>
+					</div>
+					<div class="hide">电商</div>
+					<div class="hide">金控</div>
+				</div>
+				<!-- <div id="company-logo-group">
 					<div class="hide">集团</div>
 					<div class="hide">电商</div>
 					<div class="hide">金控</div>
 				</div>
 				<div id="company-aboutUs">
 					关于我们的一些详细说明
-				</div>
+				</div> -->
 			</div>
 			<!-- 关于我们 -->
 			<!-- 切换公司对应岗位模块 -->

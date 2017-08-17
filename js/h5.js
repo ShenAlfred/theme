@@ -57,6 +57,7 @@
 				centeredSlides: true,
 				watchSlidesProgress: true,
 				slidesPerView: 'auto',
+				pagination : '.swiper-pagination',
 				spaceBetween: 40,
 				onSlideChangeStart: this.onSlideChangeStart,
 				onSetTransition: this.onSetTransition,
