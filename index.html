@@ -12,9 +12,6 @@
 			font-family: mjl;
 			src: url('./font/blxqx.ttf');
 		}
-		body {
-			font-family: mjl;
-		}
 		img {
 			vertical-align: middle;
 		}
@@ -63,12 +60,6 @@
 		.over-wrap {
 			position: relative;
 			overflow: hidden; 
-		}
-		#music {
-			position: fixed;
-			right: 20px;
-			top: 20px;
-			z-index: 10;
 		}
 		.page {
 			position: relative;
@@ -679,10 +670,20 @@
 			margin-left: 6%;
 			width: 66%;
 		}
+		.e-commerce-logo {
+			margin-top: 5%;
+			margin-left: 6%;
+			width: 67%;
+		}
+		.finance-logo {
+			margin-top: 5%;
+			margin-left: 6%;
+			width: 60%;
+		}
 		.introduct-warp {
 			position: relative;
 			width: 84%;
-			height: 56%;
+			height: 65%;
 			margin: 8% auto 0;
 		}
 		.introduct-logo {
@@ -692,38 +693,88 @@
 		.ill-pic_warp {
 			position: absolute;
 			width: 100%;
-			height: 16%;
 			bottom: 0;
 			left: 0;
 			text-align: center;
 		}
 		.group_ill-pic {
+			position: absolute;
 			width: 80%;
+			left: 50%;
+			bottom: 0;
+			margin-left: -40%;
 		}
-		.introduct-clound1 {
+		.e-commerce_ill-pic {
+			position: absolute;
+			width: 87%;
+			left: 50%;
+			bottom: 0;
+			margin-left: -44%;
+		}
+		.group-ill-warp {
+			height: 22%;
+		}
+		.finance-ill-warp {
+			height: 22%;
+		}
+		.group-ill-warp .introduct-clound1 {
 			position: absolute;
 			width: 15%;
-			top: 17%;
+			top: 37%;
 			left: 4%;
 		}
-		.introduct-clound2 {
+		.group-ill-warp .introduct-clound2 {
 			position: absolute;
 			width: 17%;
 			left: 54%;
-			top: -20%;
+			top: 20px;
 		}
-		.introduct-clound3 {
+		.group-ill-warp .introduct-clound3 {
 			position: absolute;
 			width: 14%;
-			top: 45%;
+			top: 65%;
 			right: -5%;
+		}
+		.e-commerce-ill-warp {
+			height: 22%;
+		}
+		.e-commerce-ill-warp .introduct-clound2 {
+			position: absolute;
+			width: 17%;
+			top: 31%;
+			right: 4%;
+		}
+		.e-commerce-ill-warp .introduct-clound3 {
+			position: absolute;
+			width: 14%;
+			left: 40%;
+			top: 7%;
+		}
+		.finance-ill-warp .introduct-clound2{
+			position: absolute;
+			width: 17%;
+			top: 9%;
+			right: 7%;
+		}
+		.finance-ill-warp .introduct-clound3{
+			position: absolute;
+			top: 44%;
+			left: 7%;
+			width: 14%;
 		}
 		.introduct-content {
 			position: absolute;
-			width: 88%;
+			width: 90%;
 			height: 81%;
 			top: 7%;
 			left: 6%;
+		}
+		.e-commerce-title {
+			font-size: 14px;
+			padding: 1% 2%;
+			margin-bottom: 4%;
+			background: #ffea5a;
+			border-radius: 17px;
 		}
 		.introduct-cn {
 			font-size: 17px;
@@ -732,6 +783,183 @@
 			margin-top: 2%;
 			font-size: 16px;
 			line-height: 1.6875;
+			letter-spacing: 2px;
+		}
+		.introduct-content p span {
+			display: block;
+			padding-top: 2%;
+		}
+		.finance-content p {
+			margin-top: 0;
+		}
+		.finance_ill-pic {
+			position: absolute;
+			bottom: 0;
+			width: 85%;
+			left: 50%;
+			margin-left: -42%;
+		}
+		.end_text {
+			display: block;
+			margin: 7% auto 0;
+			width: 82%;
+		}
+		.gaoji-warp {
+			position: relative;
+			margin: 6% auto 0;
+			width: 79%;
+			height: 43%;
+		}
+		.bottom-warp {
+			position: absolute;
+			width: 100%;
+			height: 26%;
+			bottom: 0;
+			left: 0;
+		}
+		.address {
+			margin: 5% auto 0;
+			text-align: center;
+			width: 100%;
+			font-size: 14px;
+			line-height: 1.625;
+		}
+		.sb-group-btn {
+			margin: 6% auto 0;
+			width: 90%;
+			overflow: hidden;
+		}
+		.sb-btn {
+			width: 46%;
+		}
+		.gaoji-paper {
+			position: absolute;
+			width: 91%;
+			height: 69%;
+			bottom: 0;
+			left: 50%;
+			margin-left: -45%;
+			z-index: 2;
+		}
+		.end_bg {
+			width: 100%;
+			height: 100%;
+		}
+		.boy1 {
+			position: absolute;
+			width: 50%;
+			height: 33%;
+			left: 0;
+		}
+		.boy2 {
+			position: absolute;
+			width: 48%;
+			height: 33%;
+			right: 0;
+		}
+		.boy1_hand {
+			position: absolute;
+			width: 7%;
+			top: 30%;
+			left: 40%;
+			z-index: 3;
+		}
+		.boy2_hand {
+			position: absolute;
+			width: 6%;
+			top: 30%;
+			right: 43%;
+			z-index: 3;
+		}
+		.qr_code {
+			position: absolute;
+			top: 18%;
+			width: 36%;
+			height: 47%;
+			left: 50%;
+			margin-left: -18%;
+		}
+		.skhe {
+			position: absolute;
+			width: 57%;
+			left: 50%;
+			bottom: 17%;
+			margin-left: -28%;
+			text-align: center;
+		}
+		.mark_close {
+			width: 7%;
+		}
+		.QR_code_text {
+			padding: 0 2%;
+			width: 70%;
+		}
+		.gaoji-start1 {
+			position: absolute;
+			width: 5%;
+			left: 4%;
+			top: 21%;
+		}
+		.gaoji-start2 {
+			position: absolute;
+			width: 6%;
+			top: 8%;
+			right: 13%;
+		}
+		.meimao1 {
+			position: absolute;
+			top: 26%;
+			left: 42%;
+			width: 6%;
+		}
+		.meimao2 {
+			position: absolute;
+			top: 24%;
+			right: 45%;
+			width: 4%;
+		}
+		.boy2_line {
+			position: absolute;
+			top: 19%;
+			width: 7%;
+			right: 6%;
+		}
+		.join_us {
+			position: absolute;
+			width: 12%;
+			left: 42%;
+			top: 10%;
+		}
+		.favour {
+			position: absolute;
+			width: 6%;
+			top: 15%;
+			left: 45%;
+		}
+		.share-layer {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, .75) url('./images/share_layer.png') 80% top no-repeat;
+			background-size: 181px 110px;
+			z-index: 99;
+		}
+		.music {
+			position: fixed;
+			right: 4%;
+			top: 2%;
+			width: 8%;
+			z-index: 10;
+		}
+		.pull-up {
+			position: fixed;
+			width: 6%;
+			left: 50%;
+			margin-left: -3%;
+			bottom: 2%;
+			z-index: 20;
 		}
 		@media screen and (max-width: 320px) {
 			.job-desc-item span {
@@ -747,6 +975,12 @@
 				font-size: 14px;
 			}
 			.introduct-content p {
+				font-size: 12px;
+			}
+			.e-commerce-title {
+				font-size: 12px;
+			}
+			.address {
 				font-size: 12px;
 			}
 		}
@@ -765,6 +999,12 @@
 			}
 			.introduct-content p {
 				font-size: 24px;
+			}
+			.e-commerce-title {
+				font-size: 21px;
+			}
+			.address {
+				font-size: 21px;
 			}
 		}
 
@@ -812,7 +1052,7 @@
     <div class="swiper-container" id="main-page">
 		<div class="swiper-wrapper">
 			<!-- page1-->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="ex-paper-warp">
 						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" alt="">
@@ -847,7 +1087,7 @@
 				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
 			</div>
 			<!--page2 選擇 -->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="man-select" id="community-invite" >
 						<img src="./images/select1.png" class="img-select" alt=""/>
@@ -869,7 +1109,7 @@
 				</div>
 			</div>
 			<!-- page3 福利 -->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="wel-text-warp">
 						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
@@ -886,7 +1126,7 @@
 				</div>
 			</div>
 			<!-- page4 福利描述 -->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="wel-desc-warp">
 						<div style="text-align: center; margin: 6% auto 0;">
@@ -920,7 +1160,7 @@
 				</div>
 			</div>
 			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide over-wrap hide">
+			<div class="swiper-slide over-wrap">
 				<!-- 公司集合模块 step1-->
 				<div class="custom-page page1">
 					<div class="page">
@@ -1084,7 +1324,7 @@
 			<!-- 关于我们 -->
 			<div class="swiper-slide">
 				<div id="company-logo-group">
-					<div class="page">
+					<div class="page hide">
 						<img src="./images/group_logo.png" class="group-logo" alt="">
 						<div class="introduct-warp">
 							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
@@ -1099,118 +1339,112 @@
 								</p>
 							</div>
 						</div>
-						<div class="ill-pic_warp">
-							<img src="./images/group_ill-pic.png" class="group_ill-pic" alt="">
+						<div class="ill-pic_warp group-ill-warp">
+							<img src="./images/group_ill-pic.png" class="group_ill-pic">
 							<img src="./images/introduct-clound1.png" class="introduct-clound1" >
 							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
 							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
 						</div>
 					</div>
-					<div class="hide">电商</div>
-					<div class="hide">金控</div>
+					<div class="page hide">
+						<img src="./images/e-commerce-logo.png" class="e-commerce-logo">
+						<div class="introduct-warp">
+							<img src="./images/introduct-logo.png" class="introduct-logo">
+							<div class="introduct-content">
+								<div class="e-commerce-title">
+									供应链服务+社区化电商+线下体验中心
+								</div>
+								<h2 class="introduct-cn">商赢电子商务有限公司</h2>
+								<p>
+									(以下简称“商赢电商”)是商赢控股集团旗下的控股子公司。
+									公司围绕“小前台，大中台，重后台”的企业运营思想，强化后台建设，
+									斥资开发商赢智能信息系统，并自营建造及运营100-300亩集智能仓储，
+									打造集商业展示，智能办公为一体“智能化，自动化，集约化，
+									一站式”的母婴生态服务园区-智汇乐源。
+								</p>
+							</div>
+						</div>
+						<div class="ill-pic_warp e-commerce-ill-warp">
+							<img src="./images/e-commerce_ill-pic.png" class="e-commerce_ill-pic">
+							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
+							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
+						</div>
+					</div>
+					<div class="page hide">
+						<img src="./images/finance-logo.png" class="finance-logo" alt="">
+						<div class="introduct-warp">
+							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
+							<div class="introduct-content finance-content">
+								<p>
+									<b>商赢金控</b>是商赢集团重点打造的金融产业全新生态集群，
+									旗下有商赢金服（www.sy8.com）、商赢融资租赁、商赢典当、商赢财富、商赢资产五大支柱板块。<br />
+									<span>未来，商赢金控将不断通过在网络小额贷款、金融资产交易、银行、第三方支付、证券、保险、基金等众多专业性金融服务领域深耕发展，
+									为客户提供专业的“全牌照+互联网”模式的综合性金融服务。
+									商赢金控，致力为您打造一个全新的金融生态圈。</span>
+								</p>
+							</div>
+						</div>
+						<div class="ill-pic_warp finance-ill-warp">
+							<img src="./images/finance_ill-pic.png" class="finance_ill-pic">						
+							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
+							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
+						</div>
+					</div>
 				</div>
-				<!-- <div id="company-logo-group">
-					<div class="hide">集团</div>
-					<div class="hide">电商</div>
-					<div class="hide">金控</div>
-				</div>
-				<div id="company-aboutUs">
-					关于我们的一些详细说明
-				</div> -->
 			</div>
 			<!-- 关于我们 -->
 			<!-- 切换公司对应岗位模块 -->
 			<div class="swiper-slide">
-				<button id="backFirstPage">返回首页</button>
+				<div class="page">
+					<img src="./images/end_text.png" class="end_text" >
+					<div class="gaoji-warp">
+						<img src="./images/join_us.png" class="join_us">
+						<img src="./images/favour.png" class="favour">
+						<img src="./images/boy2_line.png" class="boy2_line">
+						<img src="./images/meimao1.png" class="meimao1">
+						<img src="./images/meimao2.png" class="meimao2">
+						<img src="./images/start1.png" class="gaoji-start1">
+						<img src="./images/start1.png" class="gaoji-start2">
+						<img src="./images/boy1.png" class="boy1">
+						<img src="./images/boy2.png" class="boy2">
+						<img src="./images/boy1_hand.png" class="boy1_hand">
+						<img src="./images/boy2_hand.png" class="boy2_hand">
+						<div class="gaoji-paper">
+							<img src="./images/end_bg.png" class="end_bg" >
+							<img src="./images/QRCode.jpeg" class="qr_code" >
+							<div class="skhe">
+								<img src="./images/mark_close.png" class="mark_close">
+								<img src="./images/QR_code_text.png" class="QR_code_text">
+								<img src="./images/mark_close.png" class="mark_close">
+							</div>
+						</div>
+					</div>
+					<div class="bottom-warp">
+						<div class="address">
+							咨询电话:021-50688888 转 3088／8610 <br />
+							公司地址:徐汇区中山西路1600号宏汇国际广场A栋11楼
+						</div>
+						<div class="sb-group-btn">
+							<img src="./images/back_home.png" id="backFirstPage" class="sb-btn fl">
+							<img src="./images/share.png" class="sb-btn fr">
+						</div>
+					</div>
+				</div>
+				<!-- <button id="backFirstPage">返回首页</button> -->
 			</div>
 		</div>
 	</div>
+	<!-- 管培生模块 -->
 	<div id="management" style="display:none; position: absolute; top: 0; background: #ccc; width: 100%;z-index: 99;height: 100%;overflow: scroll">
-			<div>
-				管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-			管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-			管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-			管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
-		管培生<br>
+		<div>
+				
 		</div>
 	</div>
-	<button id="music">音乐</button>
+	<!-- 分享提示层 -->
+	<div class="share-layer hide" id="share-layer"></div>
+	<img src="./images/pull_up.png" class="pull-up" />
+	<!-- 音乐ICON -->
+	<img src="./images/music.png" id="music" class="music" >
 	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
