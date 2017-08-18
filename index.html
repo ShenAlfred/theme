@@ -69,6 +69,34 @@
 			background: url('./images/bg.png') repeat;
 			background-size: 375px 15px;
 		}
+		.loading {
+			position: absolute;
+			top: 34%;
+			width: 44%;
+			left: 50%;
+			text-align: center;
+			margin-left: -22%;
+		}
+		.loading-text {
+			width: 30%;
+		}
+		.loading-point {
+			width: 2%;
+		}
+		.loading-progress {
+			width: 100%;
+			height: 100%;
+		}
+		.progress-warp {
+			width: 100%;
+			height: 30px;
+		}
+		svg {
+			fill: transparent;
+		}
+		.progress-line {
+			stroke: #333;
+		}
 		.img-logo {
 			position: absolute;
 			bottom: 6%;
@@ -76,27 +104,38 @@
 			left: 50%;
 			margin-left: -13%;
 		}
+		.hehe-warp {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 51%;
+		}
 		.person-warp {
 			position: absolute;
 			left: 33%;
 			bottom: 0;
 			width: 53%;
+			height: 99%;
 			z-index: 1;
 		}
 		.img-person {
-			width: 100%;
+			position: absolute;
+			bottom: 0;
+			width: 53%;
+			left: 33%;
+			height: 99%;
 		}
 		.img-left-hand {
             position: absolute;
-			width: 32px;
-			top: -30px;
-            left: -10px;
+			width: 9%;
+			top: -8%;
+            left: 30%;
 		}
 		.img-right-hand {
 		    position: absolute;
-			width: 43px;
-			right: -19px;
-            top: 2px;
+			width: 12%;
+			right: 8%;
+            top: 1%;
 		}
 		.ex-paper-warp {
 			position: absolute;
@@ -1045,7 +1084,26 @@
 </head>
 <body>
 	<!-- loading -->
-	<div class="page loading-page" style="display: none;">
+	<div class="page loading-page">
+		<svg width="100%" height="30" class="progress-line">
+			<mask id="loading-mask" x="0" y="0" width="100%" height="30" >
+				<image xlink:href="./images/loading-progress.png" x="0" y="0" width="100%" height="30" />
+			</mask>
+		</svg> 
+		<div class="loading">
+			<div>
+				<img src="./images/loading.png" class="loading-text">
+				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/loading_point.png" class="loading-point">
+			</div>
+			<div class="progress-warp">
+				<svg width="100%" height="30">
+					<!-- <rect x="0" y="0" width="100%" height="30" fill="#e94227" style="mask: url(#loading-mask)" />  -->
+				<line x1="0" y1="0" x2="100%" y2="0"style="stroke:#e94227;stroke-width:30" />
+				</svg>
+			</div>
+		</div>
 		<img src="./images/logo.png" class="img-logo" />
 	</div>
 	<!-- loading -->
@@ -1058,11 +1116,16 @@
 						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" alt="">
 						<img src="./images/ex_paper.png" class="img-ex-paper" />
 					</div>
-					<div class="person-warp">
+					<div class="hehe-warp">
 						<img src="./images/person.png" class="img-person" />
 						<img src="./images/left_hand.png" class="img-left-hand" />
 						<img src="./images/right_hand.png" class="img-right-hand" />
 					</div>
+					<!-- <div class="person-warp">
+						<img src="./images/person.png" class="img-person" />
+						<img src="./images/left_hand.png" class="img-left-hand" />
+						<img src="./images/right_hand.png" class="img-right-hand" />
+					</div> -->
 					<div class="clound-warp">
 						<img src="./images/inner_center_clound.png" class="img-icc" />
 						<img src="./images/out_left_clound.png" class="img-olc" />
@@ -1442,9 +1505,9 @@
 	</div>
 	<!-- 分享提示层 -->
 	<div class="share-layer hide" id="share-layer"></div>
-	<img src="./images/pull_up.png" class="pull-up" />
+	<img src="./images/pull_up.png" class="pull-up hide" />
 	<!-- 音乐ICON -->
-	<img src="./images/music.png" id="music" class="music" >
+	<img src="./images/music.png" id="music" class="music hide" >
 	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
