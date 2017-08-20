@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+        <svg class="masked-element" width="300" height="300" viewBox="0 0 300 300">
+            <defs>
+                <pattern id="pattern-inner" x="0" y="0" width="100%" height="300" patternUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="100%" height="300" fill="#f00"></rect>
+                </pattern>
+                <g id="progress">
+                    <rect x="0" y="0" width="300" height="300" />
+                    <rect x="0" y="0" width="150" height="300" fill="#f00" />
+                </g>
+            </defs>
+            <!--<image xlink:href="./images/forest-example-square.jpg" width="300px" height="300px" style="mask: url(#mask1);" />-->
+            <!--<rect width="100%" height="300" fill="url(#pattern-inner)" style="mask: url(#mask1);"></rect>-->
+            <!--<rect width="100%" height="300" fill="#000" style="mask: url(#mask1);"></rect>-->
+            <use xlink:href="#progress" style="mask: url(#mask1)"></use>
+        </svg>
+        <svg class="svg-mask">
+            <defs>
+                <mask id="mask1" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                    <circle cx="0.50" cy="0.50" r="0.50" id="circle" style="fill-opacity: 1; fill: white;"/>
+                </mask>
+            </defs>
+        </svg>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: url(./images/bg.png) repeat;
+        }
+        .progress {
+            width: 323px;
+            height: 28px;
+            background: url("./images/loading-progress.png") no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="progress">
+    <svg class="masked-element" width="323" height="28" viewBox="0 0 323 28">
+        <defs>
+            <g id="progress-line">
+                <rect x="0" y="0" width="323" height="28" fill="#fff" />
+                <rect x="0" y="0" width="100" height="28" fill="#f00" id="progress"/>
+            </g>
+            <mask id="mask1" x="0" y="0" width="323" height="28">
+                <image xlink:href="./images/progress.svg" width="323" height="28"></image>
+            </mask>
+        </defs>
+        <use xlink:href="#progress-line" style="mask: url(#mask1)"></use>
+    </svg>
+</div>
+<script>
+    window.onload = function() {
+        var progress = document.querySelector("#progress");
+        var p = 0;
+        console.log(progress.getAttribute('width'));
+//        setInterval(function() {
+//            console.log(p)
+//            if(p == 328) {
+//                return;
+//            }else {
+//                progress.setAttribute('width', p+=5);
+//            }
+//        }, 200);
+    }
+</script>
+</body>
+</html>
