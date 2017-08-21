@@ -34,9 +34,12 @@
 			return this;
 		},
 		onSlideChangeStart: function(swiper) {
-			if(swiper.activeIndex == 2 && jobsAttr.jobPagesState != 4) {
-				jobsAttr.jobPagesState = 1;
+			if( (swiper.activeIndex == 1 || swiper.activeIndex == 4 || swiper.activeIndex == 6) ) {  // && jobsAttr.jobPagesState != 4
+				// jobsAttr.jobPagesState = 1;
+				console.log("lock")
 				swiper.disableTouchControl();
+			}else {
+				swiper.enableTouchControl();
 			}
 		},
 		jumpSildeTo: function(index, speed) {
@@ -133,6 +136,7 @@
 		});
 
 		$(".changeJobItems-btn").click(function() {
+			console.log(123)
 			$(".page2").eq(jobsAttr.oldIndex).css({
 				'opacity': 0,
 				'transform': 'translate3d(0,100%,0)',
@@ -166,6 +170,12 @@
 			}
 		});
 
+		function resetState() {
+			$(".page1").removeClass('animated fadeOut').attr('style', " ");
+			$(".page2").attr('style', " ").eq(parseInt(jobsAttr.currentIndex)).removeClass('animated fadeOutLeft');
+			$(".page3").removeClass('animated fadeInRight').addClass('translate-out-x');
+		}
+
 		/**
 		 * 社會招聘點擊跳轉到page3
 		 */
@@ -174,7 +184,9 @@
 
 		});
 
+		//返回首页
 		$("#backFirstPage").on('click', function() {
+			resetState();
 			mainSwiper.jumpSildeTo(0, 1000)
 		});
 

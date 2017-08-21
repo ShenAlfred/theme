@@ -81,18 +81,16 @@
 			width: 30%;
 		}
 		.loading-point {
-			width: 2%;
+			width: 10%;
 		}
 		.loading-progress {
 			width: 100%;
 			height: 100%;
 		}
 		.progress-warp {
+			position: relative;
 			width: 100%;
-			height: 30px;
-		}
-		svg {
-			fill: transparent;
+			margin-top: 3%;
 		}
 		.progress-line {
 			stroke: #333;
@@ -128,14 +126,66 @@
 		.img-left-hand {
             position: absolute;
 			width: 9%;
-			top: -8%;
-            left: 30%;
+			top: -7%;
+			left: 30%;
+		}
+		.hhs-left {
+			-webkit-animation-name: hhs-left;
+			animation-name: hhs-left;
+		}
+		@keyframes hhs-left{
+			0%, 15%{ 
+				-webkit-transform: rotate(0deg);
+			}
+			35%, 65%{
+				-webkit-transform: rotate(10deg);
+			}
+			85%, 100%{
+				-webkit-transform: rotate(0deg);
+			}
+		}
+		@keyframes hhs-left{
+			0%, 15%{ 
+				transform: rotate(0deg);
+			}
+			35%, 65%{
+				transform: rotate(10deg);
+			}
+			85%, 100%{
+				transform: rotate(0deg);
+			}
 		}
 		.img-right-hand {
 		    position: absolute;
 			width: 12%;
 			right: 8%;
-            top: 1%;
+			top: 2%;
+		}
+		.hhs-right {
+			-webkit-animation-name: hhs-right;
+			animation-name: hhs-right;
+		}
+		@keyframes hhs-right{
+			0%, 15%{ 
+				-webkit-transform: rotate(0deg);
+			}
+			35%, 65%{
+				-webkit-transform: rotate(10deg);
+			}
+			85%, 100%{
+				-webkit-transform: rotate(0deg);
+			}
+		}
+		@keyframes hhs-right{
+			0%, 15%{ 
+				transform: rotate(0deg);
+			}
+			35%, 65%{
+				transform: rotate(10deg);
+			}
+			85%, 100%{
+				transform: rotate(0deg);
+			}
 		}
 		.ex-paper-warp {
 			position: absolute;
@@ -155,39 +205,31 @@
     		animation-name: focusFadeIn;
 		}
 		@-webkit-keyframes focusFadeIn {
-			0% {
+			0%, 15%{ 
 				opacity: 0;
-				transform: scale(1.2);
+				-webkit-transform: scale(1.1);
 			}
-			20% {
+			35%, 65%{
+				opacity: 1;
+				-webkit-transform: scale(1);
+			}
+			85%, 100%{
 				opacity: 0;
-				transform: scale(1.2);
-			}
-			50% {
-				opacity: 0.5;
-				transform: scale(1.1);
-			}
-			80% {
-				opacity: 1;
-				transform: scale(1);
-			}
-			100% {
-				opacity: 1;
-				transform: scale(1);
+				-webkit-transform: scale(1.1);
 			}
 		}
 		@keyframes focusFadeIn {
-			0% {
+			0%, 15%{ 
 				opacity: 0;
-				transform: scale(1.2);
-			}
-			50% {
-				opacity: 0.5;
 				transform: scale(1.1);
 			}
-			100% {
+			35%, 65%{
 				opacity: 1;
 				transform: scale(1);
+			}
+			85%, 100%{
+				opacity: 0;
+				transform: scale(1.1);
 			}
 		}
 		.img-ex-paper {
@@ -229,13 +271,63 @@
 			top: -10%;
 			left: 0;
 			z-index: 1;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.one-hand {
+			-webkit-animation-name: one-hand;
+			animation-name: one-hand;
+		}
+		@-webkit-keyframes one-hand {
+			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
+			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+		}
+		@keyframes one-hand {
+			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
+			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
 		}
 		.img-toh {
 			position: absolute;
 			width: 27%;
 			top: 23%;
     		left: 35px;
-			z-index: 3
+			z-index: 3;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.two-hand {
+			-webkit-animation-name: two-hand;
+			animation-name: two-hand;
+		}
+		@keyframes two-hand {
+			0%, 6.7%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
+			}
+			60%, 73.3%{
+				-webkit-transform: translate3d(-2px ,0 ,0) scale(.95);
+			}
+			93.3%, 100%{
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+		}
+		@keyframes two-hand {
+			0%, 6.7%{ 
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				transform: translate3d(0,0,0) scale(.95);
+			}
+			60%, 73.3%{
+				transform: translate3d(-2px,0,0) scale(.95);
+			}
+			93.3%, 100%{
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
 		}
 		.img-thoh {
 			position: absolute;
@@ -243,13 +335,63 @@
 			top: 21%;
     		right: 9%;
 			z-index: 3;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.three-hand {
+			-webkit-animation-name: three-hand;
+			animation-name: three-hand;
+		}
+		@keyframes three-hand {
+			0%, 6.7%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
+			}
+			60%, 73.3%{
+				-webkit-transform: translate3d(2px ,0 ,0) scale(.95);
+			}
+			93.3%, 100%{
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+		}
+		@keyframes three-hand {
+			0%, 6.7%{ 
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				transform: translate3d(0,0,0) scale(.95);
+			}
+			60%, 73.3%{
+				transform: translate3d(2px,0,0) scale(.95);
+			}
+			93.3%, 100%{
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
 		}
 		.img-foh {
 			position: absolute;
 			width: 30%;
 			top: -17%;
 			right: 1%;
-			z-index: 1
+			z-index: 1;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.four-hand {
+			-webkit-animation-name: four-hand;
+			animation-name: four-hand;
+		}
+		@-webkit-keyframes four-hand {
+			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
+			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+		}
+		@keyframes four-hand {
+			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
+			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
 		}
 		.img-cengceng {
 			position: absolute;
@@ -257,6 +399,24 @@
 			top: 36%;
 			left: 50%;
 			margin-left: -46%;
+		}
+		.cengceng {
+			-webkit-animtaion-name: cengceng;
+			animation-name: cengceng;
+		}
+		@-webkit-keyframes cengceng {
+			0%{ -webkit-transform: scale(1); }
+			25%{  -webkit-transform: scale(0.95); }
+			50%{  -webkit-transform: scale(0.92);  }
+			75%{  -webkit-transform: scale(0.93);  }
+			100%{ -webkit-transform: scale(1); }
+		}
+		@keyframes cengceng {
+			0%{ transform: scale(1); }
+			25%{  transform: scale(0.95); }
+			50%{  transform: scale(0.92);  }
+			75%{  transform: scale(0.93);  }
+			100%{ transform: scale(1); }
 		}
 		.emb-warp {
 			position: absolute;
@@ -272,6 +432,32 @@
 			left: 28%;
 			width: 8px;
 		}
+		.bScraps {
+			-webkit-animation-name: bScraps;
+			animation-name: bScraps;
+		}
+		@-webkit-keyframes bScraps {
+			0%, 15%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes bScraps {
+			0%, 15%{ 
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				transform: translate3d(0, 0, 0);
+			}
+		}
 		.img-r-ribbon {
 			top: 14%;
 			left: 19%;
@@ -281,52 +467,221 @@
 			-webkit-animtaion-name: rRibbonMove;
     		animation-name: rRibbonMove;
 		}
+		@-webkit-keyframes rRibbonMove {
+			0%, 15%{ 
+				-webkit-transform: translate3d(0 ,0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0 ,0, 0);
+			}
+		}
 		@keyframes rRibbonMove {
-			0% {
+			0%, 15%{ 
 				transform: translate3d(0 ,0, 0);
 			}
-			30% {
+			35%, 65%{
 				transform: translate3d(5px, -5px, 0);
 			}
-			50% {
-				transform: translate3d(0, 0, 0);
+			85%, 100%{
+				transform: translate3d(0 ,0, 0);
 			}
-			80% {
-				transform: translate3d(5px, -5px, 0);
-			}
-			100% {
-				transform: translate3d(0, 0,0)
-			}
-		} 
+		}
 		.img-r-scraps {
 			top: 92%;
 			right: 35%;
 			width: 9px;
 		}
+		.r-scraps {
+			-webkit-animation-name: r-scraps;
+			animation-name: r-scraps;
+		}
+		@-webkit-keyframes r-scraps{
+			0%, 15%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(-2px, -2px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes r-scraps{
+			0%, 15%{
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				transform: translate3d(-2px, -2px, 0);
+			}
+			85%, 100%{
+				transform: translate3d(0, 0, 0);
+			}
+		}
 		.img-start1 {
 			top: 74%;
 			left: 34%;
 			width: 18px;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.lb_scale {
+			-webkit-animation-name: lb_scale;
+			animation-name: lb_scale;
+		}
+		@-webkit-keyframes lb_scale {
+			0%, 15%{
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				-webkit-transform: scale(.8);
+			}
+			85%, 100%{
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes lb_scale {
+			0%, 15%{ 
+				transform: scale(1);
+			}
+			35%, 65%{
+				transform: scale(.8);
+			}
+			85%, 100%{
+				transform: scale(1);
+			}
 		}
 		.img-start2 {
 			top: 42%;
 			left: 30%;
 			width: 11px;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.o2s {
+			-webkit-animtaion-name: o2s;
+    		animation-name: o2s;
+		}
+		@-webkit-keyframes o2s {
+			0%, 15%{ 
+				opacity: .5;
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				opacity: 1;
+				-webkit-transform: scale(1.2);
+			}
+			85%, 100%{
+				opacity: .5;
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes o2s {
+			0%, 15%{ 
+				opacity: .5;
+				transform: scale(1);
+			}
+			35%, 65%{
+				opacity: 1;
+				transform: scale(1.2);
+			}
+			85%, 100%{
+				opacity: .5;
+				transform: scale(1);
+			}
 		}
 		.img-start3 {
-			top: 71%;
-			right: 29%;
+			top: 68%;
+			right: 28%;
 			width: 18px;
+		}
+		.o2s_2 {
+			-webkit-animtaion-name: o2s_2;
+    		animation-name: o2s_2;
+		}
+		@-webkit-keyframes o2s_2{
+			0%, 15%{ 
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				opacity: .5;
+				-webkit-transform: translate3d(2px, 2px, 0);
+			}
+			85%, 100%{
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes o2s_2{
+			0%, 15%{ 
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				opacity: .5;
+				transform: translate3d(2px, 2px, 0);
+			}
+			85%, 100%{
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
 		}
 		.img-y-ribbon {
 			top: 49%;
 			right: 19%;
 			width: 25px;
 		}
+		.yellow-ribbon {
+			-webkit-animation-name: yellow-ribbon;
+			animation-name: yellow-ribbon;
+		}
+		@-webkit-keyframes yellow-ribbon {
+			0%, 2.5%{  -webkit-transform: translate3d(0, 0, 0);  }
+			22.5%, 27.5%{  -webkit-transform: translate3d(0, -5px, 0);  }
+			47.5%, 52.5%{  -webkit-transform: translate3d(-.5px, -5px, 0);  }
+			72.5%, 77.5%{  -webkit-transform: translate3d(-.5px, 0, 0); }
+			97.5%, 100%{  -webkit-transform: translate3d(0, 0, 0); }
+		}
+		@keyframes yellow-ribbon {
+			0%, 2.5%{  transform: translate3d(0, 0, 0);  }
+			22.5%, 27.5%{  transform: translate3d(0, -5px, 0);  }
+			47.5%, 52.5%{  transform: translate3d(-.5px, -5px, 0);  }
+			72.5%, 77.5%{  transform: translate3d(-.5px, 0, 0); }
+			97.5%, 100%{  transform: translate3d(0, 0, 0); }
+		}
 		.img-y-start {
 			top: 5%;
 			right: 21%;
 			width: 31px;	
+		}
+		.scale-amp {
+			-webkit-animation-name: scale-amp;
+			animation-name: scale-amp;
+		}
+		@-webkit-keyframes scale-amp {
+			0%, 15%{
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				-webkit-transform: scale(1.4);
+			}
+			85%, 100%{
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes scale-amp {
+			0%, 15%{
+				transform: scale(1);
+			}
+			35%, 65%{
+				transform: scale(1.4);
+			}
+			85%, 100%{
+				transform: scale(1);
+			}
 		}
 		.man-select, .female-select {
 			position: absolute;
@@ -365,6 +720,24 @@
 			width: 100%;
 			/* height: 27%; */
 		}
+		.select-btn {
+			-webkit-animation-name: select-btn-scale;
+			animation-name: select-btn-scale;
+		}
+		@keyframes select-btn-scale {
+			0%{  -webkit-transform: scale(1);  }
+			25%{  -webkit-transform: scale(.98);  }
+			50%{  -webkit-transform: scale(.95);  }
+			75%{  -webkit-transform: scale(.92);  }
+			100%{  -webkit-transform: scale(1);  }
+		}
+		@keyframes select-btn-scale {
+			0%{  transform: scale(1);  }
+			25%{  transform: scale(.98);  }
+			50%{  transform: scale(.95);  }
+			75%{  transform: scale(.92);  }
+			100%{  transform: scale(1);  }
+		}
 		.man-select .select_start1 {
 			position: absolute;
 			width: 6%;
@@ -396,6 +769,8 @@
 			left: 18%;
 			-webkit-transform: scale(.4);
 			transform: scale(.4);
+			-webkit-animation-delay: .5s;
+			animation-delay: 1s;
 		}
 		.female-select .select_start3 {
 			position: absolute;
@@ -403,6 +778,8 @@
 			right: 12%;
 			-webkit-transform: scale(.6);
 			transform: scale(.6);
+			-webkit-animation-delay: .5s;
+			animation-delay: 1s;
 		}
 		.female-select .select_start4 {
 			position: absolute;
@@ -411,11 +788,107 @@
 			-webkit-transform: scale(.7);
 			transform: scale(.7);
 		}
+		.start_scale1 {
+			-webkit-animation-name: start_scale1;
+			animation-name: start_scale1;
+		}
+		.start_scale_dot6 {
+			-webkit-animation-name: start_scale_dot6;
+			animation-name: start_scale_dot6;
+		}
+		.start_scale_dot4 {
+			-webkit-animation-name: start_scale_dot4;
+			animation-name: start_scale_dot4;
+		}
+		.start_scale_dot7 {
+			-webkit-animation-name: start_scale_dot7;
+			animation-name: start_scale_dot7;
+		}
+		@-webkit-keyframes start_scale1 {
+			0%{
+				-webkittransform: scale(1);
+			}
+			25%{
+				-webkittransform: scale(.9);
+			}
+			50%{
+				-webkittransform: scale(.8);
+			}
+			75%{
+				-webkittransform: scale(.7);
+			}
+			100%{
+				-webkittransform: scale(1);
+			}
+		}
+		@keyframes start_scale1 {
+			0%{
+				transform: scale(1);
+			}
+			25%{
+				transform: scale(.9);
+			}
+			50%{
+				transform: scale(.8);
+			}
+			75%{
+				transform: scale(.7);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		@-webkit-keyframes start_scale_dot6 {
+			0%{  -webkit-transform: scale(.6);  }
+			33.3%{  -webkit-transform: scale(.5);  }
+			66.6%{  -webkit-transform: scale(.4);  }
+			100%{  -webkit-transform: scale(.6);  }
+		}
+		@-webkit-keyframes start_scale_dot4 {
+			0%{  -webkit-transform: scale(.4);  }
+			33.3%{  -webkit-transform: scale(.3);  }
+			66.6%{  -webkit-transform: scale(.2);  }
+			100%{  -webkit-transform: scale(.4);  }
+		}
+		@-webkit-keyframes start_scale_dot7 {
+			0%{  -webkit-transform: scale(.7);  }
+			33.3%{  -webkit-transform: scale(.6);  }
+			66.6%{  -webkit-transform: scale(.5);  }
+			100%{  -webkit-transform: scale(.7);  }
+		}
+		@keyframes start_scale_dot6 {
+			0%{  transform: scale(.6);  }
+			33.3%{  transform: scale(.5);  }
+			66.6%{  transform: scale(.4);  }
+			100%{  transform: scale(.6);  }
+		}
+		@keyframes start_scale_dot4 {
+			0%{  transform: scale(.4);  }
+			33.3%{  transform: scale(.3);  }
+			66.6%{  transform: scale(.2);  }
+			100%{  transform: scale(.4);  }
+		}
+		@keyframes start_scale_dot7 {
+			0%{  transform: scale(.7);  }
+			33.3%{  transform: scale(.6);  }
+			66.6%{  transform: scale(.5);  }
+			100%{  transform: scale(.7);  }
+		}
 		.man-line {
 			position: absolute;
 			width: 75%;
 			left: 12%;
 			top: 3%;
+		}
+		.man-line-animate {
+			-webkit-animation-name: man-line-animate;
+			animation-name: man-line-animate;
+		}
+		@keyframes man-line-animate {
+			0%{  /* 动作1 */  }
+			33.3%{  /* 动作2 */  }
+			66.6%{  /* 动作3 */  }
+			100%{  /* 动作4 */  }
 		}
 		.female-line {
 			position: absolute;
@@ -470,6 +943,131 @@
 			right: 17%;
 			width: 7%;
 		}
+		.img-wel-money.animated, .img-wel-money2.animated {
+			-webkit-animation-duration: 1s;
+    		animation-duration: 1s;
+		}
+		.img-wel-start1.animated {
+			-webkit-animation-duration: .3s;
+    		animation-duration: .3s;
+		}
+		.img-wel-start2.animated {
+			-webkit-animation-duration: 1.2s;
+    		animation-duration: 1.2s;
+		}
+		.choujing-start {
+			-webkit-animation-name: choujing-start;
+			animation-name: choujing-start;
+		}
+		.cj-start-translate {
+			-webkit-animation-name: cj-start-translate;
+			animation-name: cj-start-translate;
+		}
+		.money1 {
+			-webkit-animation-name: money1;
+			animation-name: money1;
+		}
+		.money2 {
+			-webkit-animation-name: money2;
+			animation-name: money2;
+		}
+		@-webkit-keyframes choujing-start {
+			0% {
+				-webkit-transform: scale(1);
+			}
+			50%, 100% {
+				-webkit-transform: scale(.8);
+			}
+		}
+		@keyframes choujing-start {
+			0% {
+				transform: scale(1);
+			}
+			50%, 100% {
+				transform: scale(.8);
+			}
+		}
+		@-webkit-keyframes cj-start-translate {
+			0% {
+				-webkit-transform: translate3d(0,0,0) scale(1);
+			}
+			10%, 40% {
+				-webkit-transform: translate3d(-5px,0,0) scale(.7);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0) scale(.7);
+			}
+			60%, 90% {
+				-webkit-transform: translate3d(-5px,0,0) scale(.7);
+			}
+			100% {
+				-webkit-transform: translate3d(0,0,0) scale(1);
+			}
+		}
+		@keyframes cj-start-translate {
+			0% {
+				transform: translate3d(0,0,0) scale(1);
+			}
+			10%, 40% {
+				transform: translate3d(-5px,0,0) scale(.7);
+			}
+			50% {
+				transform: translate3d(0,0,0) scale(.7);
+			}
+			60%, 90% {
+				transform: translate3d(-5px,0,0) scale(.7);
+			}
+			100% {
+				transform: translate3d(0,0,0) scale(1);
+			}
+		}
+		@keyframes money1 {
+			0% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			10%, 30% {
+				-webkit-transform: translate3d(2px, -2px, 0);
+			}
+			40% {
+				-webkit-transform: translate3d(2px, 0, 0);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			60% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			70%, 90% {
+				-webkit-transform: translate3d(2px, -2px , 0);
+			}
+			100% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+
+		}
+		@keyframes money1 {
+			0% {
+				transform: translate3d(0,0,0);
+			}
+			10%, 30% {
+				transform: translate3d(2px, -2px, 0);
+			}
+			40% {
+				transform: translate3d(2px, 0, 0);
+			}
+			50% {
+				transform: translate3d(0,0,0);
+			}
+			60% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			70%, 90% {
+				transform: translate3d(2px, -2px , 0);
+			}
+			100% {
+				transform: translate3d(0,0,0);
+			}
+		}
 		.img-wel-hand {
 			position: absolute;
 			top: 23%;
@@ -481,6 +1079,30 @@
 			width: 48%;
 			top: 1%;
 			left: 44%;
+		}
+		.img-wel-bubble.animated {
+			-webkit-animation-duration: .3s;
+    		animation-duration: .3s;
+		}
+		.bubble_roate {
+			-webkit-animation-name: bubble_roate;
+			animation-name: bubble_roate;
+		}
+		@-webkit-keyframes bubble_roate {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+			50%, 100% {
+				-webkit-transform: rotate(-5deg)
+			}
+		}
+		@keyframes bubble_roate {
+			0% {
+				transform: rotate(0deg);
+			}
+			50%, 100% {
+				transform: rotate(-5deg)
+			}
 		}
 		.wel-desc-warp {
 			position: relative;
@@ -1084,23 +1706,24 @@
 </head>
 <body>
 	<!-- loading -->
-	<div class="page loading-page">
-		<svg width="100%" height="30" class="progress-line">
-			<mask id="loading-mask" x="0" y="0" width="100%" height="30" >
-				<image xlink:href="./images/loading-progress.png" x="0" y="0" width="100%" height="30" />
-			</mask>
-		</svg> 
+	<div class="page loading-page hide">
 		<div class="loading">
 			<div>
 				<img src="./images/loading.png" class="loading-text">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/point.gif" class="loading-point">
 			</div>
 			<div class="progress-warp">
-				<svg width="100%" height="30">
-					<!-- <rect x="0" y="0" width="100%" height="30" fill="#e94227" style="mask: url(#loading-mask)" />  -->
-				<line x1="0" y1="0" x2="100%" y2="0"style="stroke:#e94227;stroke-width:30" />
+				<svg width="100%" height="14">
+					<defs>
+						<g id="progress-line">
+							<rect x="0" y="0" width="100%" height="14" fill="#fff" />
+							<rect x="0" y="0" width="50%" height="14" fill="#f00" id="progress"/>
+						</g>
+						<mask id="mask1" x="0" y="0" width="100%" height="14">
+							<image xlink:href="./images/progress.svg" width="100%" height="14"></image>
+						</mask>
+					</defs>
+					<use xlink:href="#progress-line" style="mask: url(#mask1)"></use>
 				</svg>
 			</div>
 		</div>
@@ -1110,81 +1733,76 @@
     <div class="swiper-container" id="main-page">
 		<div class="swiper-wrapper">
 			<!-- page1-->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="ex-paper-warp">
-						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" alt="">
+						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" />
 						<img src="./images/ex_paper.png" class="img-ex-paper" />
 					</div>
 					<div class="hehe-warp">
 						<img src="./images/person.png" class="img-person" />
-						<img src="./images/left_hand.png" class="img-left-hand" />
-						<img src="./images/right_hand.png" class="img-right-hand" />
+						<img src="./images/left_hand.png" class="img-left-hand animated direction infinite hhs-left" />
+						<img src="./images/right_hand.png" class="img-right-hand animated direction infinite hhs-right" />
 					</div>
-					<!-- <div class="person-warp">
-						<img src="./images/person.png" class="img-person" />
-						<img src="./images/left_hand.png" class="img-left-hand" />
-						<img src="./images/right_hand.png" class="img-right-hand" />
-					</div> -->
 					<div class="clound-warp">
 						<img src="./images/inner_center_clound.png" class="img-icc" />
 						<img src="./images/out_left_clound.png" class="img-olc" />
 						<img src="./images/out_right_clound.png" class="img-orc" />
-						<img src="./images/one_outhand.png" class="img-ooh" />
-						<img src="./images/two_outhand.png" class="img-toh" />
-						<img src="./images/three_outhand.png" class="img-thoh" />
-						<img src="./images/four_outhand.png" class="img-foh" />
+						<img src="./images/one_outhand.png" class="img-ooh animated infinite one-hand" />
+						<img src="./images/two_outhand.png" class="img-toh animated infinite two-hand" />
+						<img src="./images/three_outhand.png" class="img-thoh animated infinite three-hand" />
+						<img src="./images/four_outhand.png" class="img-foh animated infinite four-hand" />
 					</div>
 					<div class="emb-warp">
-						<img src="./images/cengceng.png" class="img-cengceng" />
-						<img src="./images/b_scraps.png" class="img-b-scraps" alt="">
-						<img src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove" alt="">
-						<img src="./images/r_scraps.png" class="img-r-scraps" alt="">
-						<img src="./images/start1.png" class="img-start1" alt="">
-						<img src="./images/start2.png" class="img-start2" alt="">
-						<img src="./images/start3.png" class="img-start3" alt="">
-						<img src="./images/y_ribbon.png" class="img-y-ribbon" alt="">
-						<img src="./images/y_start.png" class="img-y-start" alt="">
+						<img src="./images/cengceng.png" class="img-cengceng animated direction infinite cengceng">
+						<img src="./images/b_scraps.png" class="img-b-scraps animated direction infinite bScraps">
+						<img src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove">
+						<img src="./images/r_scraps.png" class="img-r-scraps animated direction infinite r-scraps">
+						<img src="./images/start1.png" class="img-start1 animated direction infinite lb_scale">
+						<img src="./images/start2.png" class="img-start2 animated direction infinite o2s">
+						<img src="./images/start3.png" class="img-start3 animated infinite o2s_2">
+						<img src="./images/y_ribbon.png" class="img-y-ribbon animated infinite yellow-ribbon">
+						<img src="./images/y_start.png" class="img-y-start animated direction infinite scale-amp">
 					</div>
 				</div>
 				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
 			</div>
 			<!--page2 選擇 -->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="man-select" id="community-invite" >
 						<img src="./images/select1.png" class="img-select" alt=""/>
-						<img src="./images/select_invite.png" class="img-btn" alt="">
+						<img src="./images/select_invite.png" class="img-btn animated infinite select-btn" alt="">
 						<img src="./images/man_line.png"  class="man-line" alt="">
-						<img src="./images/select_start1.png" class="select_start1" alt="">
-						<img src="./images/select_start2.png" class="select_start2" alt="">
-						<img src="./images/select_start3.png" class="select_start3" alt="">
+						<img src="./images/select_start1.png" class="select_start1 animated infinite start_scale1" alt="">
+						<img src="./images/select_start2.png" class="select_start2 animated infinite start_scale1" alt="">
+						<img src="./images/select_start3.png" class="select_start3 animated infinite start_scale1" alt="">
 					</div>
 					<div class="female-select">
 						<img src="./images/select2.png" class="img-select" alt="" />
-						<img src="./images/select_gps.png"  class="img-btn" alt="">
+						<img src="./images/select_gps.png"  class="img-btn animated infinite select-btn" alt="">
 						<img src="./images/female_line.png" class="female-line" alt="">
-						<img src="./images/select_start3.png" class="select_start1" alt="">
-						<img src="./images/select_start3.png" class="select_start2" alt="">
-						<img src="./images/select_start2.png" class="select_start3" alt="">
-						<img src="./images/select_start3.png" class="select_start4" alt="">
+						<img src="./images/select_start3.png" class="select_start1 animated infinite start_scale_dot6" alt="">
+						<img src="./images/select_start3.png" class="select_start2 animated infinite start_scale_dot4" alt="">
+						<img src="./images/select_start2.png" class="select_start3 animated infinite start_scale_dot6" alt="">
+						<img src="./images/select_start3.png" class="select_start4 animated infinite start_scale_dot7" alt="">
 					</div>
 				</div>
 			</div>
 			<!-- page3 福利 -->
-			<div class="swiper-slide">
+			<div class="swiper-slide hide">
 				<div class="page">
 					<div class="wel-text-warp">
 						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
 					</div>
 					<div class="wel-warp">
-						<img src="./images/welfare_bubble.png" class="img-wel-bubble" alt="">
+						<img src="./images/welfare_bubble.png" class="img-wel-bubble animated infinite direction bubble_roate" alt="">
 						<img src="./images/welfare_persons.png" class="img-wel-persons" alt="">
 						<img src="./images/welfare_shake_hand.png" class="img-wel-hand" alt="">
-						<img src="./images/welfare_start1.png" class="img-wel-start1" alt="">
-						<img src="./images/welfare_start2.png" class="img-wel-start2" alt="">
-						<img src="./images/welfare_money.png" class="img-wel-money" alt="">
-						<img src="./images/welfare_money2.png" class="img-wel-money2" alt="">
+						<img src="./images/welfare_start1.png" class="img-wel-start1 animated direction infinite choujing-start" alt="">
+						<img src="./images/welfare_start2.png" class="img-wel-start2 animated direction infinite cj-start-translate" alt="">
+						<img src="./images/welfare_money.png" class="img-wel-money animated infinite money1" alt="">
+						<img src="./images/welfare_money2.png" class="img-wel-money2 animated infinite money1" alt="">
 					</div>
 				</div>
 			</div>
@@ -1239,7 +1857,7 @@
 				<!-- 公司集合模块 -->
 				<!-- 公司对应的岗位列表模块 step2-->
 				<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
-				<div class="custom-page " id="Group-jobs">
+				<div class="custom-page page2" id="Group-jobs">
 					<div class="page">
 						<img src="./images/group_invite.png" class="invite-word" alt="">
 						<div class="paper-warp">
@@ -1268,7 +1886,7 @@
 					</div>
 				</div>
 				<!-- 电商岗位列表 -->
-				<div class="custom-page " id="EB-jobs">
+				<div class="custom-page page2" id="EB-jobs">
 					<div class="page">
 						<img src="./images/e-commerce-invite.png" class="invite-word" alt="">
 						<div class="paper-warp">
@@ -1297,7 +1915,7 @@
 					</div>
 				</div>
 				<!-- 金服岗位列表 -->
-				<div class="custom-page " id="Finance-jobs">
+				<div class="custom-page page2" id="Finance-jobs">
 					<div class="page">
 						<img src="./images/finance-invite.png" class="invite-word" alt="">
 						<div class="paper-warp">
@@ -1327,7 +1945,7 @@
 				</div>
 				<!-- 公司对应的岗位列表模块 -->
 				<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
-				<div class="custom-page page3 ">
+				<div class="custom-page page3 translate-out-x">
 					<div class="page">
 						<div class="swiper-container jobs-page" id="jobs-page">
 							<div class="swiper-wrapper jobs-wrapper">
