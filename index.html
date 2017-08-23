@@ -3574,6 +3574,12 @@
 			width: 8%;
 			z-index: 10;
 		}
+		.music.animated {
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+		}
 		.pull-up {
 			position: fixed;
 			width: 6%;
@@ -3581,6 +3587,82 @@
 			margin-left: -3%;
 			bottom: 2%;
 			z-index: 20;
+		}
+		.pull_up_ani {
+			-webkit-animation-name: pull_up_ani;
+			animation-name: pull_up_ani;
+		}
+		@-webkit-keyframes pull_up_ani {
+			0% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			10%, 30% {
+				-webkit-transform: translate3d(0, -2px, 0);
+			}
+			40% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			50% {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(0, 1px, 0);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 2px, 0);
+			}
+			80% {
+				-webkit-transform: translate3d(0, 3px, 0);
+			}
+			90%, 100% {
+				-webkit-transform: translate3d(0, 4px, 0);
+			}
+		}
+		@keyframes pull_up_ani {
+			0% {
+				transform: translate3d(0, -1px, 0);
+			}
+			10%, 30% {
+				transform: translate3d(0, -2px, 0);
+			}
+			40% {
+				transform: translate3d(0, -1px, 0);
+			}
+			50% {
+				transform: translate3d(0, 0, 0);
+			}
+			60% {
+				transform: translate3d(0, 1px, 0);
+			}
+			70% {
+				transform: translate3d(0, 2px, 0);
+			}
+			80% {
+				transform: translate3d(0, 3px, 0);
+			}
+			90%, 100% {
+				transform: translate3d(0, 4px, 0);
+			}
+		}
+		.music-rotate {
+			-webkit-animation-name: music-rotate;
+			animation-name: music-rotate;
+		}
+		@-webkit-keyframes music-rotate {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+		@keyframes music-rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
 		}
 		@media screen and (max-width: 320px) {
 			.job-desc-item span {
@@ -3668,7 +3750,7 @@
 </head>
 <body>
 	<!-- loading -->
-	<div class="page loading-page hide">
+	<div class="page loading-page">
 		<div class="loading">
 			<div>
 				<img src="./images/loading.png" class="loading-text">
@@ -3695,7 +3777,7 @@
     <div class="swiper-container" id="main-page">
 		<div class="swiper-wrapper">
 			<!-- page1-->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="ex-paper-warp">
 						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" />
@@ -3730,7 +3812,7 @@
 				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
 			</div>
 			<!--page2 選擇 -->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="man-select" id="community-invite" >
 						<img src="./images/select1.png" class="img-select"/>
@@ -3757,7 +3839,7 @@
 				</div>
 			</div>
 			<!-- page3 福利 -->
-			<div class="swiper-slide hide">
+			<div class="swiper-slide">
 				<div class="page">
 					<div class="wel-text-warp">
 						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
@@ -4106,9 +4188,9 @@
 	</div>
 	<!-- 分享提示层 -->
 	<div class="share-layer hide" id="share-layer"></div>
-	<img src="./images/pull_up.png" class="pull-up hide" />
+	<img src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani hide" />
 	<!-- 音乐ICON -->
-	<img src="./images/music.png" id="music" class="music hide" >
+	<img src="./images/music.png" id="music" class="music animated infinite music-rotate hide" >
 	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
