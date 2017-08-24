@@ -8,10 +8,6 @@
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
-		@font-face {
-			font-family: mjl;
-			src: url('./font/blxqx.ttf');
-		}
 		img {
 			vertical-align: middle;
 		}
@@ -81,18 +77,16 @@
 			width: 30%;
 		}
 		.loading-point {
-			width: 2%;
+			width: 10%;
 		}
 		.loading-progress {
 			width: 100%;
 			height: 100%;
 		}
 		.progress-warp {
+			position: relative;
 			width: 100%;
-			height: 30px;
-		}
-		svg {
-			fill: transparent;
+			margin-top: 3%;
 		}
 		.progress-line {
 			stroke: #333;
@@ -128,14 +122,66 @@
 		.img-left-hand {
             position: absolute;
 			width: 9%;
-			top: -8%;
-            left: 30%;
+			top: -7%;
+			left: 30%;
+		}
+		.hhs-left {
+			-webkit-animation-name: hhs-left;
+			animation-name: hhs-left;
+		}
+		@-webkit-keyframes hhs-left{
+			0%, 15%{ 
+				-webkit-transform: rotate(0deg);
+			}
+			35%, 65%{
+				-webkit-transform: rotate(10deg);
+			}
+			85%, 100%{
+				-webkit-transform: rotate(0deg);
+			}
+		}
+		@keyframes hhs-left{
+			0%, 15%{ 
+				transform: rotate(0deg);
+			}
+			35%, 65%{
+				transform: rotate(10deg);
+			}
+			85%, 100%{
+				transform: rotate(0deg);
+			}
 		}
 		.img-right-hand {
 		    position: absolute;
 			width: 12%;
 			right: 8%;
-            top: 1%;
+			top: 2%;
+		}
+		.hhs-right {
+			-webkit-animation-name: hhs-right;
+			animation-name: hhs-right;
+		}
+		@-webkit-keyframes hhs-right{
+			0%, 15%{ 
+				-webkit-transform: rotate(0deg);
+			}
+			35%, 65%{
+				-webkit-transform: rotate(10deg);
+			}
+			85%, 100%{
+				-webkit-transform: rotate(0deg);
+			}
+		}
+		@keyframes hhs-right{
+			0%, 15%{ 
+				transform: rotate(0deg);
+			}
+			35%, 65%{
+				transform: rotate(10deg);
+			}
+			85%, 100%{
+				transform: rotate(0deg);
+			}
 		}
 		.ex-paper-warp {
 			position: absolute;
@@ -155,39 +201,31 @@
     		animation-name: focusFadeIn;
 		}
 		@-webkit-keyframes focusFadeIn {
-			0% {
+			0%, 15%{ 
 				opacity: 0;
-				transform: scale(1.2);
+				-webkit-transform: scale(1.1);
 			}
-			20% {
+			35%, 65%{
+				opacity: 1;
+				-webkit-transform: scale(1);
+			}
+			85%, 100%{
 				opacity: 0;
-				transform: scale(1.2);
-			}
-			50% {
-				opacity: 0.5;
-				transform: scale(1.1);
-			}
-			80% {
-				opacity: 1;
-				transform: scale(1);
-			}
-			100% {
-				opacity: 1;
-				transform: scale(1);
+				-webkit-transform: scale(1.1);
 			}
 		}
 		@keyframes focusFadeIn {
-			0% {
+			0%, 15%{ 
 				opacity: 0;
-				transform: scale(1.2);
-			}
-			50% {
-				opacity: 0.5;
 				transform: scale(1.1);
 			}
-			100% {
+			35%, 65%{
 				opacity: 1;
 				transform: scale(1);
+			}
+			85%, 100%{
+				opacity: 0;
+				transform: scale(1.1);
 			}
 		}
 		.img-ex-paper {
@@ -229,13 +267,63 @@
 			top: -10%;
 			left: 0;
 			z-index: 1;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.one-hand {
+			-webkit-animation-name: one-hand;
+			animation-name: one-hand;
+		}
+		@-webkit-keyframes one-hand {
+			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
+			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+		}
+		@keyframes one-hand {
+			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
+			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
 		}
 		.img-toh {
 			position: absolute;
 			width: 27%;
 			top: 23%;
     		left: 35px;
-			z-index: 3
+			z-index: 3;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.two-hand {
+			-webkit-animation-name: two-hand;
+			animation-name: two-hand;
+		}
+		@-webkit-keyframes two-hand {
+			0%, 6.7%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
+			}
+			60%, 73.3%{
+				-webkit-transform: translate3d(-2px ,0 ,0) scale(.95);
+			}
+			93.3%, 100%{
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+		}
+		@keyframes two-hand {
+			0%, 6.7%{ 
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				transform: translate3d(0,0,0) scale(.95);
+			}
+			60%, 73.3%{
+				transform: translate3d(-2px,0,0) scale(.95);
+			}
+			93.3%, 100%{
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
 		}
 		.img-thoh {
 			position: absolute;
@@ -243,13 +331,63 @@
 			top: 21%;
     		right: 9%;
 			z-index: 3;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.three-hand {
+			-webkit-animation-name: three-hand;
+			animation-name: three-hand;
+		}
+		@-webkit-keyframes three-hand {
+			0%, 6.7%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
+			}
+			60%, 73.3%{
+				-webkit-transform: translate3d(2px ,0 ,0) scale(.95);
+			}
+			93.3%, 100%{
+				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
+			}
+		}
+		@keyframes three-hand {
+			0%, 6.7%{ 
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
+			26.7%, 40%{ 
+				transform: translate3d(0,0,0) scale(.95);
+			}
+			60%, 73.3%{
+				transform: translate3d(2px,0,0) scale(.95);
+			}
+			93.3%, 100%{
+				transform: translate3d(0 ,0 ,0) scale(1);
+			}
 		}
 		.img-foh {
 			position: absolute;
 			width: 30%;
 			top: -17%;
 			right: 1%;
-			z-index: 1
+			z-index: 1;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.four-hand {
+			-webkit-animation-name: four-hand;
+			animation-name: four-hand;
+		}
+		@-webkit-keyframes four-hand {
+			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
+			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+		}
+		@keyframes four-hand {
+			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
+			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
+			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
 		}
 		.img-cengceng {
 			position: absolute;
@@ -257,6 +395,24 @@
 			top: 36%;
 			left: 50%;
 			margin-left: -46%;
+		}
+		.cengceng {
+			-webkit-animtaion-name: cengceng;
+			animation-name: cengceng;
+		}
+		@-webkit-keyframes cengceng {
+			0%{ -webkit-transform: scale(1); }
+			25%{  -webkit-transform: scale(0.95); }
+			50%{  -webkit-transform: scale(0.92);  }
+			75%{  -webkit-transform: scale(0.93);  }
+			100%{ -webkit-transform: scale(1); }
+		}
+		@keyframes cengceng {
+			0%{ transform: scale(1); }
+			25%{  transform: scale(0.95); }
+			50%{  transform: scale(0.92);  }
+			75%{  transform: scale(0.93);  }
+			100%{ transform: scale(1); }
 		}
 		.emb-warp {
 			position: absolute;
@@ -272,6 +428,32 @@
 			left: 28%;
 			width: 8px;
 		}
+		.bScraps {
+			-webkit-animation-name: bScraps;
+			animation-name: bScraps;
+		}
+		@-webkit-keyframes bScraps {
+			0%, 15%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes bScraps {
+			0%, 15%{ 
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				transform: translate3d(0, 0, 0);
+			}
+		}
 		.img-r-ribbon {
 			top: 14%;
 			left: 19%;
@@ -281,52 +463,221 @@
 			-webkit-animtaion-name: rRibbonMove;
     		animation-name: rRibbonMove;
 		}
+		@-webkit-keyframes rRibbonMove {
+			0%, 15%{ 
+				-webkit-transform: translate3d(0 ,0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(5px, -5px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0 ,0, 0);
+			}
+		}
 		@keyframes rRibbonMove {
-			0% {
+			0%, 15%{ 
 				transform: translate3d(0 ,0, 0);
 			}
-			30% {
+			35%, 65%{
 				transform: translate3d(5px, -5px, 0);
 			}
-			50% {
-				transform: translate3d(0, 0, 0);
+			85%, 100%{
+				transform: translate3d(0 ,0, 0);
 			}
-			80% {
-				transform: translate3d(5px, -5px, 0);
-			}
-			100% {
-				transform: translate3d(0, 0,0)
-			}
-		} 
+		}
 		.img-r-scraps {
 			top: 92%;
 			right: 35%;
 			width: 9px;
 		}
+		.r-scraps {
+			-webkit-animation-name: r-scraps;
+			animation-name: r-scraps;
+		}
+		@-webkit-keyframes r-scraps{
+			0%, 15%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				-webkit-transform: translate3d(-2px, -2px, 0);
+			}
+			85%, 100%{
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes r-scraps{
+			0%, 15%{
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				transform: translate3d(-2px, -2px, 0);
+			}
+			85%, 100%{
+				transform: translate3d(0, 0, 0);
+			}
+		}
 		.img-start1 {
 			top: 74%;
 			left: 34%;
 			width: 18px;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.lb_scale {
+			-webkit-animation-name: lb_scale;
+			animation-name: lb_scale;
+		}
+		@-webkit-keyframes lb_scale {
+			0%, 15%{
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				-webkit-transform: scale(.8);
+			}
+			85%, 100%{
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes lb_scale {
+			0%, 15%{ 
+				transform: scale(1);
+			}
+			35%, 65%{
+				transform: scale(.8);
+			}
+			85%, 100%{
+				transform: scale(1);
+			}
 		}
 		.img-start2 {
 			top: 42%;
 			left: 30%;
 			width: 11px;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.o2s {
+			-webkit-animtaion-name: o2s;
+    		animation-name: o2s;
+		}
+		@-webkit-keyframes o2s {
+			0%, 15%{ 
+				opacity: .5;
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				opacity: 1;
+				-webkit-transform: scale(1.2);
+			}
+			85%, 100%{
+				opacity: .5;
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes o2s {
+			0%, 15%{ 
+				opacity: .5;
+				transform: scale(1);
+			}
+			35%, 65%{
+				opacity: 1;
+				transform: scale(1.2);
+			}
+			85%, 100%{
+				opacity: .5;
+				transform: scale(1);
+			}
 		}
 		.img-start3 {
-			top: 71%;
-			right: 29%;
+			top: 68%;
+			right: 28%;
 			width: 18px;
+		}
+		.o2s_2 {
+			-webkit-animtaion-name: o2s_2;
+    		animation-name: o2s_2;
+		}
+		@-webkit-keyframes o2s_2{
+			0%, 15%{ 
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				opacity: .5;
+				-webkit-transform: translate3d(2px, 2px, 0);
+			}
+			85%, 100%{
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+		}
+		@keyframes o2s_2{
+			0%, 15%{ 
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+			35%, 65%{
+				opacity: .5;
+				transform: translate3d(2px, 2px, 0);
+			}
+			85%, 100%{
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
 		}
 		.img-y-ribbon {
 			top: 49%;
 			right: 19%;
 			width: 25px;
 		}
+		.yellow-ribbon {
+			-webkit-animation-name: yellow-ribbon;
+			animation-name: yellow-ribbon;
+		}
+		@-webkit-keyframes yellow-ribbon {
+			0%, 2.5%{  -webkit-transform: translate3d(0, 0, 0);  }
+			22.5%, 27.5%{  -webkit-transform: translate3d(0, -5px, 0);  }
+			47.5%, 52.5%{  -webkit-transform: translate3d(-.5px, -5px, 0);  }
+			72.5%, 77.5%{  -webkit-transform: translate3d(-.5px, 0, 0); }
+			97.5%, 100%{  -webkit-transform: translate3d(0, 0, 0); }
+		}
+		@keyframes yellow-ribbon {
+			0%, 2.5%{  transform: translate3d(0, 0, 0);  }
+			22.5%, 27.5%{  transform: translate3d(0, -5px, 0);  }
+			47.5%, 52.5%{  transform: translate3d(-.5px, -5px, 0);  }
+			72.5%, 77.5%{  transform: translate3d(-.5px, 0, 0); }
+			97.5%, 100%{  transform: translate3d(0, 0, 0); }
+		}
 		.img-y-start {
 			top: 5%;
 			right: 21%;
 			width: 31px;	
+		}
+		.scale-amp {
+			-webkit-animation-name: scale-amp;
+			animation-name: scale-amp;
+		}
+		@-webkit-keyframes scale-amp {
+			0%, 15%{
+				-webkit-transform: scale(1);
+			}
+			35%, 65%{
+				-webkit-transform: scale(1.4);
+			}
+			85%, 100%{
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes scale-amp {
+			0%, 15%{
+				transform: scale(1);
+			}
+			35%, 65%{
+				transform: scale(1.4);
+			}
+			85%, 100%{
+				transform: scale(1);
+			}
 		}
 		.man-select, .female-select {
 			position: absolute;
@@ -365,6 +716,24 @@
 			width: 100%;
 			/* height: 27%; */
 		}
+		.select-btn {
+			-webkit-animation-name: select-btn-scale;
+			animation-name: select-btn-scale;
+		}
+		@-webkit-keyframes select-btn-scale {
+			0%{  -webkit-transform: scale(1);  }
+			25%{  -webkit-transform: scale(.98);  }
+			50%{  -webkit-transform: scale(.95);  }
+			75%{  -webkit-transform: scale(.92);  }
+			100%{  -webkit-transform: scale(1);  }
+		}
+		@keyframes select-btn-scale {
+			0%{  transform: scale(1);  }
+			25%{  transform: scale(.98);  }
+			50%{  transform: scale(.95);  }
+			75%{  transform: scale(.92);  }
+			100%{  transform: scale(1);  }
+		}
 		.man-select .select_start1 {
 			position: absolute;
 			width: 6%;
@@ -396,6 +765,8 @@
 			left: 18%;
 			-webkit-transform: scale(.4);
 			transform: scale(.4);
+			-webkit-animation-delay: .5s;
+			animation-delay: 1s;
 		}
 		.female-select .select_start3 {
 			position: absolute;
@@ -403,6 +774,8 @@
 			right: 12%;
 			-webkit-transform: scale(.6);
 			transform: scale(.6);
+			-webkit-animation-delay: .5s;
+			animation-delay: 1s;
 		}
 		.female-select .select_start4 {
 			position: absolute;
@@ -411,17 +784,225 @@
 			-webkit-transform: scale(.7);
 			transform: scale(.7);
 		}
-		.man-line {
-			position: absolute;
-			width: 75%;
-			left: 12%;
-			top: 3%;
+		.start_scale1 {
+			-webkit-animation-name: start_scale1;
+			animation-name: start_scale1;
 		}
-		.female-line {
+		.start_scale_dot6 {
+			-webkit-animation-name: start_scale_dot6;
+			animation-name: start_scale_dot6;
+		}
+		.start_scale_dot4 {
+			-webkit-animation-name: start_scale_dot4;
+			animation-name: start_scale_dot4;
+		}
+		.start_scale_dot7 {
+			-webkit-animation-name: start_scale_dot7;
+			animation-name: start_scale_dot7;
+		}
+		@-webkit-keyframes start_scale1 {
+			0%{
+				-webkit-transform: scale(1);
+			}
+			25%{
+				-webkit-transform: scale(.9);
+			}
+			50%{
+				-webkit-transform: scale(.8);
+			}
+			75%{
+				-webkit-transform: scale(.7);
+			}
+			100%{
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes start_scale1 {
+			0%{
+				transform: scale(1);
+			}
+			25%{
+				transform: scale(.9);
+			}
+			50%{
+				transform: scale(.8);
+			}
+			75%{
+				transform: scale(.7);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		@-webkit-keyframes start_scale_dot6 {
+			0%{  -webkit-transform: scale(.6);  }
+			33.3%{  -webkit-transform: scale(.5);  }
+			66.6%{  -webkit-transform: scale(.4);  }
+			100%{  -webkit-transform: scale(.6);  }
+		}
+		@-webkit-keyframes start_scale_dot4 {
+			0%{  -webkit-transform: scale(.4);  }
+			33.3%{  -webkit-transform: scale(.3);  }
+			66.6%{  -webkit-transform: scale(.2);  }
+			100%{  -webkit-transform: scale(.4);  }
+		}
+		@-webkit-keyframes start_scale_dot7 {
+			0%{  -webkit-transform: scale(.7);  }
+			33.3%{  -webkit-transform: scale(.6);  }
+			66.6%{  -webkit-transform: scale(.5);  }
+			100%{  -webkit-transform: scale(.7);  }
+		}
+		@keyframes start_scale_dot6 {
+			0%{  transform: scale(.6);  }
+			33.3%{  transform: scale(.5);  }
+			66.6%{  transform: scale(.4);  }
+			100%{  transform: scale(.6);  }
+		}
+		@keyframes start_scale_dot4 {
+			0%{  transform: scale(.4);  }
+			33.3%{  transform: scale(.3);  }
+			66.6%{  transform: scale(.2);  }
+			100%{  transform: scale(.4);  }
+		}
+		@keyframes start_scale_dot7 {
+			0%{  transform: scale(.7);  }
+			33.3%{  transform: scale(.6);  }
+			66.6%{  transform: scale(.5);  }
+			100%{  transform: scale(.7);  }
+		}
+		.man-line1 {
 			position: absolute;
-			width: 71%;
-			left: 15%;
-			top: 8%;
+			width: 6%;
+			right: 28%;
+			top: 2%;
+		}
+		.man-line2 {
+			position: absolute;
+			width: 8%;
+			left: 25%;
+			top: 56%;
+		}
+		.man-line3 {
+			position: absolute;
+			width: 2%;
+			left: 12%;
+			top: 82%;
+		}
+		.man-line4 {
+			position: absolute;
+			width: 6%;
+			right: 12%;
+			top: 66%;
+		}
+		.man-line1_ani {
+			-webkit-animation-name: man-line1_ani;
+			animation-name: man-line1_ani;
+		}
+		.man-line2_ani {
+			-webkit-animation-name: man-line2_ani;
+			animation-name: man-line2_ani;
+		}
+		.man-line3_ani, .female-line1_ani, .female-line2_ani  {
+			-webkit-animation-name: man-line3_ani;
+			animation-name: man-line3_ani;
+		}
+		.man-line4_ani, .female-line3_ani  {
+			-webkit-animation-name: man-line4_ani;
+			animation-name: man-line4_ani;
+		}
+		@-webkit-keyframes man-line1_ani {
+			0%, 25%{
+				-webkit-transform: translate3d(1px,0,0);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			75%, 100%{
+				-webkit-transform: translate3d(-1px,0,0);
+			}
+		}
+		@keyframes man-line1_ani {
+			0%, 25%{
+				transform: translate3d(1px,0,0);
+			}
+			50% {
+				transform: translate3d(0,0,0);
+			}
+			75%, 100%{
+				transform: translate3d(-1px,0,0);
+			}
+		}
+		@-webkit-keyframes man-line2_ani {
+			0%, 25%{
+				-webkit-transform: translate3d(0,-1px,0);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			75%, 100%{
+				-webkit-transform: translate3d(0,1px,0);
+			}
+		}
+		@keyframes man-line2_ani {
+			0%, 25%{
+				transform: translate3d(0,-1px,0);
+			}
+			50% {
+				transform: translate3d(0,0,0);
+			}
+			75%, 100%{
+				transform: translate3d(0,1px,0);
+			}
+		}
+		@-webkit-keyframes man-line3_ani {
+			0%, 25%{
+				-webkit-transform: translate3d(1px,0,0);
+			}
+			50%, 100% {
+				-webkit-transform: translate3d(2px,0,0);
+			}
+		}
+		@keyframes man-line3_ani {
+			0%, 25%{
+				transform: translate3d(1px,0,0);
+			}
+			50%, 100% {
+				transform: translate3d(2px,0,0);
+			}
+		}
+		@-webkit-keyframes man-line4_ani {
+			0%, 25%{
+				-webkit-transform: translate3d(-1px,0,0);
+			}
+			50%, 100% {
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+		}
+		@keyframes man-line4_ani {
+			0%, 25%{
+				transform: translate3d(-1px,0,0);
+			}
+			50%, 100% {
+				transform: translate3d(-2px,0,0);
+			}
+		}
+		.female-line1 {
+			position: absolute;
+			width: 3%;
+			left: 30%;
+			top: 9%;
+		}
+		.female-line2 {
+			position: absolute;
+			width: 7%;
+			left: 16%;
+			top: 63%;
+		}
+		.female-line3 {
+			position: absolute;
+			width: 1.5%;
+			right: 14%;
+			top: 84%;
 		}
 		.wel-text-warp {
 			position: absolute;
@@ -470,6 +1051,131 @@
 			right: 17%;
 			width: 7%;
 		}
+		.img-wel-money.animated, .img-wel-money2.animated {
+			-webkit-animation-duration: 1s;
+    		animation-duration: 1s;
+		}
+		.img-wel-start1.animated {
+			-webkit-animation-duration: .3s;
+    		animation-duration: .3s;
+		}
+		.img-wel-start2.animated {
+			-webkit-animation-duration: 1.2s;
+    		animation-duration: 1.2s;
+		}
+		.choujing-start {
+			-webkit-animation-name: choujing-start;
+			animation-name: choujing-start;
+		}
+		.cj-start-translate {
+			-webkit-animation-name: cj-start-translate;
+			animation-name: cj-start-translate;
+		}
+		.money1 {
+			-webkit-animation-name: money1;
+			animation-name: money1;
+		}
+		.money2 {
+			-webkit-animation-name: money2;
+			animation-name: money2;
+		}
+		@-webkit-keyframes choujing-start {
+			0% {
+				-webkit-transform: scale(1);
+			}
+			50%, 100% {
+				-webkit-transform: scale(.8);
+			}
+		}
+		@keyframes choujing-start {
+			0% {
+				transform: scale(1);
+			}
+			50%, 100% {
+				transform: scale(.8);
+			}
+		}
+		@-webkit-keyframes cj-start-translate {
+			0% {
+				-webkit-transform: translate3d(0,0,0) scale(1);
+			}
+			10%, 40% {
+				-webkit-transform: translate3d(-5px,0,0) scale(.7);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0) scale(.7);
+			}
+			60%, 90% {
+				-webkit-transform: translate3d(-5px,0,0) scale(.7);
+			}
+			100% {
+				-webkit-transform: translate3d(0,0,0) scale(1);
+			}
+		}
+		@keyframes cj-start-translate {
+			0% {
+				transform: translate3d(0,0,0) scale(1);
+			}
+			10%, 40% {
+				transform: translate3d(-5px,0,0) scale(.7);
+			}
+			50% {
+				transform: translate3d(0,0,0) scale(.7);
+			}
+			60%, 90% {
+				transform: translate3d(-5px,0,0) scale(.7);
+			}
+			100% {
+				transform: translate3d(0,0,0) scale(1);
+			}
+		}
+		@-webkit-keyframes money1 {
+			0% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			10%, 30% {
+				-webkit-transform: translate3d(2px, -2px, 0);
+			}
+			40% {
+				-webkit-transform: translate3d(2px, 0, 0);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			60% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			70%, 90% {
+				-webkit-transform: translate3d(2px, -2px , 0);
+			}
+			100% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+
+		}
+		@keyframes money1 {
+			0% {
+				transform: translate3d(0,0,0);
+			}
+			10%, 30% {
+				transform: translate3d(2px, -2px, 0);
+			}
+			40% {
+				transform: translate3d(2px, 0, 0);
+			}
+			50% {
+				transform: translate3d(0,0,0);
+			}
+			60% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			70%, 90% {
+				transform: translate3d(2px, -2px , 0);
+			}
+			100% {
+				transform: translate3d(0,0,0);
+			}
+		}
 		.img-wel-hand {
 			position: absolute;
 			top: 23%;
@@ -482,6 +1188,30 @@
 			top: 1%;
 			left: 44%;
 		}
+		.img-wel-bubble.animated {
+			-webkit-animation-duration: .3s;
+    		animation-duration: .3s;
+		}
+		.bubble_roate {
+			-webkit-animation-name: bubble_roate;
+			animation-name: bubble_roate;
+		}
+		@-webkit-keyframes bubble_roate {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+			50%, 100% {
+				-webkit-transform: rotate(-5deg)
+			}
+		}
+		@keyframes bubble_roate {
+			0% {
+				transform: rotate(0deg);
+			}
+			50%, 100% {
+				transform: rotate(-5deg)
+			}
+		}
 		.wel-desc-warp {
 			position: relative;
 			width: 100%;
@@ -489,6 +1219,84 @@
 		}
 		.wel_desc_xc {
 			width: 64%;
+			-webkit-transform: rotate(3deg);
+			transform: rotate(3deg);
+			-webkit-transform-origin: center center;
+			transform-origin: center center;
+		}
+		.fuli_rotate {
+			-webkit-animation-name: fuli_rotate;
+			animation-name: fuli_rotate;
+		}
+		@-webkit-keyframes fuli_rotate {
+			0% {
+				-webkit-transform: rotate(3deg);
+			}
+			5% {
+				-webkit-transform: rotate(2.625deg);
+			}
+			10% {
+				-webkit-transform: rotate(2.25deg);
+			}
+			15% {
+				-webkit-transform: rotate(1.875deg);
+			}
+			20% {
+				-webkit-transform: rotate(1.5deg);
+			}
+			25% {
+				-webkit-transform: rotate(1.125deg);
+			}
+			30% {
+				-webkit-transform: rotate(0.75deg);
+			}
+			35% {
+				-webkit-transform: rotate(0.375deg);
+			}
+			40%, 80% {
+				-webkit-transform: rotate(0deg);
+			}
+			85% {
+				-webkit-transform: rotate(1.5deg);
+			}
+			90%, 100% {
+				-webkit-transform: rotate(3deg);
+			}
+		}
+		@keyframes fuli_rotate {
+			0% {
+				transform: rotate(3deg);
+			}
+			5% {
+				transform: rotate(2.625deg);
+			}
+			10% {
+				transform: rotate(2.25deg);
+			}
+			15% {
+				transform: rotate(1.875deg);
+			}
+			20% {
+				transform: rotate(1.5deg);
+			}
+			25% {
+				transform: rotate(1.125deg);
+			}
+			30% {
+				transform: rotate(0.75deg);
+			}
+			35% {
+				transform: rotate(0.375deg);
+			}
+			40%, 80% {
+				transform: rotate(0deg);
+			}
+			85% {
+				transform: rotate(1.5deg);
+			}
+			90%, 100% {
+				transform: rotate(3deg);
+			}
 		}
 		.desc-cp-warp {
 			position: relative;
@@ -498,30 +1306,476 @@
 		}
 		.desc-cp-warp .img-desc-cp{
 			width: 74%;
+			-webkit-transform: rotate(-3deg);
+			transform: rotate(-3deg);
+		}
+		.desc-cp-ani {
+			-webkit-animation-name: desc-cp-ani;
+			animation-name: desc-cp-ani;
+		}
+		@-webkit-keyframes desc-cp-ani {
+			0% {
+				-webkit-transform: rotate(-3deg);
+			}
+			10% {
+				-webkit-transform: rotate(-2.625deg);
+			}
+			15% {
+				-webkit-transform: rotate(-2.25deg);
+			}
+			20% {
+				-webkit-transform: rotate(-1.875deg);
+			}
+			25% {
+				-webkit-transform: rotate(-1.5deg);
+			}
+			30% {
+				-webkit-transform: rotate(-1.125deg);
+			}
+			35% {
+				-webkit-transform: rotate(-0.75deg);
+			}
+			40% {
+				-webkit-transform: rotate(-0.375deg);
+			}
+			45% {
+				-webkit-transform: rotate(0deg);
+			}
+			50% {
+				-webkit-transform: rotate(-1deg);
+			}
+			55% {
+				-webkit-transform: rotate(-1.5deg);
+			}
+			60%, 100% {
+				-webkit-transform: rotate(-3deg);
+			}
+		}
+		@keyframes desc-cp-ani {
+			0% {
+				transform: rotate(-3deg);
+			}
+			10% {
+				transform: rotate(-2.625deg);
+			}
+			15% {
+				transform: rotate(-2.25deg);
+			}
+			20% {
+				transform: rotate(-1.875deg);
+			}
+			25% {
+				transform: rotate(-1.5deg);
+			}
+			30% {
+				transform: rotate(-1.125deg);
+			}
+			35% {
+				transform: rotate(-0.75deg);
+			}
+			40% {
+				transform: rotate(-0.375deg);
+			}
+			45% {
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: rotate(-1deg);
+			}
+			55% {
+				transform: rotate(-1.5deg);
+			}
+			60%, 100% {
+				transform: rotate(-3deg);
+			}
 		}
 		.wel-desc-desc {
 			width: 100%;
 		}
 		.wel_desc_jp {
 			width: 41%;
+			-webkit-transform: rotate(1deg);
+			transform: rotate(1deg);
+			-webkit-transform-origin: center center;
+			transform-origin: center center;
+		}
+		.desc_jp_ani {
+			-webkit-animation-name: desc_jp_ani;
+			animation-name: desc_jp_ani;
+		}
+		@-webkit-keyframes desc_jp_ani {
+			0% {
+				-webkit-transform: rotate(1deg);
+			}
+			5% {
+				-webkit-transform: rotate(0.86deg);
+			}
+			10% {
+				-webkit-transform: rotate(0.716deg);
+			}
+			15% {
+				-webkit-transform: rotate(0.574deg);
+			}
+			20% {
+				-webkit-transform: rotate(0.432deg);
+			}
+			25% {
+				-webkit-transform: rotate(0.29deg);
+			}
+			30% {
+				-webkit-transform: rotate(0.148deg);
+			}
+			35%, 65% {
+				-webkit-transform: rotate(0deg);
+			}
+			70% {
+				-webkit-transform: rotate(2deg);
+			}
+			75%, 100% {
+				-webkit-transform: rotate(2.2deg);
+			}
+		}
+		@keyframes desc_jp_ani {
+			0% {
+				transform: rotate(1deg);
+			}
+			5% {
+				transform: rotate(0.86deg);
+			}
+			10% {
+				transform: rotate(0.716deg);
+			}
+			15% {
+				transform: rotate(0.574deg);
+			}
+			20% {
+				transform: rotate(0.432deg);
+			}
+			25% {
+				transform: rotate(0.29deg);
+			}
+			30% {
+				transform: rotate(0.148deg);
+			}
+			35%, 65% {
+				transform: rotate(0deg);
+			}
+			70% {
+				transform: rotate(2deg);
+			}
+			75%, 100% {
+				transform: rotate(2.2deg);
+			}
 		}
 		.wel_desc_tj {
 			position: absolute;
 			right: 0;
 			top: -1%;
 			width: 52%;
+			-webkit-transform: rotate(-2deg);
+			transform: rotate(-2deg);
+		}
+		.desc_tj_ani {
+			-webkit-animation-name: desc_tj-ani; 
+			animation-name: desc_tj-ani;
+		}
+		@-webkit-keyframes desc_tj-ani {
+			0% {
+				-webkit-transform: rotate(-2deg);
+			}
+			5% {
+				-webkit-transform: rotate(-1.715deg);
+			}
+			15% {
+				-webkit-transform: rotate(-1.43deg);
+			}
+			20% {
+				-webkit-transform: rotate(-1.145deg);
+			}
+			25% {
+				-webkit-transform: rotate(-0.86deg);
+			}
+			30% {
+				-webkit-transform: rotate(-0.575deg);
+			}
+			35% {
+				-webkit-transform: rotate(-0.29deg);
+			}
+			40%, 65% {
+				-webkit-transform: rotate(0deg);
+			}
+			70% {
+				-webkit-transform: rotate(-1deg);
+			}
+			75%, 100% {
+				-webkit-transform: rotate(-2deg);
+			}
+		}
+		@keyframes desc_tj-ani {
+			0% {
+				transform: rotate(-2deg);
+			}
+			5% {
+				transform: rotate(-1.715deg);
+			}
+			15% {
+				transform: rotate(-1.43deg);
+			}
+			20% {
+				transform: rotate(-1.145deg);
+			}
+			25% {
+				transform: rotate(-0.86deg);
+			}
+			30% {
+				transform: rotate(-0.575deg);
+			}
+			35% {
+				transform: rotate(-0.29deg);
+			}
+			40%, 65% {
+				transform: rotate(0deg);
+			}
+			70% {
+				transform: rotate(-1deg);
+			}
+			75%, 100% {
+				transform: rotate(-2deg);
+			}
 		}
 		.wel_desc_tjj {
 			width: 58%;
+			-webkit-transform: rotate(2deg);
+			transform: rotate(2deg);
+		}
+		.desc_tjj_ani {
+			-webkit-animation-name: desc_tjj_ani;
+			animation-name: desc_tjj_ani;
+		}
+		@-webkit-keyframes desc_tjj_ani {
+			0%{
+				-webkit-transform: rotate(2deg);
+			}
+			5% {
+				-webkit-transform: rotate(1.715deg);
+			}
+			15% {
+				-webkit-transform: rotate(1.43deg);
+			}
+			20% {
+				-webkit-transform: rotate(1.145deg);
+			}
+			25% {
+				-webkit-transform: rotate(0.86deg);
+			}
+			30% {
+				-webkit-transform: rotate(0.575deg);
+			}
+			35% {
+				-webkit-transform: rotate(0.29deg);
+			}
+			40%, 50% {
+				-webkit-transform: rotate(0deg);
+			}
+			55% {
+				-webkit-transform: rotate(0.575deg);
+			}
+			60% {
+				-webkit-transform: rotate(1.145deg);
+			}
+			65%, 100% {
+				-webkit-transform: rotate(2deg);
+			}
+
+		}
+		@keyframes desc_tjj_ani {
+			0%{
+				transform: rotate(2deg);
+			}
+			5% {
+				transform: rotate(1.715deg);
+			}
+			15% {
+				transform: rotate(1.43deg);
+			}
+			20% {
+				transform: rotate(1.145deg);
+			}
+			25% {
+				transform: rotate(0.86deg);
+			}
+			30% {
+				transform: rotate(0.575deg);
+			}
+			35% {
+				transform: rotate(0.29deg);
+			}
+			40%, 50% {
+				transform: rotate(0deg);
+			}
+			55% {
+				transform: rotate(0.575deg);
+			}
+			60% {
+				transform: rotate(1.145deg);
+			}
+			65%, 100% {
+				transform: rotate(2deg);
+			}
 		}
 		.wel_desc_sr {
 			position: absolute;
 			right: 0;
 			top: 12%;
 			width: 38%;
+			transform: rotate(-3deg);
+		}
+		.desc_sr_ani {
+			-webkit-animation-name: desc_sr_ani;
+			animation-name: desc_sr_ani;
+		}
+		@-webkit-keyframes desc_sr_ani {
+			0%{
+				-webkit-transform: rotate(-3deg);
+			}
+			10% {
+				-webkit-transform: rotate(-2.58deg);
+			}
+			20% {
+				-webkit-transform: rotate(-2.1deg);
+			}
+			30% {
+				-webkit-transform: rotate(-1.62deg);
+			}
+			40% {
+				-webkit-transform: rotate(-1.14deg);
+			}
+			50% {
+				-webkit-transform: rotate(-0.66deg);
+			}
+			60%, 70% {
+				-webkit-transform: rotate(0deg);
+			}
+			80% {
+				-webkit-transform: rotate(-1deg);
+			}
+			90%, 100% {
+				-webkit-transform: rotate(-3deg);
+			}
+		}
+		@keyframes desc_sr_ani {
+			0%{
+				transform: rotate(-3deg);
+			}
+			10% {
+				transform: rotate(-2.58deg);
+			}
+			20% {
+				transform: rotate(-2.1deg);
+			}
+			30% {
+				transform: rotate(-1.62deg);
+			}
+			40% {
+				transform: rotate(-1.14deg);
+			}
+			50% {
+				transform: rotate(-0.66deg);
+			}
+			60%, 70% {
+				transform: rotate(0deg);
+			}
+			80% {
+				transform: rotate(-1deg);
+			}
+			90%, 100% {
+				transform: rotate(-3deg);
+			}
 		}
 		.wel_desc_nh {
 			width: 58%;
+			-webkit-transform: rotate(2deg);
+			transform: rotate(2deg);
+		}
+		.desc_nh_ani {
+			-webkit-animation-name: desc_nh_ani;
+			animation-name: desc_nh_ani;
+		}
+		@-webkit-keyframes desc_nh_ani {
+			0%{
+				-webkit-transform: rotate(2deg);
+			}
+			5% {
+				-webkit-transform: rotate(1.72deg);
+			}
+			10% {
+				-webkit-transform: rotate(1.44deg);
+			}
+			15% {
+				-webkit-transform: rotate(1.16deg);
+			}
+			20% {
+				-webkit-transform: rotate(0.88deg);
+			}
+			25% {
+				-webkit-transform: rotate(0.66deg);
+			}
+			30% {
+				-webkit-transform: rotate(0.6deg);
+			}
+			35% {
+				-webkit-transform: rotate(0.32deg);
+			}
+			40%{
+				-webkit-transform: rotate(0deg);
+			}
+			45% {
+				-webkit-transform: rotate(0.6deg);
+			}
+			50% {
+				-webkit-transform: rotate(1deg);
+			}
+			55%, 100% {
+				-webkit-transform: rotate(2deg);
+			}
+		}
+		@keyframes desc_nh_ani {
+			0%{
+				transform: rotate(2deg);
+			}
+			5% {
+				transform: rotate(1.72deg);
+			}
+			10% {
+				transform: rotate(1.44deg);
+			}
+			15% {
+				transform: rotate(1.16deg);
+			}
+			20% {
+				transform: rotate(0.88deg);
+			}
+			25% {
+				transform: rotate(0.66deg);
+			}
+			30% {
+				transform: rotate(0.6deg);
+			}
+			35% {
+				transform: rotate(0.32deg);
+			}
+			40%{
+				transform: rotate(0deg);
+			}
+			45% {
+				transform: rotate(0.6deg);
+			}
+			50% {
+				transform: rotate(1deg);
+			}
+			55%, 100% {
+				transform: rotate(2deg);
+			}
 		}
 		.wel_gift_warp {
 			position: absolute;
@@ -534,18 +1788,352 @@
 			width: 9%;
 			right: 5%;
 			top: 42%;
+			-webkit-transform: rotate(8deg);
+			transform: rotate(8deg);
+		}
+		.desc_muscle_ani {
+			-webkit-animation-name: desc-muscle-ani;
+			animation-name: desc-muscle-ani;
+		}
+		@-webkit-keyframes desc-muscle-ani {
+			0% {
+				-webkit-transform: rotate(8deg);
+			}
+			5% {
+				-webkit-transform: rotate(6.86deg);
+			}
+			10% {
+				-webkit-transform: rotate(5.72deg);
+			}
+			15% {
+				-webkit-transform: rotate(4.58deg);
+			}
+			20% {
+				-webkit-transform: rotate(3.44deg);
+			}
+			25% {
+				-webkit-transform: rotate(2.3deg);
+			}
+			30% {
+				-webkit-transform: rotate(1.16deg);
+			}
+			35%, 45% {
+				-webkit-transform: rotate(0deg);
+			}
+			50% {
+				-webkit-transform: translate3d(0.5%, 0, 0) rotate(0deg);
+			}
+			55% {
+				-webkit-transform: translate3d(1%, 0, 0) rotate(0deg);
+			}
+			60% {
+				-webkit-transform: translate3d(1.5%, 0, 0) rotate(0deg);
+			}
+			65% {
+				-webkit-transform: translate3d(2%, 0, 0) rotate(0deg);
+			}
+			70% {
+				-webkit-transform: translate3d(2%, 0, 0) rotate(1.16deg);
+			}
+			75%, 100% {
+				-webkit-transform: translate3d(2%, 0, 0) rotate(8deg);
+			}
+		}
+		@keyframes desc-muscle-ani {
+			0% {
+				transform: rotate(8deg);
+			}
+			5% {
+				transform: rotate(6.86deg);
+			}
+			10% {
+				transform: rotate(5.72deg);
+			}
+			15% {
+				transform: rotate(4.58deg);
+			}
+			20% {
+				transform: rotate(3.44deg);
+			}
+			25% {
+				transform: rotate(2.3deg);
+			}
+			30% {
+				transform: rotate(1.16deg);
+			}
+			35%, 45% {
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: translate3d(0.5%, 0, 0) rotate(0deg);
+			}
+			55% {
+				transform: translate3d(1%, 0, 0) rotate(0deg);
+			}
+			60% {
+				transform: translate3d(1.5%, 0, 0) rotate(0deg);
+			}
+			65% {
+				transform: translate3d(2%, 0, 0) rotate(0deg);
+			}
+			70% {
+				transform: translate3d(2%, 0, 0) rotate(1.16deg);
+			}
+			75%, 100% {
+				transform: translate3d(2%, 0, 0) rotate(8deg);
+			}
 		}
 		.wel-desc-cake {
 			position: absolute;
 			width: 7%;
-			right: 30%;
-			top: 65%;
+			right: 31%;
+			top: 63%;
+			-webkit-transform: rotate(4deg);
+			transform: rotate(4deg);
 		}
-		.wel-desc-scraps {
+		.desc_cake_ani {
+			-webkit-aniamtion-name: desc_cake_ani;
+			animation-name: desc_cake_ani;
+		}
+		@-webkit-keyframes desc_cake_ani {
+			0% {
+				-webkit-transform: translate3d(0,0,0) rotate(4deg);
+			}
+			5% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(4deg);
+			}
+			10% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(3.2deg);
+			}
+			15% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(2.4deg);
+			}
+			20% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(1.6deg);
+			}
+			25% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(0.8deg);
+			}
+			30%, 40% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(0deg);
+			}
+			45% {
+				-webkit-transform: translate3d(-0.5%,0,0) rotate(4deg);
+			}
+			50% {
+				-webkit-transform: translate3d(0,0,0) rotate(4deg);
+			}
+			55% {
+				-webkit-transform: translate3d(1%,0,0) rotate(4deg);
+			}
+			60%, 100% {
+				-webkit-transform: translate3d(2%,0,0) rotate(4deg);
+			}
+		}
+		@keyframes desc_cake_ani {
+			0% {
+				transform: translate3d(0,0,0) rotate(4deg);
+			}
+			5% {
+				transform: translate3d(-0.5%,0,0) rotate(4deg);
+			}
+			10% {
+				transform: translate3d(-0.5%,0,0) rotate(3.2deg);
+			}
+			15% {
+				transform: translate3d(-0.5%,0,0) rotate(2.4deg);
+			}
+			20% {
+				transform: translate3d(-0.5%,0,0) rotate(1.6deg);
+			}
+			25% {
+				transform: translate3d(-0.5%,0,0) rotate(0.8deg);
+			}
+			30%, 40% {
+				transform: translate3d(-0.5%,0,0) rotate(0deg);
+			}
+			45% {
+				transform: translate3d(-0.5%,0,0) rotate(4deg);
+			}
+			50% {
+				transform: translate3d(0,0,0) rotate(4deg);
+			}
+			55% {
+				transform: translate3d(1%,0,0) rotate(4deg);
+			}
+			60%, 100% {
+				transform: translate3d(2%,0,0) rotate(4deg);
+			}
+		}
+		.wel-desc-scraps1 {
 			position: absolute;
-			width: 100%;
-			top: 5%;
-			left: 0;
+			width: 6%;
+			top: 10%;
+			left: 2%;
+		}
+		.wel-desc-scraps2 {
+			position: absolute;
+			width: 4%;
+			top: 65%;
+			left: 3%;
+		}
+		.wel-desc-scraps3 {
+			position: absolute;
+			width: 9%;
+			top: 10%;
+			right: 0;
+		}
+		.wel-desc-scraps4 {
+			position: absolute;
+			width: 4%;
+			top: 65%;
+			right: 4%;
+		}
+		.desc_scraps1_ani {
+			-webkit-animation-name: desc_scraps1_ani;
+			animation-name: desc_scraps1_ani;
+		}
+		.desc_scraps2_ani {
+			-webkit-animation-name: desc_scraps2_ani;
+			animation-name: desc_scraps2_ani;
+		}
+		.desc_scraps3_ani {
+			-webkit-animation-name: desc_scraps3_ani;
+			animation-name: desc_scraps3_ani;
+		}
+		.desc_scraps4_ani {
+			-webkit-animation-name: desc_scraps4_ani;
+			animation-name: desc_scraps4_ani;
+		}
+		@-webkit-keyframes desc_scraps1_ani{
+			0% {
+				-webkit-transform: translate3d(1px, 1px, 0);
+			}
+			15%, 45% {
+				-webkit-transform: translate3d(2px, 1px, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(1px, 0, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(-1px, 0, 0);
+			}
+			100% {
+				-webkit-transform: translate3d(-2px, -1px, 0);
+			}
+		}
+		@keyframes desc_scraps1_ani{
+			0% {
+				transform: translate3d(1px, 1px, 0);
+			}
+			15%, 45% {
+				transform: translate3d(2px, 1px, 0);
+			}
+			60% {
+				transform: translate3d(1px, 0, 0);
+			}
+			75% {
+				transform: translate3d(-1px, 0, 0);
+			}
+			100% {
+				transform: translate3d(-2px, -1px, 0);
+			}
+		}
+		@-webkit-keyframes desc_scraps2_ani {
+			0% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			15%, 45% {
+				-webkit-transform: translate3d(2px, -1px, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(0, 1px, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(-1px, 2px, 0);
+			}
+			100% {
+				-webkit-transform: translate3d(-2px, 3px, 0);
+			}
+		}
+		@keyframes desc_scraps2_ani {
+			0% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			15%, 45% {
+				transform: translate3d(2px, -1px, 0);
+			}
+			60% {
+				transform: translate3d(0, 1px, 0);
+			}
+			75% {
+				transform: translate3d(-1px, 2px, 0);
+			}
+			100% {
+				transform: translate3d(-2px, 3px, 0);
+			}
+		}
+		@-webkit-keyframes desc_scraps3_ani {
+			0% {
+				-webkit-transform: translate3d(-1px, 1px, 0);
+			}
+			15%, 45% {
+				-webkit-transform: translate3d(-2px, 1px, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(-1px, 1px, 0);
+			}
+			75% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			100% {
+				-webkit-transform: translate3d(1px,-2px, 0);
+			}
+		}
+		@keyframes desc_scraps3_ani {
+			0% {
+				transform: translate3d(-1px, 1px, 0);
+			}
+			15%, 45% {
+				transform: translate3d(-2px, 1px, 0);
+			}
+			60% {
+				transform: translate3d(-1px, 1px, 0);
+			}
+			75% {
+				transform: translate3d(0, -1px, 0);
+			}
+			100% {
+				transform: translate3d(1px,-2px, 0);
+			}
+		}
+		@-webkit-keyframes desc_scraps4_ani {
+			0%, 45% {
+				-webkit-transform: translate3d(-1px,-1px,0);
+			}
+			60% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			75% {
+				-webkit-transform: translate3d(1px,1px,0);
+			}
+			100% {
+				-webkit-transform: translate3d(2px,2px,0);
+			}
+		}
+		@keyframes desc_scraps4_ani {
+			0%, 45% {
+				transform: translate3d(-1px,-1px,0);
+			}
+			60% {
+				transform: translate3d(0,0,0);
+			}
+			75% {
+				transform: translate3d(1px,1px,0);
+			}
+			100% {
+				transform: translate3d(2px,2px,0);
+			}
 		}
 		.wel-desc-gift {
 			position: absolute;
@@ -557,9 +2145,457 @@
 		.wel-desc-popstarts {
 			position: absolute;
 			width: 41%;
-			top: 0;
+			top: 4%;
 			left: 50%;
 			margin-left: -20%;
+			-webkit-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+		.desc_popstarts_ani {
+			-webkit-animation-name: desc_popstarts_ani;
+			animation-name: desc_popstarts_ani;
+		}
+		.pop_ystart {
+			position: absolute;
+			width: 6%;
+			left: 42%;
+			top: 1%;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.pop_ystart_ani {
+			-webkit-animation-name: pop_ystart_ani;
+			animation-name: pop_ystart_ani;
+		}
+		@-webkit-keyframes pop_ystart_ani {
+			0% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			10%, 50%{
+				-webkit-transform: translate3d(0, -2px, 0) scale(1.2);
+			}
+			60% {
+				-webkit-transform: translate3d(0, -1px, 0) scale(1);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 1px, 0);
+			}
+			80%, 100% {
+				-webkit-transform: translate3d(0, 2px, 0);
+			}
+		}
+		@keyframes pop_ystart_ani {
+			0% {
+				transform: translate3d(0, -1px, 0);
+			}
+			10%, 50%{
+				transform: translate3d(0, -2px, 0) scale(1.2);
+			}
+			60% {
+				transform: translate3d(0, -1px, 0) scale(1);
+			}
+			70% {
+				transform: translate3d(0, 1px, 0);
+			}
+			80%, 100% {
+				transform: translate3d(0, 2px, 0);
+			}
+		}
+		.pop_scraps3 {
+			position: absolute;
+			width: 2%;
+			left: 60%;
+			top: 10%;
+		}
+		.pop_scraps3_ani {
+			-webkit-animation-name: pop_scraps3_ani;
+			animation-name: pop_scraps3_ani;
+		}
+		@-webkit-keyframes pop_scraps3_ani {
+			0% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			10%, 50%{
+				-webkit-transform: translate3d(2px, -2px, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			80% {
+				-webkit-transform: translate3d(-1px, 1px, 0);
+			}
+			90% {
+				-webkit-transform: translate3d(-2px, 2px, 0);
+			}
+			100% {
+				-webkit-transform: translate3d(-3px, 3px, 0);
+			}
+		}
+		@keyframes pop_scraps3_ani {
+			0% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			10%, 50%{
+				transform: translate3d(2px, -2px, 0);
+			}
+			60% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			70% {
+				transform: translate3d(0, 0, 0);
+			}
+			80% {
+				transform: translate3d(-1px, 1px, 0);
+			}
+			90% {
+				transform: translate3d(-2px, 2px, 0);
+			}
+			100% {
+				transform: translate3d(-3px, 3px, 0);
+			}
+		}
+		.pop_scraps2 {
+			position: absolute;
+			width: 6%;
+			left: 48%;
+			top: 9%;
+			-webkit-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+		.pop_scraps2_ani {
+			-webkit-animation-name: pop_scraps2_ani;
+			animation-name: pop_scraps2_ani;
+		}
+		@-webkit-keyframes pop_scraps2_ani {
+			0% {
+				-webkit-transform: translate3d(0, -1px ,0) scale(1.1);
+			}
+			10%, 50% {
+				-webkit-transform: translate3d(0, -2px ,0) scale(1.2);
+			}
+			60% {
+				-webkit-transform: translate3d(0, -1px ,0) scale(1.1);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 0 , 0) scale(1);
+			}
+			80% {
+				-webkit-transform: translate3d(0, 1px ,0) scale(1);
+			}
+			90%, 100% {
+				-webkit-transform: translate3d(0, 2px ,0) scale(1);
+			}
+		}
+		@keyframes pop_scraps2_ani {
+			0% {
+				transform: translate3d(0, -1px ,0) scale(1.1);
+			}
+			10%, 50% {
+				transform: translate3d(0, -2px ,0) scale(1.2);
+			}
+			60% {
+				transform: translate3d(0, -1px ,0) scale(1.1);
+			}
+			70% {
+				transform: translate3d(0, 0 , 0) scale(1);
+			}
+			80% {
+				transform: translate3d(0, 1px ,0) scale(1);
+			}
+			90%, 100% {
+				transform: translate3d(0, 2px ,0) scale(1);
+			}
+		}
+		.pop_scraps1 {
+			position: absolute;
+			width: 2%;
+			left: 37%;
+			top: 13%;
+			transform-origin: right bottom;
+		}
+		.pop_scraps1_ani {
+			-webkit-animation-name: pop_scraps1_ani;
+			animation-name: pop_scraps1_ani;
+		}
+		@-webkit-keyframes pop_scraps1_ani {
+			0% {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			5% {
+				-webkit-transform: translate3d(-1px, -1px, 0);
+			}
+			10%, 50%{
+				-webkit-transform: translate3d(-1px, -2px, 0) scale(1.02);
+			}
+			60% {
+				-webkit-transform: translate3d(-1px, -2px, 0) scale(1);
+			}
+			70% {
+				-webkit-transform: translate3d(0, -1px, 0) scale(.9);
+			}
+			80% {
+				-webkit-transform: translate3d(0, 0, 0) scale(.9);
+			}
+			90% {
+				-webkit-transform: translate3d(0, 1px, 0) scale(.9);
+			}
+			100% {
+				-webkit-transform: translate3d(0, 2px, 0) scale(.9);
+			}
+		}
+		@keyframes pop_scraps1_ani {
+			0% {
+				transform: translate3d(0, 0, 0);
+			}
+			5% {
+				transform: translate3d(-1px, -1px, 0);
+			}
+			10%, 50%{
+				transform: translate3d(-1px, -2px, 0) scale(1.02);
+			}
+			60% {
+				transform: translate3d(-1px, -2px, 0) scale(1);
+			}
+			70% {
+				transform: translate3d(0, -1px, 0) scale(.9);
+			}
+			80% {
+				transform: translate3d(0, 0, 0) scale(.9);
+			}
+			90% {
+				transform: translate3d(0, 1px, 0) scale(.9);
+			}
+			100% {
+				transform: translate3d(0, 2px, 0) scale(.9);
+			}
+		}
+		.pop_line1 {
+			position: absolute;
+			width: 9%;
+			left: 29%;
+			top: 29%;
+			-webkit-transform-origin: right bottom;
+			transform-origin: right bottom;
+		}
+		.pop_line1_ani, .pop_bscraps_ani {
+			-webkit-animation-name: pop_line1_ani;
+			animation-name: pop_line1_ani;
+		}
+		@-webkit-keyframes pop_line1_ani {
+			0% {
+				-webkit-transform: translate3d(-1px, -1px, 0) scale(1.05);
+			}
+			10%, 50% {
+				-webkit-transform: translate3d(-2px, -2px, 0) scale(1.1);
+			}
+			60% {
+				-webkit-transform: translate3d(-1px, -1px, 0) scale(1.05);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 0, 0) scale(1);
+			}
+			80% {
+				-webkit-transform: translate3d(1px, 1px, 0) scale(1);
+			}
+			90%, 100% {
+				-webkit-transform: translate3d(2px, 2px, 0) scale(1);
+			}
+		}
+		@keyframes pop_line1_ani {
+			0% {
+				transform: translate3d(-1px, -1px, 0) scale(1.05);
+			}
+			10%, 50% {
+				transform: translate3d(-2px, -2px, 0) scale(1.1);
+			}
+			60% {
+				transform: translate3d(-1px, -1px, 0) scale(1.05);
+			}
+			70% {
+				transform: translate3d(0, 0, 0) scale(1);
+			}
+			80% {
+				transform: translate3d(1px, 1px, 0) scale(1);
+			}
+			90%, 100% {
+				transform: translate3d(2px, 2px, 0) scale(1);
+			}
+		}
+		.pop_line2 {
+			position: absolute;
+			width: 9%;
+			left: 49%;
+			top: 21%;
+		}
+		.pop_line2_ani, .pop_line3_ani {
+			-webkit-animation-name: pop_line2_ani;
+			animation-name: pop_line2_ani;
+		}
+		@-webkit-keyframes pop_line2_ani {
+			0% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			10%, 50% {
+				-webkit-transform: translate3d(2px, -2px, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(1px, -1px, 0);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			80% {
+				-webkit-transform: translate3d(-1px, 1px, 0);
+			}
+			90%, 100% {
+				-webkit-transform: translate3d(-3px, 3px, 0);
+			}
+		}
+		@keyframes pop_line2_ani {
+			0% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			10%, 50% {
+				transform: translate3d(2px, -2px, 0);
+			}
+			60% {
+				transform: translate3d(1px, -1px, 0);
+			}
+			70% {
+				transform: translate3d(0, 0, 0);
+			}
+			80% {
+				transform: translate3d(-1px, 1px, 0);
+			}
+			90%, 100% {
+				transform: translate3d(-3px, 3px, 0);
+			}
+		}
+		.pop_line3 {
+			position: absolute;
+			width: 6%;
+			left: 55%;
+			top: 27%;
+		}
+		.pop_circle {
+			position: absolute;
+			width: 2%;
+			left: 44%;
+			top: 38%;
+			-webkit-transform: scale(.8);
+			transform: scale(.8);
+			-webkit-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+		.pop_circle_ani {
+			-webkit-animation-name: pop_circle_ani;
+			animation-name: pop_circle_ani;
+		}
+		@-webkit-keyframes pop_circle_ani {
+			0% {
+				opacity: 1;
+				-webkit-transform: translate3d(0,-1px,0) scale(.9);
+			}
+			10%, 40% {
+				opacity: 1;
+				-webkit-transform: translate3d(0,-2px,0) scale(1);
+			}
+			50% {
+				opacity: .9;
+				-webkit-transform: translate3d(0,-2px,0) scale(.9);
+			}
+			60% {
+				opacity: .8;
+				-webkit-transform: translate3d(0,-1px,0) scale(.8);
+			}
+			70% {
+				opacity: .8;
+				-webkit-transform: translate3d(0,0,0) scale(.8);
+			}
+			80% {
+				opacity: .8;
+				-webkit-transform: translate3d(0,1px,0) scale(.8);
+			}
+			90%, 100% {
+				opacity: .8;
+				-webkit-transform: translate3d(0,3px,0) scale(.8);
+			}
+		}
+		@keyframes pop_circle_ani {
+			0% {
+				opacity: 1;
+				transform: translate3d(0,-1px,0) scale(.9);
+			}
+			10%, 40% {
+				opacity: 1;
+				transform: translate3d(0,-2px,0) scale(1);
+			}
+			50% {
+				opacity: .9;
+				transform: translate3d(0,-2px,0) scale(.9);
+			}
+			60% {
+				opacity: .8;
+				transform: translate3d(0,-1px,0) scale(.8);
+			}
+			70% {
+				opacity: .8;
+				transform: translate3d(0,0,0) scale(.8);
+			}
+			80% {
+				opacity: .8;
+				transform: translate3d(0,1px,0) scale(.8);
+			}
+			90%, 100% {
+				opacity: .8;
+				transform: translate3d(0,3px,0) scale(.8);
+			}
+		}
+		.pop_bscraps {
+			position: absolute;
+			width: 4%;
+			left: 38%;
+			top: 27%;
+		}
+		.pop_rstart {
+			position: absolute;
+			width: 7%;
+			left: 64%;
+			top: 15%;
+			-webkit-transform: scale(.8);
+			transform: scale(.8);
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+		}
+		.pop_rstart_ani {
+			-webkit-animation-name: pop_rstart_ani;
+			animation-name: pop_rstart_ani;
+		}
+		@keyframes pop_rstart_ani {
+			0% {
+				transform: translate3d(1px, -1px, 0) scale(.9);
+			}
+			10%, 40% {
+				transform: translate3d(2px, -2px, 0) scale(1);
+			}
+			50% {
+				transform: translate3d(2px, -2px, 0) scale(.9);
+			}
+			60% {
+				transform: translate3d(1px, -1px, 0) scale(.8);
+			}
+			70% {
+				transform: translate3d(0, 0, 0) scale(.8);
+			}
+			80% {
+				transform: translate3d(-1px, 1px, 0) scale(.8);
+			}
+			90%, 100% {
+				transform: translate3d(-3px, 3px, 0) scale(.8);
+			}
 		}
 		.wel-desc-text {
 			position: absolute;
@@ -578,6 +2614,40 @@
 			top: 60%;
 			right: 10%;
 			width: 2%;
+			-webkit-animation-delay: .5s;
+			animation-delay: .5s;
+		}
+		.desc_start_ani {
+			-webkit-animation-name: desc_start_ani;
+			animation-name: desc_start_ani;
+		}
+		@-webkit-keyframes desc_start_ani {
+			0%, 50% {
+				-webkit-transform: scale(1);
+			}
+			55%, 65%{
+				-webkit-transform: scale(1.15);
+			}
+			70% {
+				-webkit-transform: scale(1.1);
+			}
+			75%, 100% {
+				-webkit-transform: scale(1);
+			}
+		}
+		@keyframes desc_start_ani {
+			0%, 50% {
+				transform: scale(1);
+			}
+			55%, 65%{
+				transform: scale(1.15);
+			}
+			70% {
+				transform: scale(1.1);
+			}
+			75%, 100% {
+				transform: scale(1);
+			}
 		}
 		.company-text {
 			margin-top: 4%;
@@ -613,6 +2683,48 @@
 			width: 100%;
 			height: 100%;
 		}
+		.shuline {
+			position: absolute;
+			bottom: 18%;
+			left: 3%;
+			width: 1%;
+		}
+		.shuline.animated {
+			-webkit-animation-duration: 1s;
+    		animation-duration: 1s;
+		}
+		.shuline_animate {
+			-webkit-animation-name: shuline_animate;
+			animation-name: shuline_animate;
+		}
+		@-webkit-keyframes shuline_animate {
+			0% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			20% {
+				-webkit-transform: translate3d(0,-2px,0);
+			}
+			40% {
+				-webkit-transform: translate3d(0,2px,0);
+			}
+			60%, 100% {
+				-webkit-transform: translate3d(0,3px,0);
+			}
+		}
+		@keyframes shuline_animate {
+			0% {
+				transform: translate3d(0,0,0);
+			}
+			20% {
+				transform: translate3d(0,-2px,0);
+			}
+			40% {
+				transform: translate3d(0,2px,0);
+			}
+			60%, 100% {
+				transform: translate3d(0,3px,0);
+			}
+		}
 		.jobs-content-warp {
 			position: absolute;
 			top: 10%;
@@ -622,6 +2734,7 @@
 			overflow: scroll;
 		}
 		.jobs-list li {
+			position: relative;
 			padding: 5% 0 6%;
 			width: 91%;
 			font-size: 20px;
@@ -633,9 +2746,83 @@
 			background: none;
 		}
 		.arrow {
+			position: absolute;
 			display: block;
-			float: right;
+			right: 2%;
 			width: 5%;
+			top: 26%;
+		}
+		.arrow.animated{
+			-webkit-animation-duration: 1s;
+    		animation-duration: 1s;
+		}
+		.arrow_ani {
+			-webkit-animation-name: arrow_ani;
+			animation-name: arrow_ani;
+		}
+		@-webkit-keyframes arrow_ani {
+			0% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			5% {
+				-webkit-transform: translate3d(-1px,0,0);
+			}
+			10%, 20% {
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			25% {
+				-webkit-transform: translate3d(1px,0,0);
+			}
+			30% {
+				-webkit-transform: translate3d(-1px,0,0);
+			}
+			35% {
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			40% {
+				-webkit-transform: translate3d(-3px,0,0);
+			}
+			45% {
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			50% {
+				-webkit-transform: translate3d(1px,0,0);
+			}
+			55%, 100% {
+				-webkit-transform: translate3d(2px,0,0);
+			}
+		}
+		@keyframes arrow_ani {
+			0% {
+				transform: translate3d(0,0,0);
+			}
+			5% {
+				transform: translate3d(-1px,0,0);
+			}
+			10%, 20% {
+				transform: translate3d(-2px,0,0);
+			}
+			25% {
+				transform: translate3d(1px,0,0);
+			}
+			30% {
+				transform: translate3d(-1px,0,0);
+			}
+			35% {
+				transform: translate3d(-2px,0,0);
+			}
+			40% {
+				transform: translate3d(-3px,0,0);
+			}
+			45% {
+				transform: translate3d(-2px,0,0);
+			}
+			50% {
+				transform: translate3d(1px,0,0);
+			}
+			55%, 100% {
+				transform: translate3d(2px,0,0);
+			}
 		}
 		.btn-group {
 			margin: 7% auto 0;
@@ -694,6 +2881,50 @@
 		.mail {
 			vertical-align: middle;
 			width: 6%;
+		}
+		.mail_ani {
+			-webkit-animation-name: mail_ani;
+			animation-name: mail_ani;
+		}
+		@-webkit-keyframes mail_ani {
+			0%, 10% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			20% {
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			30% {
+				-webkit-transform: translate3d(-4px,0,0);
+			}
+			40% {
+				-webkit-transform: translate3d(-3px,0,0);
+			}
+			50% {
+				-webkit-transform: translate3d(-1px,0,0);
+			}
+			60%, 100% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+		}
+		@keyframes mail_ani {
+			0%, 10% {
+				transform: translate3d(0,0,0);
+			}
+			20% {
+				transform: translate3d(-2px,0,0);
+			}
+			30% {
+				transform: translate3d(-4px,0,0);
+			}
+			40% {
+				transform: translate3d(-3px,0,0);
+			}
+			50% {
+				transform: translate3d(-1px,0,0);
+			}
+			60%, 100% {
+				transform: translate3d(0,0,0);
+			}
 		}
 		.contact-method {
 			font-size: 14px;
@@ -773,6 +3004,112 @@
 			width: 14%;
 			top: 65%;
 			right: -5%;
+		}
+		.group-ill-warp .introduct-clound1.animated,
+		.group-ill-warp .introduct-clound2.animated,
+		.group-ill-warp .introduct-clound3.animated {
+			-webkit-animation-duration: .6s;
+    		animation-duration: 1s;
+		}
+		.clound_ani {
+			-webkit-animation-name: clound_ani;
+			animation-name: clound_ani;
+		}
+		.clound_ani1 {
+			-webkit-animation-name: clound_ani1;
+			animation-name: clound_ani1;
+		}
+		@-webkit-keyframes clound_ani {
+			0%{
+				-webkit-transform: translate3d(0,0,0);
+			}
+			16.7%{
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			33.4%{
+				-webkit-transform: translate3d(-4px,0,0);
+			}
+			50.1%{
+				-webkit-transform: translate3d(-6px,0,0);
+			}
+			66.8%{
+				-webkit-transform: translate3d(-5px,0,0);
+			}
+			83.5%{
+				-webkit-transform: translate3d(-2px,0,0);
+			}
+			100%{
+				-webkit-transform: translate3d(0,0,0);
+			}
+		}
+		@keyframes clound_ani {
+			0%{
+				transform: translate3d(0,0,0);
+			}
+			16.7%{
+				transform: translate3d(-2px,0,0);
+			}
+			33.4%{
+				transform: translate3d(-4px,0,0);
+			}
+			50.1%{
+				transform: translate3d(-6px,0,0);
+			}
+			66.8%{
+				transform: translate3d(-5px,0,0);
+			}
+			83.5%{
+				transform: translate3d(-2px,0,0);
+			}
+			100%{
+				transform: translate3d(0,0,0);
+			}
+		}
+		@-webkit-keyframes clound_ani1 {
+			0%{
+				-webkit-transform: translate3d(0,0,0);
+			}
+			16.7%{
+				-webkit-transform: translate3d(2px,0,0);
+			}
+			33.4%{
+				-webkit-transform: translate3d(4px,0,0);
+			}
+			50.1%{
+				-webkit-transform: translate3d(6px,0,0);
+			}
+			66.8%{
+				-webkit-transform: translate3d(5px,0,0);
+			}
+			83.5%{
+				-webkit-transform: translate3d(2px,0,0);
+			}
+			100%{
+				-webkit-transform: translate3d(0,0,0);
+			}
+		}
+		@keyframes clound_ani1 {
+			0%{
+				transform: translate3d(0,0,0);
+			}
+			16.7%{
+				transform: translate3d(2px,0,0);
+			}
+			33.4%{
+				transform: translate3d(4px,0,0);
+			}
+			50.1%{
+				transform: translate3d(6px,0,0);
+			}
+			66.8%{
+				transform: translate3d(5px,0,0);
+			}
+			83.5%{
+				transform: translate3d(2px,0,0);
+			}
+			100%{
+				transform: translate3d(0,0,0);
+			}
 		}
 		.e-commerce-ill-warp {
 			height: 22%;
@@ -929,6 +3266,54 @@
 		.mark_close {
 			width: 7%;
 		}
+		.m_rotate1 {
+			-webkit-transform: rotate(-8deg);
+			transform: rotate(-8deg);
+		}
+		.m_rotate2 {
+			-webkit-transform: rotate(8deg);
+			transform: rotate(8deg);
+		}
+		.close-rotate1 {
+			-webkit-animation-name: close-rotate1;
+			animation-name: close-rotate1;
+		}
+		.close-rotate2 {
+			-webkit-animation-name: close-rotate2;
+			animation-name: close-rotate2;
+		}
+		@-webkit-keyframes close-rotate1 {
+			to {
+				-webkit-transform: rotate(8deg);
+			}
+			from {
+				-webkit-transform: rotate(-8deg);
+			}
+		}
+		@-webkit-keyframes close-rotate2 {
+			to {
+				-webkit-transform: rotate(-8deg);
+			}
+			from {
+				-webkit-transform: rotate(8deg);
+			}
+		}
+		@keyframes close-rotate1 {
+			to {
+				transform: rotate(8deg);
+			}
+			from {
+				transform: rotate(-8deg);
+			}
+		}
+		@keyframes close-rotate2 {
+			to {
+				transform: rotate(-8deg);
+			}
+			from {
+				transform: rotate(8deg);
+			}
+		}
 		.QR_code_text {
 			padding: 0 2%;
 			width: 70%;
@@ -938,6 +3323,32 @@
 			width: 5%;
 			left: 4%;
 			top: 21%;
+		}
+		.gjstart_ani {
+			-webkit-animation-name: gjstart_ani;
+			animation-name: gjstart_ani;
+		}
+		@-webkit-keyframes gjstart_ani {
+			0%, 25%{
+				-webkit-transform: scale(.8);
+			}
+			25%, 75% {
+				-webkit-transform: scale(1.3);
+			}
+			100% {
+				-webkit-transform: scale(.8);
+			}
+		}
+		@keyframes gjstart_ani {
+			0%, 25%{
+				transform: scale(.8);
+			}
+			25%, 75% {
+				transform: scale(1.3);
+			}
+			100% {
+				transform: scale(.8);
+			}
 		}
 		.gaoji-start2 {
 			position: absolute;
@@ -953,27 +3364,191 @@
 		}
 		.meimao2 {
 			position: absolute;
-			top: 24%;
+			top: 25%;
 			right: 45%;
 			width: 4%;
 		}
+		.meimao-ani {
+			-webkit-animation-name: meimao-ani;
+			animation-name: meimao-ani;
+		}
+		.meimao-ani2 {
+			-webkit-animation-name: meimao-ani2;
+			animation-name: meimao-ani2;
+		}
+		@-webkit-keyframes meimao-ani {
+			0%, 25%{
+				-webkit-transform: translate3d(0,-1px,0);
+			}
+			50%, 75%{
+				-webkit-transform: translate3d(1px,1px,0);
+			}
+			100%{
+				-webkit-transform: translate3d(0,-1px,0);
+			}
+		}
+		@-webkit-keyframes meimao-ani2 {
+			0%, 25% {
+				-webkit-transform: translate3d(1px,-1px,0);
+			}
+			50%, 75% {
+				-webkit-transform: translate3d(-2px,2px,0);
+			}
+			100% {
+				-webkit-transform: translate3d(1px,-1px,0);
+			}
+		}
+		@keyframes meimao-ani {
+			0%, 25%{
+				transform: translate3d(0,-1px,0);
+			}
+			50%, 75%{
+				transform: translate3d(1px,1px,0);
+			}
+			100%{
+				transform: translate3d(0,-1px,0);
+			}
+		}
+		@keyframes meimao-ani2 {
+			0%, 25% {
+				transform: translate3d(1px,-1px,0);
+			}
+			50%, 75% {
+				transform: translate3d(-2px,2px,0);
+			}
+			100% {
+				transform: translate3d(1px,-1px,0);
+			}
+		}
+		.boy1_line {
+			position: absolute;
+			width: 2%;
+			left: 6%;
+			top: 3%;
+		}
+		.boy1line_ani {
+			-webkit-animation-name: boy1line_ani;
+			animation-name: boy1line_ani;
+		}
+		@-webkit-keyframes boy1line_ani {
+			0%, 25%{
+				-webkit-transform: translate3d(0, 1px ,0);
+			}
+			50%, 75% {
+				-webkit-transform: translate3d(0, -1px ,0);
+			}
+			100% {
+				-webkit-transform: translate3d(0, 1px ,0);
+			}
+		}
+		@keyframes boy1line_ani {
+			0%, 25%{
+				transform: translate3d(0, 1px ,0);
+			}
+			50%, 75% {
+				transform: translate3d(0, -1px ,0);
+			}
+			100% {
+				transform: translate3d(0, 1px ,0);
+			}
+		}
 		.boy2_line {
 			position: absolute;
-			top: 19%;
+			top: 17%;
 			width: 7%;
-			right: 6%;
+			right: 5%;
+		}
+		.boy2line_ani {
+			-webkit-animation-name: boy2line_ani;
+			animation-name: boy2line_ani;
+		}
+		@-webkit-keyframes boy2line_ani {
+			0%{
+				-webkit-transform: translate3d(-1px, 1px ,0);
+			}
+			50% {
+				-webkit-transform: translate3d(0, -1px ,0);
+			}
+			100% {
+				-webkit-transform: translate3d(-1px, 1px ,0);
+			}
+		}
+		@keyframes boy2line_ani {
+			0%{
+				transform: translate3d(-1px, 1px ,0);
+			}
+			50% {
+				transform: translate3d(0, -1px ,0);
+			}
+			100% {
+				transform: translate3d(-1px, 1px ,0);
+			}
 		}
 		.join_us {
 			position: absolute;
 			width: 12%;
 			left: 42%;
-			top: 10%;
+			top: 8%;
+		}
+		.joinus_ani {
+			-webkit-animation-name: joinus_ani;
+			animation-name: joinus_ani
+		}
+		@-webkit-keyframes joinus_ani {
+			0%, 25% {
+				-webkit-transform: translate3d(0,0,0);
+			}
+			50%, 75% {
+				-webkit-transform: translate3d(-1px,-1px,0);
+			}
+			100%{
+				-webkit-transform: translate3d(0,0,0);
+			}
+		}
+		@keyframes joinus_ani {
+			0%, 25% {
+				transform: translate3d(0,0,0);
+			}
+			50%, 75% {
+				transform: translate3d(-1px,-1px,0);
+			}
+			100%{
+				transform: translate3d(0,0,0);
+			}
 		}
 		.favour {
 			position: absolute;
 			width: 6%;
-			top: 15%;
+			top: 14%;
 			left: 45%;
+			-webkit-transform: scale(.8);
+			transform: scale(.8);
+		}
+		.favour_ani {
+			-webkit-animation-name: favour_ani;
+			animation-name: favour_ani;
+		}
+		@-webkit-keyframes favour_ani {
+			0% ,20%{
+				-webkit-transform: scale(.8);
+			}
+			40%, 60% {
+				-webkit-transform: scale(1.2);
+			}
+			80%, 100% {
+				-webkit-transform: scale(0.8);
+			}
+		}
+		@keyframes favour_ani {
+			0% ,20%{
+				transform: scale(.8);
+			}
+			40%, 60% {
+				transform: scale(1.2);
+			}
+			80%, 100% {
+				transform: scale(0.8);
+			}
 		}
 		.share-layer {
 			position: fixed;
@@ -992,6 +3567,12 @@
 			width: 8%;
 			z-index: 10;
 		}
+		.music.animated {
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+		}
 		.pull-up {
 			position: fixed;
 			width: 6%;
@@ -999,6 +3580,82 @@
 			margin-left: -3%;
 			bottom: 2%;
 			z-index: 20;
+		}
+		.pull_up_ani {
+			-webkit-animation-name: pull_up_ani;
+			animation-name: pull_up_ani;
+		}
+		@-webkit-keyframes pull_up_ani {
+			0% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			10%, 30% {
+				-webkit-transform: translate3d(0, -2px, 0);
+			}
+			40% {
+				-webkit-transform: translate3d(0, -1px, 0);
+			}
+			50% {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			60% {
+				-webkit-transform: translate3d(0, 1px, 0);
+			}
+			70% {
+				-webkit-transform: translate3d(0, 2px, 0);
+			}
+			80% {
+				-webkit-transform: translate3d(0, 3px, 0);
+			}
+			90%, 100% {
+				-webkit-transform: translate3d(0, 4px, 0);
+			}
+		}
+		@keyframes pull_up_ani {
+			0% {
+				transform: translate3d(0, -1px, 0);
+			}
+			10%, 30% {
+				transform: translate3d(0, -2px, 0);
+			}
+			40% {
+				transform: translate3d(0, -1px, 0);
+			}
+			50% {
+				transform: translate3d(0, 0, 0);
+			}
+			60% {
+				transform: translate3d(0, 1px, 0);
+			}
+			70% {
+				transform: translate3d(0, 2px, 0);
+			}
+			80% {
+				transform: translate3d(0, 3px, 0);
+			}
+			90%, 100% {
+				transform: translate3d(0, 4px, 0);
+			}
+		}
+		.music-rotate {
+			-webkit-animation-name: music-rotate;
+			animation-name: music-rotate;
+		}
+		@-webkit-keyframes music-rotate {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+		@keyframes music-rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
 		}
 		@media screen and (max-width: 320px) {
 			.job-desc-item span {
@@ -1064,6 +3721,8 @@
 		}
 		.swiper-pagination-bullet-active {
 			background: #e94227;
+			-webkit-transition: background-color .4s ease;
+			transition: background-color .4s ease;
 		}
 
 		/**********************************demo*************************/
@@ -1080,420 +3739,459 @@
 		.page3 {
 			z-index: 1;
 		}
-	</style>
+		.progress-kuang {
+			width: 100%;
+			height: 100%;
+			background: url('./images/progress.svg');
+			background-size: 100% 100%;
+		}
+		#main-page {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+</style>
 </head>
 <body>
+	<!-- <style>
+		@font-face {
+			font-family: mjl;
+			src: url('./font/blxqx.ttf');
+		}
+		body {
+			font-family: mjl;
+		}
+	</style> -->
 	<!-- loading -->
 	<div class="page loading-page">
-		<svg width="100%" height="30" class="progress-line">
-			<mask id="loading-mask" x="0" y="0" width="100%" height="30" >
-				<image xlink:href="./images/loading-progress.png" x="0" y="0" width="100%" height="30" />
-			</mask>
-		</svg> 
 		<div class="loading">
 			<div>
 				<img src="./images/loading.png" class="loading-text">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/point.gif" class="loading-point">
 			</div>
 			<div class="progress-warp">
-				<svg width="100%" height="30">
-					<!-- <rect x="0" y="0" width="100%" height="30" fill="#e94227" style="mask: url(#loading-mask)" />  -->
-				<line x1="0" y1="0" x2="100%" y2="0"style="stroke:#e94227;stroke-width:30" />
+				<svg width="100%" height="14">
+					<defs>
+						<g id="progress-line">
+							<rect x="0" y="0" width="100%" height="14" fill="#fff" id="progress1"/>
+							<rect x="0" y="0" width="0%" height="14" fill="#f00" id="progress"/>
+						</g>
+						<mask id="mask1" x="0" y="0" width="100%" height="14">
+							<image xlink:href="./images/progress.svg" width="100%" height="14"></image>
+						</mask>
+					</defs>
+					<use xlink:href="#progress-line" style="mask: url(#mask1)"></use>
 				</svg>
 			</div>
 		</div>
 		<img src="./images/logo.png" class="img-logo" />
 	</div>
-	<!-- loading -->
-    <div class="swiper-container" id="main-page">
-		<div class="swiper-wrapper">
-			<!-- page1-->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="ex-paper-warp">
-						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" alt="">
-						<img src="./images/ex_paper.png" class="img-ex-paper" />
-					</div>
-					<div class="hehe-warp">
-						<img src="./images/person.png" class="img-person" />
-						<img src="./images/left_hand.png" class="img-left-hand" />
-						<img src="./images/right_hand.png" class="img-right-hand" />
-					</div>
-					<!-- <div class="person-warp">
-						<img src="./images/person.png" class="img-person" />
-						<img src="./images/left_hand.png" class="img-left-hand" />
-						<img src="./images/right_hand.png" class="img-right-hand" />
-					</div> -->
-					<div class="clound-warp">
-						<img src="./images/inner_center_clound.png" class="img-icc" />
-						<img src="./images/out_left_clound.png" class="img-olc" />
-						<img src="./images/out_right_clound.png" class="img-orc" />
-						<img src="./images/one_outhand.png" class="img-ooh" />
-						<img src="./images/two_outhand.png" class="img-toh" />
-						<img src="./images/three_outhand.png" class="img-thoh" />
-						<img src="./images/four_outhand.png" class="img-foh" />
-					</div>
-					<div class="emb-warp">
-						<img src="./images/cengceng.png" class="img-cengceng" />
-						<img src="./images/b_scraps.png" class="img-b-scraps" alt="">
-						<img src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove" alt="">
-						<img src="./images/r_scraps.png" class="img-r-scraps" alt="">
-						<img src="./images/start1.png" class="img-start1" alt="">
-						<img src="./images/start2.png" class="img-start2" alt="">
-						<img src="./images/start3.png" class="img-start3" alt="">
-						<img src="./images/y_ribbon.png" class="img-y-ribbon" alt="">
-						<img src="./images/y_start.png" class="img-y-start" alt="">
-					</div>
-				</div>
-				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
-			</div>
-			<!--page2 選擇 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="man-select" id="community-invite" >
-						<img src="./images/select1.png" class="img-select" alt=""/>
-						<img src="./images/select_invite.png" class="img-btn" alt="">
-						<img src="./images/man_line.png"  class="man-line" alt="">
-						<img src="./images/select_start1.png" class="select_start1" alt="">
-						<img src="./images/select_start2.png" class="select_start2" alt="">
-						<img src="./images/select_start3.png" class="select_start3" alt="">
-					</div>
-					<div class="female-select">
-						<img src="./images/select2.png" class="img-select" alt="" />
-						<img src="./images/select_gps.png"  class="img-btn" alt="">
-						<img src="./images/female_line.png" class="female-line" alt="">
-						<img src="./images/select_start3.png" class="select_start1" alt="">
-						<img src="./images/select_start3.png" class="select_start2" alt="">
-						<img src="./images/select_start2.png" class="select_start3" alt="">
-						<img src="./images/select_start3.png" class="select_start4" alt="">
-					</div>
-				</div>
-			</div>
-			<!-- page3 福利 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="wel-text-warp">
-						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
-					</div>
-					<div class="wel-warp">
-						<img src="./images/welfare_bubble.png" class="img-wel-bubble" alt="">
-						<img src="./images/welfare_persons.png" class="img-wel-persons" alt="">
-						<img src="./images/welfare_shake_hand.png" class="img-wel-hand" alt="">
-						<img src="./images/welfare_start1.png" class="img-wel-start1" alt="">
-						<img src="./images/welfare_start2.png" class="img-wel-start2" alt="">
-						<img src="./images/welfare_money.png" class="img-wel-money" alt="">
-						<img src="./images/welfare_money2.png" class="img-wel-money2" alt="">
-					</div>
-				</div>
-			</div>
-			<!-- page4 福利描述 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="wel-desc-warp">
-						<div style="text-align: center; margin: 6% auto 0;">
-							<img src="./images/wel_desc_xc.png" class="wel_desc_xc" alt="">
-						</div>
-						<div class="desc-cp-warp">
-							<img src="./images/wel_desc_cp.png" class="img-desc-cp" alt="">
-							<img src="./images/wel_desc_scraps.png" class="wel-desc-scraps" alt="">
-						</div>
-						<div style="position: relative; margin: 4% auto 0;width: 86%;">
-							<img src="./images/wel_desc_jp.png" class="wel_desc_jp" alt="">
-							<img src="./images/wel_desc_tj.png" class="wel_desc_tj" alt="">
-						</div>
-						<div style="position: relative; margin: 4% auto 0;width: 95%;">
-							<img src="./images/wel_desc_tjj.png" class="wel_desc_tjj" alt="">
-							<img src="./images/wel_desc_sr.png" class="wel_desc_sr" alt="">
-						</div>
-						<div style="position: relative; margin: 4% auto 0; text-align:center">
-							<img src="./images/wel_desc_nh.png" class="wel_desc_nh" alt="">
-						</div>
-						<img src="./images/wel_desc_cake.png" class="wel-desc-cake" alt="">
-						<img src="./images/wel-desc-muscle.png" class="wel-desc-muscle" alt="">
-					</div>
-					<div class="wel_gift_warp">
-						<img src="./images/wel-desc-gift.png" class="wel-desc-gift" alt="">
-						<img src="./images/wel_desc_popstarts.png" class="wel-desc-popstarts" alt="">
-						<img src="./images/wel_desc_text.png" class="wel-desc-text" alt="">
-						<img src="./images/gift_start.png" class="wel-desc-start" alt="">
-						<img src="./images/gift_start2.png" class="wel-desc-start2" alt="">
-					</div>
-				</div>
-			</div>
-			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide over-wrap">
-				<!-- 公司集合模块 step1-->
-				<div class="custom-page page1">
+	<div id="main-page animated">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- page1-->
+				<div class="swiper-slide">
 					<div class="page">
-						<img src="./images/company_text.png" class="company-text" alt="">
-						<img src="./images/company_mid_text.png" class="company-mid-text" alt="">
-						<div class="company-btn-group">
-							<img src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems" data-index=0>
-							<img src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems" data-index=1>
-							<img src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems" data-index=2>
+						<div class="ex-paper-warp">
+							<img data-src="./images/focus.png" class="img-focus swiper-lazy animated infinite focusFadeIn" />
+							<img data-src="./images/ex_paper.png" class="img-ex-paper swiper-lazy" />
 						</div>
+						<div class="hehe-warp">
+							<img data-src="./images/person.png" class="img-person swiper-lazy" />
+							<img data-src="./images/left_hand.png" class="img-left-hand swiper-lazy animated direction infinite hhs-left" />
+							<img data-src="./images/right_hand.png" class="img-right-hand swiper-lazy animated direction infinite hhs-right" />
+						</div>
+						<div class="clound-warp">
+							<img data-src="./images/inner_center_clound.png" class="img-icc swiper-lazy" />
+							<img data-src="./images/out_left_clound.png" class="img-olc swiper-lazy" />
+							<img data-src="./images/out_right_clound.png" class="img-orc swiper-lazy" />
+							<img data-src="./images/one_outhand.png" class="img-ooh swiper-lazy animated infinite one-hand" />
+							<img data-src="./images/two_outhand.png" class="img-toh swiper-lazy animated infinite two-hand" />
+							<img data-src="./images/three_outhand.png" class="img-thoh swiper-lazy animated infinite three-hand" />
+							<img data-src="./images/four_outhand.png" class="img-foh swiper-lazy animated infinite four-hand" />
+						</div>
+						<div class="emb-warp">
+							<img data-src="./images/cengceng.png" class="img-cengceng swiper-lazy animated direction infinite cengceng">
+							<img data-src="./images/b_scraps.png" class="img-b-scraps swiper-lazy animated direction infinite bScraps">
+							<img data-src="./images/r_ribbon.png" class="img-r-ribbon swiper-lazy animated direction infinite rRibbonMove">
+							<img data-src="./images/r_scraps.png" class="img-r-scraps swiper-lazy animated direction infinite r-scraps">
+							<img data-src="./images/start1.png" class="img-start1 swiper-lazy animated direction infinite lb_scale">
+							<img data-src="./images/start2.png" class="img-start2 swiper-lazy animated direction infinite o2s">
+							<img data-src="./images/start3.png" class="img-start3 swiper-lazy animated infinite o2s_2">
+							<img data-src="./images/y_ribbon.png" class="img-y-ribbon swiper-lazy animated infinite yellow-ribbon">
+							<img data-src="./images/y_start.png" class="img-y-start swiper-lazy animated direction infinite scale-amp">
+						</div>
+					</div>
+					<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
+				</div>
+				<!--page2 選擇 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="man-select" id="community-invite" >
+							<img data-src="./images/select1.png" class="img-select swiper-lazy"/>
+							<img data-src="./images/select_invite.png" class="img-btn swiper-lazy animated infinite select-btn">
+							<img data-src="./images/man_line1.png"  class="man-line1 swiper-lazy animated infinite man-line1_ani" >
+							<img data-src="./images/man_line2.png"  class="man-line2 swiper-lazy animated infinite man-line2_ani" >
+							<img data-src="./images/man_line3.png"  class="man-line3 swiper-lazy animated infinite man-line3_ani" >
+							<img data-src="./images/man_line4.png"  class="man-line4 swiper-lazy animated infinite man-line4_ani" >
+							<img data-src="./images/select_start1.png" class="select_start1 swiper-lazy animated infinite start_scale1">
+							<img data-src="./images/select_start2.png" class="select_start2 swiper-lazy animated infinite start_scale1">
+							<img data-src="./images/select_start3.png" class="select_start3 swiper-lazy animated infinite start_scale1">
+						</div>
+						<div class="female-select">
+							<img data-src="./images/select2.png" class="img-select swiper-lazy"/>
+							<img data-src="./images/select_gps.png"  class="img-btn swiper-lazy animated infinite select-btn">
+							<img data-src="./images/female_line1.png" class="female-line1 swiper-lazy animated infinite female-line1_ani">
+							<img data-src="./images/female_line2.png" class="female-line2 swiper-lazy animated infinite female-line2_ani">
+							<img data-src="./images/female_line3.png" class="female-line3 swiper-lazy animated infinite female-line3_ani">
+							<img data-src="./images/select_start3.png" class="select_start1 swiper-lazy animated infinite start_scale_dot6">
+							<img data-src="./images/select_start3.png" class="select_start2 swiper-lazy animated infinite start_scale_dot4">
+							<img data-src="./images/select_start2.png" class="select_start3 swiper-lazy animated infinite start_scale_dot6">
+							<img data-src="./images/select_start3.png" class="select_start4 swiper-lazy animated infinite start_scale_dot7">
+						</div>
+					</div>
+				</div>
+				<!-- page3 福利 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="wel-text-warp">
+							<img data-src="./images/welfare_text.png" class="img-wel-text swiper-lazy" alt="">
+						</div>
+						<div class="wel-warp">
+							<img data-src="./images/welfare_bubble.png" class="img-wel-bubble swiper-lazy animated infinite direction bubble_roate" alt="">
+							<img data-src="./images/welfare_persons.png" class="img-wel-persons swiper-lazy">
+							<img data-src="./images/welfare_shake_hand.png" class="img-wel-hand swiper-lazy">
+							<img data-src="./images/welfare_start1.png" class="img-wel-start1 swiper-lazy animated direction infinite choujing-start" alt="">
+							<img data-src="./images/welfare_start2.png" class="img-wel-start2 swiper-lazy animated direction infinite cj-start-translate" alt="">
+							<img data-src="./images/welfare_money.png" class="img-wel-money swiper-lazy animated infinite money1" alt="">
+							<img data-src="./images/welfare_money2.png" class="img-wel-money2 swiper-lazy animated infinite money1" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- page4 福利描述 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="wel-desc-warp">
+							<div style="text-align: center; margin: 6% auto 0;">
+								<img data-src="./images/wel_desc_xc.png" class="wel_desc_xc swiper-lazy animated infinite fuli_rotate">
+							</div>
+							<div class="desc-cp-warp">
+								<img data-src="./images/wel_desc_cp.png" class="img-desc-cp swiper-lazy animated infinite desc-cp-ani">
+								<img data-src="./images/scraps1.png" class="wel-desc-scraps1 swiper-lazy animated infinite desc_scraps1_ani">
+								<img data-src="./images/scraps2.png" class="wel-desc-scraps2 swiper-lazy animated infinite desc_scraps2_ani">
+								<img data-src="./images/scraps3.png" class="wel-desc-scraps3 swiper-lazy animated infinite desc_scraps3_ani">
+								<img data-src="./images/scraps4.png" class="wel-desc-scraps4 swiper-lazy animated infinite desc_scraps4_ani">
+							</div>
+							<div style="position: relative; margin: 4% auto 0;width: 86%;">
+								<img data-src="./images/wel_desc_jp.png" class="wel_desc_jp swiper-lazy animated infinite desc_jp_ani" alt="">
+								<img data-src="./images/wel_desc_tj.png" class="wel_desc_tj swiper-lazy animated infinite desc_tj_ani" alt="">
+							</div>
+							<div style="position: relative; margin: 4% auto 0;width: 95%;">
+								<img data-src="./images/wel_desc_tjj.png" class="wel_desc_tjj swiper-lazy animated infinite desc_tjj_ani" alt="">
+								<img data-src="./images/wel_desc_sr.png" class="wel_desc_sr swiper-lazy animated infinite desc_sr_ani" alt="">
+							</div>
+							<div style="position: relative; margin: 4% auto 0; text-align:center">
+								<img data-src="./images/wel_desc_nh.png" class="wel_desc_nh swiper-lazy animated infinite desc_nh_ani">
+							</div>
+							<img data-src="./images/wel_desc_cake.png" class="wel-desc-cake swiper-lazy animated infinite desc_cake_ani">
+							<img data-src="./images/wel-desc-muscle.png" class="wel-desc-muscle swiper-lazy animated infinite desc_muscle_ani">
+						</div>
+						<div class="wel_gift_warp">
+							<img data-src="./images/wel-desc-gift.png" class="wel-desc-gift swiper-lazy">
+							<img data-src="./images/pop_ystart.png" class="pop_ystart swiper-lazy animated infinite pop_ystart_ani">
+							<img data-src="./images/pop_scraps3.png" class="pop_scraps3 swiper-lazy animated infinite pop_scraps3_ani">
+							<img data-src="./images/pop_scraps2.png" class="pop_scraps2 swiper-lazy animated infinite pop_scraps2_ani">
+							<img data-src="./images/pop_scraps1.png" class="pop_scraps1 swiper-lazy animated infinite pop_scraps1_ani">
+							<img data-src="./images/pop_line1.png" class="pop_line1 swiper-lazy animated infinite pop_line1_ani">
+							<img data-src="./images/pop_line2.png" class="pop_line2 swiper-lazy animated infinite pop_line2_ani">
+							<img data-src="./images/pop_line3.png" class="pop_line3 swiper-lazy animated infinite pop_line3_ani">
+							<img data-src="./images/pop_circle.png" class="pop_circle swiper-lazy animated infinite pop_circle_ani">
+							<img data-src="./images/pop_bscraps.png" class="pop_bscraps swiper-lazy animated infinite pop_bscraps_ani">
+							<img data-src="./images/pop_rstart.png" class="pop_rstart swiper-lazy animated infinite pop_rstart_ani">
+							<img data-src="./images/wel_desc_text.png" class="wel-desc-text swiper-lazy">
+							<img data-src="./images/gift_start.png" class="wel-desc-start swiper-lazy animated infinite desc_start_ani">
+							<img data-src="./images/gift_start2.png" class="wel-desc-start2 swiper-lazy animated infinite desc_start_ani">
+						</div>
+					</div>
+				</div>
+				<!-- 切换公司对应岗位模块 -->
+				<div class="swiper-slide over-wrap">
+					<!-- 公司集合模块 step1-->
+					<div class="custom-page page1">
+						<div class="page">
+							<img data-src="./images/company_text.png" class="company-text swiper-lazy" alt="">
+							<img data-src="./images/company_mid_text.png" class="company-mid-text swiper-lazy" alt="">
+							<div class="company-btn-group">
+								<img data-src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems swiper-lazy" data-index=0>
+								<img data-src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems swiper-lazy" data-index=1>
+								<img data-src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems swiper-lazy" data-index=2>
+							</div>
+						</div> 
 					</div> 
-				</div> 
-				<!-- 公司集合模块 -->
-				<!-- 公司对应的岗位列表模块 step2-->
-				<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
-				<div class="custom-page " id="Group-jobs">
-					<div class="page">
-						<img src="./images/group_invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<span class="arrow"></span>
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<span class="arrow"></span>
-									</li>
-								</ul>
+					<!-- 公司集合模块 -->
+					<!-- 公司对应的岗位列表模块 step2-->
+					<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
+					<div class="custom-page page2" id="Group-jobs">
+						<div class="page">
+							<img data-src="./images/group_invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
-							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
-						</div>
 					</div>
-				</div>
-				<!-- 电商岗位列表 -->
-				<div class="custom-page " id="EB-jobs">
-					<div class="page">
-						<img src="./images/e-commerce-invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-								</ul>
+					<!-- 电商岗位列表 -->
+					<div class="custom-page page2" id="EB-jobs">
+						<div class="page">
+							<img data-src="./images/e-commerce-invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=0>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size" data-index=0>
-							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
-						</div>
 					</div>
-				</div>
-				<!-- 金服岗位列表 -->
-				<div class="custom-page " id="Finance-jobs">
-					<div class="page">
-						<img src="./images/finance-invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<img src="./images/arrow.png" class="arrow" alt="">
-									</li>
-								</ul>
+					<!-- 金服岗位列表 -->
+					<div class="custom-page page2" id="Finance-jobs">
+						<div class="page">
+							<img data-src="./images/finance-invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=0>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
-							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size" data-index=0>
-						</div>
 					</div>
-				</div>
-				<!-- 公司对应的岗位列表模块 -->
-				<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
-				<div class="custom-page page3 ">
-					<div class="page">
-						<div class="swiper-container jobs-page" id="jobs-page">
-							<div class="swiper-wrapper jobs-wrapper">
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
-										<div class="card-content-warp">
-											<h2 class="job-name ellipsis">总裁办秘书</h2>
-											<ul class="job-desc">
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>好文笔、好身手、好头脑！</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>来吧，欢迎和我们聊聊！</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>请任性的说：放心把你们总裁交给我吧！</span>
-												</li>
-											</ul>
+					<!-- 公司对应的岗位列表模块 -->
+					<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
+					<div class="custom-page page3 translate-out-x">
+						<div class="page">
+							<div class="swiper-container jobs-page" id="jobs-page">
+								<div class="swiper-wrapper jobs-wrapper">
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+											<div class="card-content-warp">
+												<h2 class="job-name ellipsis">总裁办秘书</h2>
+												<ul class="job-desc">
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>好文笔、好身手、好头脑！</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>来吧，欢迎和我们聊聊！</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>请任性的说：放心把你们总裁交给我吧！</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+										</div>
+									</div>
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
 										</div>
 									</div>
 								</div>
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
+								<div class="swiper-pagination"></div>
+							</div>
+							<div class="mail-warp">
+								<img data-src="./images/mail.png" class="mail swiper-lazy animated infinite mail_ani">
+								<span class="contact-method">
+									简历投至:&nbsp;&nbsp;zhaopin@mail.xusenintl.com
+								</span>
+							</div>
+						</div>
+					</div>
+					<!-- 岗位详情模块 -->
+				</div>
+				<!-- 关于我们 -->
+				<div class="swiper-slide">
+					<div id="company-logo-group">
+						<div class="page hide">
+							<img data-src="./images/group_logo.png" class="group-logo swiper-lazy" alt="">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy" alt="">
+								<div class="introduct-content">
+									<h2 class="introduct-cn">商赢控股集团有限公司</h2>
+									<p>
+										( 以下简称“ 商赢集团 ”) 成立于2014年9月，总部位于上海。
+										集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，
+										构建了全球布局、多地联动的A股上市公司商赢环球（股票代码: 600146）、
+										“让投融资更简单更全面更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，
+										形成全球化布局、多平台共进的发展模式。
+									</p>
+								</div>
+							</div>
+							<div class="ill-pic_warp group-ill-warp">
+								<img data-src="./images/group_ill-pic.png" class="group_ill-pic swiper-lazy">
+								<img data-src="./images/introduct-clound1.png" class="introduct-clound1 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
+						</div>
+						<div class="page hide">
+							<img data-src="./images/e-commerce-logo.png" class="e-commerce-logo swiper-lazy">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy">
+								<div class="introduct-content">
+									<div class="e-commerce-title">
+										供应链服务+社区化电商+线下体验中心
 									</div>
-								</div>
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
-									</div>
+									<h2 class="introduct-cn">商赢电子商务有限公司</h2>
+									<p>
+										(以下简称“商赢电商”)是商赢控股集团旗下的控股子公司。
+										公司围绕“小前台，大中台，重后台”的企业运营思想，强化后台建设，
+										斥资开发商赢智能信息系统，并自营建造及运营100-300亩集智能仓储，
+										打造集商业展示，智能办公为一体“智能化，自动化，集约化，
+										一站式”的母婴生态服务园区-智汇乐源。
+									</p>
 								</div>
 							</div>
-							<div class="swiper-pagination"></div>
+							<div class="ill-pic_warp e-commerce-ill-warp">
+								<img data-src="./images/e-commerce_ill-pic.png" class="e-commerce_ill-pic swiper-lazy">
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
 						</div>
-						<div class="mail-warp">
-							<img src="./images/mail.png" class="mail" alt="">
-							<span class="contact-method">
-								简历投至:&nbsp;&nbsp;zhaopin@mail.xusenintl.com
-							</span>
+						<div class="page hide">
+							<img data-src="./images/finance-logo.png" class="finance-logo swiper-lazy" alt="">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy" alt="">
+								<div class="introduct-content finance-content">
+									<p>
+										<b>商赢金控</b>是商赢集团重点打造的金融产业全新生态集群，
+										旗下有商赢金服（www.sy8.com）、商赢融资租赁、商赢典当、商赢财富、商赢资产五大支柱板块。<br />
+										<span>未来，商赢金控将不断通过在网络小额贷款、金融资产交易、银行、第三方支付、证券、保险、基金等众多专业性金融服务领域深耕发展，
+										为客户提供专业的“全牌照+互联网”模式的综合性金融服务。
+										商赢金控，致力为您打造一个全新的金融生态圈。</span>
+									</p>
+								</div>
+							</div>
+							<div class="ill-pic_warp finance-ill-warp">
+								<img data-src="./images/finance_ill-pic.png" class="finance_ill-pic swiper-lazy">						
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
 						</div>
 					</div>
 				</div>
-				<!-- 岗位详情模块 -->
-			</div>
-			<!-- 关于我们 -->
-			<div class="swiper-slide">
-				<div id="company-logo-group">
-					<div class="page hide">
-						<img src="./images/group_logo.png" class="group-logo" alt="">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
-							<div class="introduct-content">
-								<h2 class="introduct-cn">商赢控股集团有限公司</h2>
-								<p>
-									( 以下简称“ 商赢集团 ”) 成立于2014年9月，总部位于上海。
-									集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，
-									构建了全球布局、多地联动的A股上市公司商赢环球（股票代码: 600146）、
-									“让投融资更简单更全面更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，
-									形成全球化布局、多平台共进的发展模式。
-								</p>
-							</div>
-						</div>
-						<div class="ill-pic_warp group-ill-warp">
-							<img src="./images/group_ill-pic.png" class="group_ill-pic">
-							<img src="./images/introduct-clound1.png" class="introduct-clound1" >
-							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
-						</div>
-					</div>
-					<div class="page hide">
-						<img src="./images/e-commerce-logo.png" class="e-commerce-logo">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo">
-							<div class="introduct-content">
-								<div class="e-commerce-title">
-									供应链服务+社区化电商+线下体验中心
+				<!-- 关于我们 -->
+				<!-- 切换公司对应岗位模块 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<img data-src="./images/end_text.png" class="end_text swiper-lazy" >
+						<div class="gaoji-warp">
+							<img data-src="./images/join_us.png" class="join_us swiper-lazy animated infinite joinus_ani">
+							<img data-src="./images/favour.png" class="favour swiper-lazy animated infinite favour_ani">
+							<img data-src="./images/boy2_line.png" class="boy2_line swiper-lazy animated infinite boy2line_ani">
+							<img data-src="./images/boy1_line.png" class="boy1_line swiper-lazy animated infinite boy1line_ani">
+							<img data-src="./images/meimao1.png" class="meimao1 swiper-lazy animated infinite meimao-ani">
+							<img data-src="./images/meimao2.png" class="meimao2 swiper-lazy animated infinite meimao-ani2">
+							<img data-src="./images/start1.png" class="gaoji-start1 swiper-lazy animated infinite gjstart_ani">
+							<img data-src="./images/start1.png" class="gaoji-start2 swiper-lazy animated infinite gjstart_ani">
+							<img data-src="./images/boy1.png" class="boy1 swiper-lazy">
+							<img data-src="./images/boy2.png" class="boy2 swiper-lazy">
+							<img data-src="./images/boy1_hand.png" class="boy1_hand swiper-lazy">
+							<img data-src="./images/boy2_hand.png" class="boy2_hand swiper-lazy">
+							<div class="gaoji-paper">
+								<img data-src="./images/end_bg.png" class="end_bg swiper-lazy" >
+								<img data-src="./images/QRCode.jpeg" class="qr_code swiper-lazy" >
+								<div class="skhe">
+									<img data-src="./images/mark_close.png" class="mark_close m_rotate1 swiper-lazy animated infinite close-rotate2">
+									<img data-src="./images/QR_code_text.png" class="QR_code_text swiper-lazy">
+									<img data-src="./images/mark_close.png" class="mark_close m_rotate2 swiper-lazy animated infinite close-rotate1">
 								</div>
-								<h2 class="introduct-cn">商赢电子商务有限公司</h2>
-								<p>
-									(以下简称“商赢电商”)是商赢控股集团旗下的控股子公司。
-									公司围绕“小前台，大中台，重后台”的企业运营思想，强化后台建设，
-									斥资开发商赢智能信息系统，并自营建造及运营100-300亩集智能仓储，
-									打造集商业展示，智能办公为一体“智能化，自动化，集约化，
-									一站式”的母婴生态服务园区-智汇乐源。
-								</p>
 							</div>
 						</div>
-						<div class="ill-pic_warp e-commerce-ill-warp">
-							<img src="./images/e-commerce_ill-pic.png" class="e-commerce_ill-pic">
-							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
-						</div>
-					</div>
-					<div class="page hide">
-						<img src="./images/finance-logo.png" class="finance-logo" alt="">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
-							<div class="introduct-content finance-content">
-								<p>
-									<b>商赢金控</b>是商赢集团重点打造的金融产业全新生态集群，
-									旗下有商赢金服（www.sy8.com）、商赢融资租赁、商赢典当、商赢财富、商赢资产五大支柱板块。<br />
-									<span>未来，商赢金控将不断通过在网络小额贷款、金融资产交易、银行、第三方支付、证券、保险、基金等众多专业性金融服务领域深耕发展，
-									为客户提供专业的“全牌照+互联网”模式的综合性金融服务。
-									商赢金控，致力为您打造一个全新的金融生态圈。</span>
-								</p>
+						<div class="bottom-warp">
+							<div class="address">
+								咨询电话:021-50688888 转 3088／8610 <br />
+								公司地址:徐汇区中山西路1600号宏汇国际广场A栋11楼
+							</div>
+							<div class="sb-group-btn">
+								<img data-src="./images/back_home.png" id="backFirstPage" class="sb-btn fl swiper-lazy animated infinite select-btn">
+								<img data-src="./images/share.png" class="sb-btn swiper-lazy animated infinite select-btn fr">
 							</div>
 						</div>
-						<div class="ill-pic_warp finance-ill-warp">
-							<img src="./images/finance_ill-pic.png" class="finance_ill-pic">						
-							<img src="./images/introduct-clound2.png" class="introduct-clound2" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3" >
-						</div>
 					</div>
+					<!-- <button id="backFirstPage">返回首页</button> -->
 				</div>
-			</div>
-			<!-- 关于我们 -->
-			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<img src="./images/end_text.png" class="end_text" >
-					<div class="gaoji-warp">
-						<img src="./images/join_us.png" class="join_us">
-						<img src="./images/favour.png" class="favour">
-						<img src="./images/boy2_line.png" class="boy2_line">
-						<img src="./images/meimao1.png" class="meimao1">
-						<img src="./images/meimao2.png" class="meimao2">
-						<img src="./images/start1.png" class="gaoji-start1">
-						<img src="./images/start1.png" class="gaoji-start2">
-						<img src="./images/boy1.png" class="boy1">
-						<img src="./images/boy2.png" class="boy2">
-						<img src="./images/boy1_hand.png" class="boy1_hand">
-						<img src="./images/boy2_hand.png" class="boy2_hand">
-						<div class="gaoji-paper">
-							<img src="./images/end_bg.png" class="end_bg" >
-							<img src="./images/QRCode.jpeg" class="qr_code" >
-							<div class="skhe">
-								<img src="./images/mark_close.png" class="mark_close">
-								<img src="./images/QR_code_text.png" class="QR_code_text">
-								<img src="./images/mark_close.png" class="mark_close">
-							</div>
-						</div>
-					</div>
-					<div class="bottom-warp">
-						<div class="address">
-							咨询电话:021-50688888 转 3088／8610 <br />
-							公司地址:徐汇区中山西路1600号宏汇国际广场A栋11楼
-						</div>
-						<div class="sb-group-btn">
-							<img src="./images/back_home.png" id="backFirstPage" class="sb-btn fl">
-							<img src="./images/share.png" class="sb-btn fr">
-						</div>
-					</div>
-				</div>
-				<!-- <button id="backFirstPage">返回首页</button> -->
 			</div>
 		</div>
 	</div>
@@ -1505,12 +4203,69 @@
 	</div>
 	<!-- 分享提示层 -->
 	<div class="share-layer hide" id="share-layer"></div>
-	<img src="./images/pull_up.png" class="pull-up hide" />
+	<img src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani hide" />
 	<!-- 音乐ICON -->
-	<img src="./images/music.png" id="music" class="music hide" >
+	<img src="./images/music.png" id="music" class="music animated infinite music-rotate hide" >
 	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
 	<script src="./js/h5.js"></script>
+	<script>
+		(function(){
+			var count = 0;
+			var rate = 0;
+			var progress = $("#progress");
+			var loadPage = $(".loading-page");
+			var mainPage = $("#main-page");
+			var svg = './images/progress.svg';
+			var load_thing = ['./images/logo.png', './images/loading.png', './images/bg.png', './images/focus.png', './images/ex_paper.png', './images/person.png', './images/left_hand.png',
+							'./images/right_hand.png', './images/inner_center_clound.png', './images/out_left_clound.png', './images/out_right_clound.png', './images/one_outhand.png', './images/two_outhand.png',
+							'./images/three_outhand.png', './images/four_outhand.png', './images/cengceng.png', './images/b_scraps.png', './images/r_ribbon.png', './images/r_scraps.png', './images/start1.png',
+							'./images/start2.png', './images/start3.png', './images/y_ribbon.png', './images/y_start.png', './images/select1.png', './images/select_invite.png', './images/man_line1.png', './images/man_line2.png',
+						'./images/man_line3.png', './images/man_line4.png', './images/select_start1.png', './images/select_start2.png', './images/select_start3.png', './images/select2.png', './images/select_gps.png', './images/female_line1.png',
+					'./images/female_line2.png', './images/female_line3.png'];
+			
+			var loadsvg = new Image();
+			loadsvg.src = svg;
+			loadsvg.onload = function() {
+				//alert("svg loaded!")
+				loadImages(load_thing);
+			}
+			loadsvg.onerror = function() {
+				//alert("svg loaded error!")
+				loadImages(load_thing);
+			}
+			function loadImages(images) {
+				for(var i=0; i<images.length; i++) {
+					(function(i){
+						var img = new Image();
+						img.src = images[i];
+						img.onload = function() {
+							count++;
+							rate = (count/images.length)*100;
+							progress.attr('width', rate + "%");
+							if(rate >= 100) {
+								loadPage.addClass('animated fadeOut');
+								setTimeout(function() {
+									loadPage.remove();
+								}, 3000);
+							}
+						}
+						img.onerror = function() {
+							count++;
+							rate = (count/images.length)*100;
+							progress.attr('width', rate + "%");
+							if(rate >= 100) {
+								loadPage.addClass('animated fadeOut');
+								setTimeout(function() {
+									loadPage.remove();
+								}, 3000);
+							}
+						}
+					})(i);
+				}
+			}
+		})();
+	</script>
 </body>
 </html>
