@@ -29,7 +29,11 @@
 		newSwiper: function() {
 			this.swiper = new Swiper(this.domName, {
 				direction: this.direction,
-				onSlideChangeStart: this.onSlideChangeStart
+				onSlideChangeStart: this.onSlideChangeStart,
+				lazyLoading: true,
+				lazyLoadingInPrevNext : true,
+				lazyLoadingOnTransitionStart : true,
+				lazyLoadingInPrevNextAmount : 2
 			});
 			return this;
 		},
@@ -170,6 +174,9 @@
 			}
 		});
 
+		/**
+		 *  重置状态
+		 */
 		function resetState() {
 			$(".page1").removeClass('animated fadeOut').attr('style', " ");
 			$(".page2").attr('style', " ").eq(parseInt(jobsAttr.currentIndex)).removeClass('animated fadeOutLeft');

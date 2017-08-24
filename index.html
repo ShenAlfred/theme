@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
-		@font-face {
-			font-family: mjl;
-			src: url('./font/blxqx.ttf');
-		}
-		body {
-			font-family: mjl;
-		}
 		img {
 			vertical-align: middle;
 		}
@@ -3746,9 +3739,30 @@
 		.page3 {
 			z-index: 1;
 		}
-	</style>
+		.progress-kuang {
+			width: 100%;
+			height: 100%;
+			background: url('./images/progress.svg');
+			background-size: 100% 100%;
+		}
+		#main-page {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+</style>
 </head>
 <body>
+	<!-- <style>
+		@font-face {
+			font-family: mjl;
+			src: url('./font/blxqx.ttf');
+		}
+		body {
+			font-family: mjl;
+		}
+	</style> -->
 	<!-- loading -->
 	<div class="page loading-page">
 		<div class="loading">
@@ -3760,8 +3774,8 @@
 				<svg width="100%" height="14">
 					<defs>
 						<g id="progress-line">
-							<rect x="0" y="0" width="100%" height="14" fill="#fff" />
-							<rect x="0" y="0" width="50%" height="14" fill="#f00" id="progress"/>
+							<rect x="0" y="0" width="100%" height="14" fill="#fff" id="progress1"/>
+							<rect x="0" y="0" width="0%" height="14" fill="#f00" id="progress"/>
 						</g>
 						<mask id="mask1" x="0" y="0" width="100%" height="14">
 							<image xlink:href="./images/progress.svg" width="100%" height="14"></image>
@@ -3773,410 +3787,411 @@
 		</div>
 		<img src="./images/logo.png" class="img-logo" />
 	</div>
-	<!-- loading -->
-    <div class="swiper-container" id="main-page">
-		<div class="swiper-wrapper">
-			<!-- page1-->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="ex-paper-warp">
-						<img src="./images/focus.png" class="img-focus animated infinite focusFadeIn" />
-						<img src="./images/ex_paper.png" class="img-ex-paper" />
-					</div>
-					<div class="hehe-warp">
-						<img src="./images/person.png" class="img-person" />
-						<img src="./images/left_hand.png" class="img-left-hand animated direction infinite hhs-left" />
-						<img src="./images/right_hand.png" class="img-right-hand animated direction infinite hhs-right" />
-					</div>
-					<div class="clound-warp">
-						<img src="./images/inner_center_clound.png" class="img-icc" />
-						<img src="./images/out_left_clound.png" class="img-olc" />
-						<img src="./images/out_right_clound.png" class="img-orc" />
-						<img src="./images/one_outhand.png" class="img-ooh animated infinite one-hand" />
-						<img src="./images/two_outhand.png" class="img-toh animated infinite two-hand" />
-						<img src="./images/three_outhand.png" class="img-thoh animated infinite three-hand" />
-						<img src="./images/four_outhand.png" class="img-foh animated infinite four-hand" />
-					</div>
-					<div class="emb-warp">
-						<img src="./images/cengceng.png" class="img-cengceng animated direction infinite cengceng">
-						<img src="./images/b_scraps.png" class="img-b-scraps animated direction infinite bScraps">
-						<img src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove">
-						<img src="./images/r_scraps.png" class="img-r-scraps animated direction infinite r-scraps">
-						<img src="./images/start1.png" class="img-start1 animated direction infinite lb_scale">
-						<img src="./images/start2.png" class="img-start2 animated direction infinite o2s">
-						<img src="./images/start3.png" class="img-start3 animated infinite o2s_2">
-						<img src="./images/y_ribbon.png" class="img-y-ribbon animated infinite yellow-ribbon">
-						<img src="./images/y_start.png" class="img-y-start animated direction infinite scale-amp">
-					</div>
-				</div>
-				<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
-			</div>
-			<!--page2 選擇 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="man-select" id="community-invite" >
-						<img src="./images/select1.png" class="img-select"/>
-						<img src="./images/select_invite.png" class="img-btn animated infinite select-btn">
-						<img src="./images/man_line1.png"  class="man-line1 animated infinite man-line1_ani" >
-						<img src="./images/man_line2.png"  class="man-line2 animated infinite man-line2_ani" >
-						<img src="./images/man_line3.png"  class="man-line3 animated infinite man-line3_ani" >
-						<img src="./images/man_line4.png"  class="man-line4 animated infinite man-line4_ani" >
-						<img src="./images/select_start1.png" class="select_start1 animated infinite start_scale1">
-						<img src="./images/select_start2.png" class="select_start2 animated infinite start_scale1">
-						<img src="./images/select_start3.png" class="select_start3 animated infinite start_scale1">
-					</div>
-					<div class="female-select">
-						<img src="./images/select2.png" class="img-select"/>
-						<img src="./images/select_gps.png"  class="img-btn animated infinite select-btn">
-						<img src="./images/female_line1.png" class="female-line1 animated infinite female-line1_ani">
-						<img src="./images/female_line2.png" class="female-line2 animated infinite female-line2_ani">
-						<img src="./images/female_line3.png" class="female-line3 animated infinite female-line3_ani">
-						<img src="./images/select_start3.png" class="select_start1 animated infinite start_scale_dot6">
-						<img src="./images/select_start3.png" class="select_start2 animated infinite start_scale_dot4">
-						<img src="./images/select_start2.png" class="select_start3 animated infinite start_scale_dot6">
-						<img src="./images/select_start3.png" class="select_start4 animated infinite start_scale_dot7">
-					</div>
-				</div>
-			</div>
-			<!-- page3 福利 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="wel-text-warp">
-						<img src="./images/welfare_text.png" class="img-wel-text" alt="">
-					</div>
-					<div class="wel-warp">
-						<img src="./images/welfare_bubble.png" class="img-wel-bubble animated infinite direction bubble_roate" alt="">
-						<img src="./images/welfare_persons.png" class="img-wel-persons" alt="">
-						<img src="./images/welfare_shake_hand.png" class="img-wel-hand" alt="">
-						<img src="./images/welfare_start1.png" class="img-wel-start1 animated direction infinite choujing-start" alt="">
-						<img src="./images/welfare_start2.png" class="img-wel-start2 animated direction infinite cj-start-translate" alt="">
-						<img src="./images/welfare_money.png" class="img-wel-money animated infinite money1" alt="">
-						<img src="./images/welfare_money2.png" class="img-wel-money2 animated infinite money1" alt="">
-					</div>
-				</div>
-			</div>
-			<!-- page4 福利描述 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<div class="wel-desc-warp">
-						<div style="text-align: center; margin: 6% auto 0;">
-							<img src="./images/wel_desc_xc.png" class="wel_desc_xc animated infinite fuli_rotate">
-						</div>
-						<div class="desc-cp-warp">
-							<img src="./images/wel_desc_cp.png" class="img-desc-cp animated infinite desc-cp-ani">
-							<img src="./images/scraps1.png" class="wel-desc-scraps1 animated infinite desc_scraps1_ani">
-							<img src="./images/scraps2.png" class="wel-desc-scraps2 animated infinite desc_scraps2_ani">
-							<img src="./images/scraps3.png" class="wel-desc-scraps3 animated infinite desc_scraps3_ani">
-							<img src="./images/scraps4.png" class="wel-desc-scraps4 animated infinite desc_scraps4_ani">
-						</div>
-						<div style="position: relative; margin: 4% auto 0;width: 86%;">
-							<img src="./images/wel_desc_jp.png" class="wel_desc_jp animated infinite desc_jp_ani" alt="">
-							<img src="./images/wel_desc_tj.png" class="wel_desc_tj animated infinite desc_tj_ani" alt="">
-						</div>
-						<div style="position: relative; margin: 4% auto 0;width: 95%;">
-							<img src="./images/wel_desc_tjj.png" class="wel_desc_tjj animated infinite desc_tjj_ani" alt="">
-							<img src="./images/wel_desc_sr.png" class="wel_desc_sr animated infinite desc_sr_ani" alt="">
-						</div>
-						<div style="position: relative; margin: 4% auto 0; text-align:center">
-							<img src="./images/wel_desc_nh.png" class="wel_desc_nh animated infinite desc_nh_ani">
-						</div>
-						<img src="./images/wel_desc_cake.png" class="wel-desc-cake animated infinite desc_cake_ani">
-						<img src="./images/wel-desc-muscle.png" class="wel-desc-muscle animated infinite desc_muscle_ani">
-					</div>
-					<div class="wel_gift_warp">
-						<img src="./images/wel-desc-gift.png" class="wel-desc-gift">
-						<img src="./images/pop_ystart.png" class="pop_ystart animated infinite pop_ystart_ani">
-						<img src="./images/pop_scraps3.png" class="pop_scraps3 animated infinite pop_scraps3_ani">
-						<img src="./images/pop_scraps2.png" class="pop_scraps2 animated infinite pop_scraps2_ani">
-						<img src="./images/pop_scraps1.png" class="pop_scraps1 animated infinite pop_scraps1_ani">
-						<img src="./images/pop_line1.png" class="pop_line1 animated infinite pop_line1_ani">
-						<img src="./images/pop_line2.png" class="pop_line2 animated infinite pop_line2_ani">
-						<img src="./images/pop_line3.png" class="pop_line3 animated infinite pop_line3_ani">
-						<img src="./images/pop_circle.png" class="pop_circle animated infinite pop_circle_ani">
-						<img src="./images/pop_bscraps.png" class="pop_bscraps animated infinite pop_bscraps_ani">
-						<img src="./images/pop_rstart.png" class="pop_rstart animated infinite pop_rstart_ani">
-						<img src="./images/wel_desc_text.png" class="wel-desc-text">
-						<img src="./images/gift_start.png" class="wel-desc-start animated infinite desc_start_ani">
-						<img src="./images/gift_start2.png" class="wel-desc-start2 animated infinite desc_start_ani">
-					</div>
-				</div>
-			</div>
-			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide over-wrap">
-				<!-- 公司集合模块 step1-->
-				<div class="custom-page page1">
+	<div id="main-page animated">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- page1-->
+				<div class="swiper-slide">
 					<div class="page">
-						<img src="./images/company_text.png" class="company-text" alt="">
-						<img src="./images/company_mid_text.png" class="company-mid-text" alt="">
-						<div class="company-btn-group">
-							<img src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems" data-index=0>
-							<img src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems" data-index=1>
-							<img src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems" data-index=2>
+						<div class="ex-paper-warp">
+							<img data-src="./images/focus.png" class="img-focus swiper-lazy animated infinite focusFadeIn" />
+							<img data-src="./images/ex_paper.png" class="img-ex-paper swiper-lazy" />
 						</div>
+						<div class="hehe-warp">
+							<img data-src="./images/person.png" class="img-person swiper-lazy" />
+							<img data-src="./images/left_hand.png" class="img-left-hand swiper-lazy animated direction infinite hhs-left" />
+							<img data-src="./images/right_hand.png" class="img-right-hand swiper-lazy animated direction infinite hhs-right" />
+						</div>
+						<div class="clound-warp">
+							<img data-src="./images/inner_center_clound.png" class="img-icc swiper-lazy" />
+							<img data-src="./images/out_left_clound.png" class="img-olc swiper-lazy" />
+							<img data-src="./images/out_right_clound.png" class="img-orc swiper-lazy" />
+							<img data-src="./images/one_outhand.png" class="img-ooh swiper-lazy animated infinite one-hand" />
+							<img data-src="./images/two_outhand.png" class="img-toh swiper-lazy animated infinite two-hand" />
+							<img data-src="./images/three_outhand.png" class="img-thoh swiper-lazy animated infinite three-hand" />
+							<img data-src="./images/four_outhand.png" class="img-foh swiper-lazy animated infinite four-hand" />
+						</div>
+						<div class="emb-warp">
+							<img data-src="./images/cengceng.png" class="img-cengceng swiper-lazy animated direction infinite cengceng">
+							<img data-src="./images/b_scraps.png" class="img-b-scraps swiper-lazy animated direction infinite bScraps">
+							<img data-src="./images/r_ribbon.png" class="img-r-ribbon swiper-lazy animated direction infinite rRibbonMove">
+							<img data-src="./images/r_scraps.png" class="img-r-scraps swiper-lazy animated direction infinite r-scraps">
+							<img data-src="./images/start1.png" class="img-start1 swiper-lazy animated direction infinite lb_scale">
+							<img data-src="./images/start2.png" class="img-start2 swiper-lazy animated direction infinite o2s">
+							<img data-src="./images/start3.png" class="img-start3 swiper-lazy animated infinite o2s_2">
+							<img data-src="./images/y_ribbon.png" class="img-y-ribbon swiper-lazy animated infinite yellow-ribbon">
+							<img data-src="./images/y_start.png" class="img-y-start swiper-lazy animated direction infinite scale-amp">
+						</div>
+					</div>
+					<!-- <audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> -->
+				</div>
+				<!--page2 選擇 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="man-select" id="community-invite" >
+							<img data-src="./images/select1.png" class="img-select swiper-lazy"/>
+							<img data-src="./images/select_invite.png" class="img-btn swiper-lazy animated infinite select-btn">
+							<img data-src="./images/man_line1.png"  class="man-line1 swiper-lazy animated infinite man-line1_ani" >
+							<img data-src="./images/man_line2.png"  class="man-line2 swiper-lazy animated infinite man-line2_ani" >
+							<img data-src="./images/man_line3.png"  class="man-line3 swiper-lazy animated infinite man-line3_ani" >
+							<img data-src="./images/man_line4.png"  class="man-line4 swiper-lazy animated infinite man-line4_ani" >
+							<img data-src="./images/select_start1.png" class="select_start1 swiper-lazy animated infinite start_scale1">
+							<img data-src="./images/select_start2.png" class="select_start2 swiper-lazy animated infinite start_scale1">
+							<img data-src="./images/select_start3.png" class="select_start3 swiper-lazy animated infinite start_scale1">
+						</div>
+						<div class="female-select">
+							<img data-src="./images/select2.png" class="img-select swiper-lazy"/>
+							<img data-src="./images/select_gps.png"  class="img-btn swiper-lazy animated infinite select-btn">
+							<img data-src="./images/female_line1.png" class="female-line1 swiper-lazy animated infinite female-line1_ani">
+							<img data-src="./images/female_line2.png" class="female-line2 swiper-lazy animated infinite female-line2_ani">
+							<img data-src="./images/female_line3.png" class="female-line3 swiper-lazy animated infinite female-line3_ani">
+							<img data-src="./images/select_start3.png" class="select_start1 swiper-lazy animated infinite start_scale_dot6">
+							<img data-src="./images/select_start3.png" class="select_start2 swiper-lazy animated infinite start_scale_dot4">
+							<img data-src="./images/select_start2.png" class="select_start3 swiper-lazy animated infinite start_scale_dot6">
+							<img data-src="./images/select_start3.png" class="select_start4 swiper-lazy animated infinite start_scale_dot7">
+						</div>
+					</div>
+				</div>
+				<!-- page3 福利 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="wel-text-warp">
+							<img data-src="./images/welfare_text.png" class="img-wel-text swiper-lazy" alt="">
+						</div>
+						<div class="wel-warp">
+							<img data-src="./images/welfare_bubble.png" class="img-wel-bubble swiper-lazy animated infinite direction bubble_roate" alt="">
+							<img data-src="./images/welfare_persons.png" class="img-wel-persons swiper-lazy">
+							<img data-src="./images/welfare_shake_hand.png" class="img-wel-hand swiper-lazy">
+							<img data-src="./images/welfare_start1.png" class="img-wel-start1 swiper-lazy animated direction infinite choujing-start" alt="">
+							<img data-src="./images/welfare_start2.png" class="img-wel-start2 swiper-lazy animated direction infinite cj-start-translate" alt="">
+							<img data-src="./images/welfare_money.png" class="img-wel-money swiper-lazy animated infinite money1" alt="">
+							<img data-src="./images/welfare_money2.png" class="img-wel-money2 swiper-lazy animated infinite money1" alt="">
+						</div>
+					</div>
+				</div>
+				<!-- page4 福利描述 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="wel-desc-warp">
+							<div style="text-align: center; margin: 6% auto 0;">
+								<img data-src="./images/wel_desc_xc.png" class="wel_desc_xc swiper-lazy animated infinite fuli_rotate">
+							</div>
+							<div class="desc-cp-warp">
+								<img data-src="./images/wel_desc_cp.png" class="img-desc-cp swiper-lazy animated infinite desc-cp-ani">
+								<img data-src="./images/scraps1.png" class="wel-desc-scraps1 swiper-lazy animated infinite desc_scraps1_ani">
+								<img data-src="./images/scraps2.png" class="wel-desc-scraps2 swiper-lazy animated infinite desc_scraps2_ani">
+								<img data-src="./images/scraps3.png" class="wel-desc-scraps3 swiper-lazy animated infinite desc_scraps3_ani">
+								<img data-src="./images/scraps4.png" class="wel-desc-scraps4 swiper-lazy animated infinite desc_scraps4_ani">
+							</div>
+							<div style="position: relative; margin: 4% auto 0;width: 86%;">
+								<img data-src="./images/wel_desc_jp.png" class="wel_desc_jp swiper-lazy animated infinite desc_jp_ani" alt="">
+								<img data-src="./images/wel_desc_tj.png" class="wel_desc_tj swiper-lazy animated infinite desc_tj_ani" alt="">
+							</div>
+							<div style="position: relative; margin: 4% auto 0;width: 95%;">
+								<img data-src="./images/wel_desc_tjj.png" class="wel_desc_tjj swiper-lazy animated infinite desc_tjj_ani" alt="">
+								<img data-src="./images/wel_desc_sr.png" class="wel_desc_sr swiper-lazy animated infinite desc_sr_ani" alt="">
+							</div>
+							<div style="position: relative; margin: 4% auto 0; text-align:center">
+								<img data-src="./images/wel_desc_nh.png" class="wel_desc_nh swiper-lazy animated infinite desc_nh_ani">
+							</div>
+							<img data-src="./images/wel_desc_cake.png" class="wel-desc-cake swiper-lazy animated infinite desc_cake_ani">
+							<img data-src="./images/wel-desc-muscle.png" class="wel-desc-muscle swiper-lazy animated infinite desc_muscle_ani">
+						</div>
+						<div class="wel_gift_warp">
+							<img data-src="./images/wel-desc-gift.png" class="wel-desc-gift swiper-lazy">
+							<img data-src="./images/pop_ystart.png" class="pop_ystart swiper-lazy animated infinite pop_ystart_ani">
+							<img data-src="./images/pop_scraps3.png" class="pop_scraps3 swiper-lazy animated infinite pop_scraps3_ani">
+							<img data-src="./images/pop_scraps2.png" class="pop_scraps2 swiper-lazy animated infinite pop_scraps2_ani">
+							<img data-src="./images/pop_scraps1.png" class="pop_scraps1 swiper-lazy animated infinite pop_scraps1_ani">
+							<img data-src="./images/pop_line1.png" class="pop_line1 swiper-lazy animated infinite pop_line1_ani">
+							<img data-src="./images/pop_line2.png" class="pop_line2 swiper-lazy animated infinite pop_line2_ani">
+							<img data-src="./images/pop_line3.png" class="pop_line3 swiper-lazy animated infinite pop_line3_ani">
+							<img data-src="./images/pop_circle.png" class="pop_circle swiper-lazy animated infinite pop_circle_ani">
+							<img data-src="./images/pop_bscraps.png" class="pop_bscraps swiper-lazy animated infinite pop_bscraps_ani">
+							<img data-src="./images/pop_rstart.png" class="pop_rstart swiper-lazy animated infinite pop_rstart_ani">
+							<img data-src="./images/wel_desc_text.png" class="wel-desc-text swiper-lazy">
+							<img data-src="./images/gift_start.png" class="wel-desc-start swiper-lazy animated infinite desc_start_ani">
+							<img data-src="./images/gift_start2.png" class="wel-desc-start2 swiper-lazy animated infinite desc_start_ani">
+						</div>
+					</div>
+				</div>
+				<!-- 切换公司对应岗位模块 -->
+				<div class="swiper-slide over-wrap">
+					<!-- 公司集合模块 step1-->
+					<div class="custom-page page1">
+						<div class="page">
+							<img data-src="./images/company_text.png" class="company-text swiper-lazy" alt="">
+							<img data-src="./images/company_mid_text.png" class="company-mid-text swiper-lazy" alt="">
+							<div class="company-btn-group">
+								<img data-src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems swiper-lazy" data-index=0>
+								<img data-src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems swiper-lazy" data-index=1>
+								<img data-src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems swiper-lazy" data-index=2>
+							</div>
+						</div> 
 					</div> 
-				</div> 
-				<!-- 公司集合模块 -->
-				<!-- 公司对应的岗位列表模块 step2-->
-				<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
-				<div class="custom-page page2" id="Group-jobs">
-					<div class="page">
-						<img src="./images/group_invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_shuline.png" class="shuline animated infinite shuline_animate">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani">
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani">
-									</li>
-								</ul>
+					<!-- 公司集合模块 -->
+					<!-- 公司对应的岗位列表模块 step2-->
+					<!-- 集团岗位列表 -->                                                                   <!-- 记得在岗位列表custom-page上加上.page2 --> 
+					<div class="custom-page page2" id="Group-jobs">
+						<div class="page">
+							<img data-src="./images/group_invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
-							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
-						</div>
 					</div>
-				</div>
-				<!-- 电商岗位列表 -->
-				<div class="custom-page page2" id="EB-jobs">
-					<div class="page">
-						<img src="./images/e-commerce-invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_shuline.png" class="shuline animated infinite shuline_animate">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-								</ul>
+					<!-- 电商岗位列表 -->
+					<div class="custom-page page2" id="EB-jobs">
+						<div class="page">
+							<img data-src="./images/e-commerce-invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=0>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size" data-index=0>
-							<img src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size" data-index=2>
-						</div>
 					</div>
-				</div>
-				<!-- 金服岗位列表 -->
-				<div class="custom-page page2" id="Finance-jobs">
-					<div class="page">
-						<img src="./images/finance-invite.png" class="invite-word" alt="">
-						<div class="paper-warp">
-							<img src="./images/invite_shuline.png" class="shuline animated infinite shuline_animate">
-							<img src="./images/invite_paper.png" class="invite_paper" alt="">
-							<div class="jobs-content-warp">
-								<ul class="jobs-list">
-									<li class="jobItem">
-										<span>总裁办秘书</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-									<li class="jobItem">
-										<span>投融资副总监</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-									<li class="jobItem">
-										<span>审计经理</span>
-										<img src="./images/arrow.png" class="arrow animated infinite arrow_ani" alt="">
-									</li>
-								</ul>
+					<!-- 金服岗位列表 -->
+					<div class="custom-page page2" id="Finance-jobs">
+						<div class="page">
+							<img data-src="./images/finance-invite.png" class="invite-word swiper-lazy" alt="">
+							<div class="paper-warp">
+								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
+								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
+								<div class="jobs-content-warp">
+									<ul class="jobs-list">
+										<li class="jobItem">
+											<span>总裁办秘书</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>投融资副总监</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+										<li class="jobItem">
+											<span>审计经理</span>
+											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btn-group">
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=0>
 							</div>
 						</div>
-						<div class="btn-group">
-							<img src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size" data-index=1>
-							<img src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size" data-index=0>
-						</div>
 					</div>
-				</div>
-				<!-- 公司对应的岗位列表模块 -->
-				<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
-				<div class="custom-page page3 translate-out-x">
-					<div class="page">
-						<div class="swiper-container jobs-page" id="jobs-page">
-							<div class="swiper-wrapper jobs-wrapper">
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
-										<div class="card-content-warp">
-											<h2 class="job-name ellipsis">总裁办秘书</h2>
-											<ul class="job-desc">
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>好文笔、好身手、好头脑！</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>来吧，欢迎和我们聊聊！</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
-												</li>
-												<li class="job-desc-item">
-													<img src="./images/mark.png" class="mark" >
-													<span>请任性的说：放心把你们总裁交给我吧！</span>
-												</li>
-											</ul>
+					<!-- 公司对应的岗位列表模块 -->
+					<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
+					<div class="custom-page page3 translate-out-x">
+						<div class="page">
+							<div class="swiper-container jobs-page" id="jobs-page">
+								<div class="swiper-wrapper jobs-wrapper">
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+											<div class="card-content-warp">
+												<h2 class="job-name ellipsis">总裁办秘书</h2>
+												<ul class="job-desc">
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>好文笔、好身手、好头脑！</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>来吧，欢迎和我们聊聊！</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
+													</li>
+													<li class="job-desc-item">
+														<img data-src="./images/mark.png" class="mark swiper-lazy" >
+														<span>请任性的说：放心把你们总裁交给我吧！</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+										</div>
+									</div>
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
 										</div>
 									</div>
 								</div>
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
+								<div class="swiper-pagination"></div>
+							</div>
+							<div class="mail-warp">
+								<img data-src="./images/mail.png" class="mail swiper-lazy animated infinite mail_ani">
+								<span class="contact-method">
+									简历投至:&nbsp;&nbsp;zhaopin@mail.xusenintl.com
+								</span>
+							</div>
+						</div>
+					</div>
+					<!-- 岗位详情模块 -->
+				</div>
+				<!-- 关于我们 -->
+				<div class="swiper-slide">
+					<div id="company-logo-group">
+						<div class="page hide">
+							<img data-src="./images/group_logo.png" class="group-logo swiper-lazy" alt="">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy" alt="">
+								<div class="introduct-content">
+									<h2 class="introduct-cn">商赢控股集团有限公司</h2>
+									<p>
+										( 以下简称“ 商赢集团 ”) 成立于2014年9月，总部位于上海。
+										集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，
+										构建了全球布局、多地联动的A股上市公司商赢环球（股票代码: 600146）、
+										“让投融资更简单更全面更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，
+										形成全球化布局、多平台共进的发展模式。
+									</p>
+								</div>
+							</div>
+							<div class="ill-pic_warp group-ill-warp">
+								<img data-src="./images/group_ill-pic.png" class="group_ill-pic swiper-lazy">
+								<img data-src="./images/introduct-clound1.png" class="introduct-clound1 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
+						</div>
+						<div class="page hide">
+							<img data-src="./images/e-commerce-logo.png" class="e-commerce-logo swiper-lazy">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy">
+								<div class="introduct-content">
+									<div class="e-commerce-title">
+										供应链服务+社区化电商+线下体验中心
 									</div>
-								</div>
-								<div class="swiper-slide card-slide">
-									<div class="card">
-										<img src="./images/job-desc-warp.png" class="job-desc-warp" alt="">
-									</div>
+									<h2 class="introduct-cn">商赢电子商务有限公司</h2>
+									<p>
+										(以下简称“商赢电商”)是商赢控股集团旗下的控股子公司。
+										公司围绕“小前台，大中台，重后台”的企业运营思想，强化后台建设，
+										斥资开发商赢智能信息系统，并自营建造及运营100-300亩集智能仓储，
+										打造集商业展示，智能办公为一体“智能化，自动化，集约化，
+										一站式”的母婴生态服务园区-智汇乐源。
+									</p>
 								</div>
 							</div>
-							<div class="swiper-pagination"></div>
+							<div class="ill-pic_warp e-commerce-ill-warp">
+								<img data-src="./images/e-commerce_ill-pic.png" class="e-commerce_ill-pic swiper-lazy">
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
 						</div>
-						<div class="mail-warp">
-							<img src="./images/mail.png" class="mail animated infinite mail_ani">
-							<span class="contact-method">
-								简历投至:&nbsp;&nbsp;zhaopin@mail.xusenintl.com
-							</span>
+						<div class="page hide">
+							<img data-src="./images/finance-logo.png" class="finance-logo swiper-lazy" alt="">
+							<div class="introduct-warp">
+								<img data-src="./images/introduct-logo.png" class="introduct-logo swiper-lazy" alt="">
+								<div class="introduct-content finance-content">
+									<p>
+										<b>商赢金控</b>是商赢集团重点打造的金融产业全新生态集群，
+										旗下有商赢金服（www.sy8.com）、商赢融资租赁、商赢典当、商赢财富、商赢资产五大支柱板块。<br />
+										<span>未来，商赢金控将不断通过在网络小额贷款、金融资产交易、银行、第三方支付、证券、保险、基金等众多专业性金融服务领域深耕发展，
+										为客户提供专业的“全牌照+互联网”模式的综合性金融服务。
+										商赢金控，致力为您打造一个全新的金融生态圈。</span>
+									</p>
+								</div>
+							</div>
+							<div class="ill-pic_warp finance-ill-warp">
+								<img data-src="./images/finance_ill-pic.png" class="finance_ill-pic swiper-lazy">						
+								<img data-src="./images/introduct-clound2.png" class="introduct-clound2 swiper-lazy animated infinite clound_ani" >
+								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
+							</div>
 						</div>
 					</div>
 				</div>
-				<!-- 岗位详情模块 -->
-			</div>
-			<!-- 关于我们 -->
-			<div class="swiper-slide">
-				<div id="company-logo-group">
-					<div class="page hide">
-						<img src="./images/group_logo.png" class="group-logo" alt="">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
-							<div class="introduct-content">
-								<h2 class="introduct-cn">商赢控股集团有限公司</h2>
-								<p>
-									( 以下简称“ 商赢集团 ”) 成立于2014年9月，总部位于上海。
-									集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，
-									构建了全球布局、多地联动的A股上市公司商赢环球（股票代码: 600146）、
-									“让投融资更简单更全面更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，
-									形成全球化布局、多平台共进的发展模式。
-								</p>
-							</div>
-						</div>
-						<div class="ill-pic_warp group-ill-warp">
-							<img src="./images/group_ill-pic.png" class="group_ill-pic">
-							<img src="./images/introduct-clound1.png" class="introduct-clound1 animated infinite clound_ani" >
-							<img src="./images/introduct-clound2.png" class="introduct-clound2 animated infinite clound_ani" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3 animated infinite clound_ani1" >
-						</div>
-					</div>
-					<div class="page hide">
-						<img src="./images/e-commerce-logo.png" class="e-commerce-logo">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo">
-							<div class="introduct-content">
-								<div class="e-commerce-title">
-									供应链服务+社区化电商+线下体验中心
+				<!-- 关于我们 -->
+				<!-- 切换公司对应岗位模块 -->
+				<div class="swiper-slide">
+					<div class="page">
+						<img data-src="./images/end_text.png" class="end_text swiper-lazy" >
+						<div class="gaoji-warp">
+							<img data-src="./images/join_us.png" class="join_us swiper-lazy animated infinite joinus_ani">
+							<img data-src="./images/favour.png" class="favour swiper-lazy animated infinite favour_ani">
+							<img data-src="./images/boy2_line.png" class="boy2_line swiper-lazy animated infinite boy2line_ani">
+							<img data-src="./images/boy1_line.png" class="boy1_line swiper-lazy animated infinite boy1line_ani">
+							<img data-src="./images/meimao1.png" class="meimao1 swiper-lazy animated infinite meimao-ani">
+							<img data-src="./images/meimao2.png" class="meimao2 swiper-lazy animated infinite meimao-ani2">
+							<img data-src="./images/start1.png" class="gaoji-start1 swiper-lazy animated infinite gjstart_ani">
+							<img data-src="./images/start1.png" class="gaoji-start2 swiper-lazy animated infinite gjstart_ani">
+							<img data-src="./images/boy1.png" class="boy1 swiper-lazy">
+							<img data-src="./images/boy2.png" class="boy2 swiper-lazy">
+							<img data-src="./images/boy1_hand.png" class="boy1_hand swiper-lazy">
+							<img data-src="./images/boy2_hand.png" class="boy2_hand swiper-lazy">
+							<div class="gaoji-paper">
+								<img data-src="./images/end_bg.png" class="end_bg swiper-lazy" >
+								<img data-src="./images/QRCode.jpeg" class="qr_code swiper-lazy" >
+								<div class="skhe">
+									<img data-src="./images/mark_close.png" class="mark_close m_rotate1 swiper-lazy animated infinite close-rotate2">
+									<img data-src="./images/QR_code_text.png" class="QR_code_text swiper-lazy">
+									<img data-src="./images/mark_close.png" class="mark_close m_rotate2 swiper-lazy animated infinite close-rotate1">
 								</div>
-								<h2 class="introduct-cn">商赢电子商务有限公司</h2>
-								<p>
-									(以下简称“商赢电商”)是商赢控股集团旗下的控股子公司。
-									公司围绕“小前台，大中台，重后台”的企业运营思想，强化后台建设，
-									斥资开发商赢智能信息系统，并自营建造及运营100-300亩集智能仓储，
-									打造集商业展示，智能办公为一体“智能化，自动化，集约化，
-									一站式”的母婴生态服务园区-智汇乐源。
-								</p>
 							</div>
 						</div>
-						<div class="ill-pic_warp e-commerce-ill-warp">
-							<img src="./images/e-commerce_ill-pic.png" class="e-commerce_ill-pic">
-							<img src="./images/introduct-clound2.png" class="introduct-clound2 animated infinite clound_ani" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3 animated infinite clound_ani1" >
-						</div>
-					</div>
-					<div class="page hide">
-						<img src="./images/finance-logo.png" class="finance-logo" alt="">
-						<div class="introduct-warp">
-							<img src="./images/introduct-logo.png" class="introduct-logo" alt="">
-							<div class="introduct-content finance-content">
-								<p>
-									<b>商赢金控</b>是商赢集团重点打造的金融产业全新生态集群，
-									旗下有商赢金服（www.sy8.com）、商赢融资租赁、商赢典当、商赢财富、商赢资产五大支柱板块。<br />
-									<span>未来，商赢金控将不断通过在网络小额贷款、金融资产交易、银行、第三方支付、证券、保险、基金等众多专业性金融服务领域深耕发展，
-									为客户提供专业的“全牌照+互联网”模式的综合性金融服务。
-									商赢金控，致力为您打造一个全新的金融生态圈。</span>
-								</p>
+						<div class="bottom-warp">
+							<div class="address">
+								咨询电话:021-50688888 转 3088／8610 <br />
+								公司地址:徐汇区中山西路1600号宏汇国际广场A栋11楼
+							</div>
+							<div class="sb-group-btn">
+								<img data-src="./images/back_home.png" id="backFirstPage" class="sb-btn fl swiper-lazy animated infinite select-btn">
+								<img data-src="./images/share.png" class="sb-btn swiper-lazy animated infinite select-btn fr">
 							</div>
 						</div>
-						<div class="ill-pic_warp finance-ill-warp">
-							<img src="./images/finance_ill-pic.png" class="finance_ill-pic">						
-							<img src="./images/introduct-clound2.png" class="introduct-clound2 animated infinite clound_ani" >
-							<img src="./images/introduct-clound3.png" class="introduct-clound3 animated infinite clound_ani1" >
-						</div>
 					</div>
+					<!-- <button id="backFirstPage">返回首页</button> -->
 				</div>
-			</div>
-			<!-- 关于我们 -->
-			<!-- 切换公司对应岗位模块 -->
-			<div class="swiper-slide">
-				<div class="page">
-					<img src="./images/end_text.png" class="end_text" >
-					<div class="gaoji-warp">
-						<img src="./images/join_us.png" class="join_us animated infinite joinus_ani">
-						<img src="./images/favour.png" class="favour animated infinite favour_ani">
-						<img src="./images/boy2_line.png" class="boy2_line animated infinite boy2line_ani">
-						<img src="./images/boy1_line.png" class="boy1_line animated infinite boy1line_ani">
-						<img src="./images/meimao1.png" class="meimao1 animated infinite meimao-ani">
-						<img src="./images/meimao2.png" class="meimao2 animated infinite meimao-ani2">
-						<img src="./images/start1.png" class="gaoji-start1 animated infinite gjstart_ani">
-						<img src="./images/start1.png" class="gaoji-start2 animated infinite gjstart_ani">
-						<img src="./images/boy1.png" class="boy1">
-						<img src="./images/boy2.png" class="boy2">
-						<img src="./images/boy1_hand.png" class="boy1_hand">
-						<img src="./images/boy2_hand.png" class="boy2_hand">
-						<div class="gaoji-paper">
-							<img src="./images/end_bg.png" class="end_bg" >
-							<img src="./images/QRCode.jpeg" class="qr_code" >
-							<div class="skhe">
-								<img src="./images/mark_close.png" class="mark_close m_rotate1 animated infinite close-rotate2">
-								<img src="./images/QR_code_text.png" class="QR_code_text">
-								<img src="./images/mark_close.png" class="mark_close m_rotate2 animated infinite close-rotate1">
-							</div>
-						</div>
-					</div>
-					<div class="bottom-warp">
-						<div class="address">
-							咨询电话:021-50688888 转 3088／8610 <br />
-							公司地址:徐汇区中山西路1600号宏汇国际广场A栋11楼
-						</div>
-						<div class="sb-group-btn">
-							<img src="./images/back_home.png" id="backFirstPage" class="sb-btn fl animated infinite select-btn">
-							<img src="./images/share.png" class="sb-btn animated infinite select-btn fr">
-						</div>
-					</div>
-				</div>
-				<!-- <button id="backFirstPage">返回首页</button> -->
 			</div>
 		</div>
 	</div>
@@ -4195,5 +4210,62 @@
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
 	<script src="./js/h5.js"></script>
+	<script>
+		(function(){
+			var count = 0;
+			var rate = 0;
+			var progress = $("#progress");
+			var loadPage = $(".loading-page");
+			var mainPage = $("#main-page");
+			var svg = './images/progress.svg';
+			var load_thing = ['./images/logo.png', './images/loading.png', './images/bg.png', './images/focus.png', './images/ex_paper.png', './images/person.png', './images/left_hand.png',
+							'./images/right_hand.png', './images/inner_center_clound.png', './images/out_left_clound.png', './images/out_right_clound.png', './images/one_outhand.png', './images/two_outhand.png',
+							'./images/three_outhand.png', './images/four_outhand.png', './images/cengceng.png', './images/b_scraps.png', './images/r_ribbon.png', './images/r_scraps.png', './images/start1.png',
+							'./images/start2.png', './images/start3.png', './images/y_ribbon.png', './images/y_start.png', './images/select1.png', './images/select_invite.png', './images/man_line1.png', './images/man_line2.png',
+						'./images/man_line3.png', './images/man_line4.png', './images/select_start1.png', './images/select_start2.png', './images/select_start3.png', './images/select2.png', './images/select_gps.png', './images/female_line1.png',
+					'./images/female_line2.png', './images/female_line3.png'];
+			
+			var loadsvg = new Image();
+			loadsvg.src = svg;
+			loadsvg.onload = function() {
+				//alert("svg loaded!")
+				loadImages(load_thing);
+			}
+			loadsvg.onerror = function() {
+				//alert("svg loaded error!")
+				loadImages(load_thing);
+			}
+			function loadImages(images) {
+				for(var i=0; i<images.length; i++) {
+					(function(i){
+						var img = new Image();
+						img.src = images[i];
+						img.onload = function() {
+							count++;
+							rate = (count/images.length)*100;
+							progress.attr('width', rate + "%");
+							if(rate >= 100) {
+								loadPage.addClass('animated fadeOut');
+								setTimeout(function() {
+									loadPage.remove();
+								}, 3000);
+							}
+						}
+						img.onerror = function() {
+							count++;
+							rate = (count/images.length)*100;
+							progress.attr('width', rate + "%");
+							if(rate >= 100) {
+								loadPage.addClass('animated fadeOut');
+								setTimeout(function() {
+									loadPage.remove();
+								}, 3000);
+							}
+						}
+					})(i);
+				}
+			}
+		})();
+	</script>
 </body>
 </html>
