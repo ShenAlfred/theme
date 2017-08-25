@@ -254,9 +254,9 @@
 					direction: this.direction,
 					onSlideChangeStart: this.onSlideChangeStart,
 					lazyLoading: true,
-					lazyLoadingInPrevNext : true,
-					lazyLoadingOnTransitionStart : true,
-					lazyLoadingInPrevNextAmount : 2
+					lazyLoadingInPrevNext: true,
+					lazyLoadingOnTransitionStart: true,
+					lazyLoadingInPrevNextAmount: 4
 				});
 				return this;
 			},
@@ -316,10 +316,83 @@
 			}	
 		};
 
+		var count = 0;
+		var rate = 0;
+		var progress = $("#progress");
+		var loadPage = $(".loading-page");
+		var mainPage = $("#pages");
+		var music = $(".music");
+		var pullUp = $(".pull-up");
+		var homePageImages = $("#homepage").find('img');
+		var secondSereenImages = $("#selectpage").find('img'); 
+		var thiredSereenImages = $("#flpage").find('img');
+		var fourScreenImages = $("#giftpage").find('img');
+		var images = [];
+		
+		/**
+		 *  存储前4章图片
+		 */
+		saveImages(images, homePageImages);
+		saveImages(images, secondSereenImages);
+		saveImages(images, thiredSereenImages);
+		saveImages(images, fourScreenImages);
+
+		loadImages2(images);
+		autoPlayer();
+
 		mainSwiper.newSwiper();
 		renderJob("group-jobs-warp", JOBS[0], 'jobitem');
 		renderJob("eb-jobs-warp", JOBS[1], 'jobitem');
 		renderJob("finance-jobs-warp", JOBS[2], 'jobitem');
+
+		function autoPlayer() {
+			if(audio != null) {
+				audio.play();
+				music.addClass('music-rotate');
+			}
+		}
+
+		function saveImages(arr, images) {
+			for(var i=0; i<images.length; i++) {
+				arr.push(images[i]);
+			}
+		}
+		
+		function loadImages2(images) {
+			var total = images.length;
+			for(var i=0; i< total; i++) {
+				(function(i){
+					var src = images[i].getAttribute('c-data-src');
+					images[i].setAttribute('src', src);
+					images[i].onload= function() {
+						count++;
+						rate = (count/total)*100;
+						progress.attr('width', rate + "%");
+						if(rate >= 100) {
+							showThing();
+						}
+					}
+					images[i].onerror = function() {
+						count++;
+						rate = (count/total)*100;
+						progress.attr('width', rate + "%");
+						if(rate >= 100) {
+							showThing();
+						}
+					}
+				})(i);
+			}
+		}
+
+		function showThing() {
+			loadPage.addClass('animated fadeOut');
+			mainPage.addClass('fadeInUp');
+			music.removeClass('hide');
+			pullUp.removeClass('hide');
+			setTimeout(function() {
+				loadPage.remove();
+			}, 1000);
+		}
 
 		function renderJob(id, job, tplid) {
 			$("#"+id).empty();
@@ -339,6 +412,17 @@
 			jobsAttr.oldIndex = index;
 			jobsAttr.jobPagesState = 2;
 		}
+
+		/**
+		 *  重置状态
+		 */
+		function resetState() {
+			jobsSwiper.swiper.destroy();		//清除職位swiper對象(防止下次預覽出現的bug)
+			$(".page1").removeClass('animated fadeOut').attr('style', " ");
+			$(".page2").attr('style', " ").eq(parseInt(jobsAttr.currentIndex)).removeClass('animated fadeOutLeft');
+			$(".page3").removeClass('animated fadeInRight').addClass('translate-out-x');
+		}
+
 
 		/**
 		 * 切换公司关于我们的内容
@@ -394,27 +478,6 @@
 			mainSwiper.swiper.enableTouchControl();
 		});
 
-
-		$("#music").on('click', function() {
-			if(audio != null) {
-				if(audio.paused) {
-					audio.play();
-				}else {
-					audio.pause();
-				}
-			}
-		});
-
-		/**
-		 *  重置状态
-		 */
-		function resetState() {
-			jobsSwiper.swiper.destroy();		//清除職位swiper對象(防止下次預覽出現的bug)
-			$(".page1").removeClass('animated fadeOut').attr('style', " ");
-			$(".page2").attr('style', " ").eq(parseInt(jobsAttr.currentIndex)).removeClass('animated fadeOutLeft');
-			$(".page3").removeClass('animated fadeInRight').addClass('translate-out-x');
-		}
-
 		/**
 		 * 社會招聘點擊跳轉到page3
 		 */
@@ -423,11 +486,31 @@
 
 		});
 
+		music.on('click', function() {
+			if(audio != null) {
+				if(audio.paused) {
+					audio.play();
+					music.addClass('music-rotate');
+				}else {
+					audio.pause();
+					music.removeClass('music-rotate')
+				}
+			}
+		});
+
 		//返回首页
 		$("#backFirstPage").on('click', function() {
 			resetState();
 			mainSwiper.jumpSildeTo(0, 1000)
 		});
+
+		//分享层
+		$("#shareBtn").on('click', function() {
+			$('#share-layer').show();
+		});
+		$('#share-layer').on('click', function() {
+			$(this).hide();
+		})
 
 	});
 
