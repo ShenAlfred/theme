@@ -12,15 +12,21 @@
             height: 28px;
             background: url("./images/loading-progress.png") no-repeat;
         }
+        #progress {
+            -webkit-transition: width .5s ease;
+            transition: width .5s ease;
+        }
     </style>
 </head>
 <body>
 <div class="progress">
-    <svg class="masked-element" width="323" height="28" viewBox="0 0 323 28">
+    <?xml version="1.0"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+    <svg class="masked-element" width="323" height="28" viewBox="0 0 323 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
             <g id="progress-line">
                 <rect x="0" y="0" width="323" height="28" fill="#fff" />
-                <rect x="0" y="0" width="100" height="28" fill="#f00" id="progress"/>
+                <rect x="0" y="0" width="0" height="28" fill="#f00" id="progress"></rect>
             </g>
             <mask id="mask1" x="0" y="0" width="323" height="28">
                 <image xlink:href="./images/progress.svg" width="323" height="28"></image>
@@ -31,17 +37,18 @@
 </div>
 <script>
     window.onload = function() {
-        var progress = document.querySelector("#progress");
+        var progress = document.getElementById("progress");
         var p = 0;
-        console.log(progress.getAttribute('width'));
 //        setInterval(function() {
-//            console.log(p)
-//            if(p == 328) {
+//            console.log( progress.style.width)
+//            if(p >= 323) {
 //                return;
 //            }else {
-//                progress.setAttribute('width', p+=5);
+//                p+=10;
+//                progress.style.width = p;
+//                progress.style.fill = "green";
 //            }
-//        }, 200);
+//        }, 2000);
     }
 </script>
 </body>
