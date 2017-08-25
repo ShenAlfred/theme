@@ -7,7 +7,7 @@ var uglifyCss = require('gulp-uglifycss');
 gulp.task('webserver', function() {
 	gulp.src('')
 		.pipe(server({
-            host: 'localhost',
+            host: '10.52.30.105',
 			port: '9000',
 			livereload: true,
             open: true,

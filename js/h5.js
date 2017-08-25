@@ -261,7 +261,7 @@
 				return this;
 			},
 			onSlideChangeStart: function(swiper) {
-				if( (swiper.activeIndex == 1 || swiper.activeIndex == 4 || swiper.activeIndex == 6) ) {
+				if( (swiper.activeIndex == 1 || (swiper.activeIndex == 4 && jobsAttr.jobPagesState!=3) || swiper.activeIndex == 6) ) {
 					pullUp.addClass('hide');
 					swiper.disableTouchControl();
 				}else {
