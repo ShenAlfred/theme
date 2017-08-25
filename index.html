@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
+		@font-face {
+			font-family: jxy;
+			src: url('./font/jxy.ttf');
+		}
+		body {
+			font-family: jxy;
+		}
 		img {
 			vertical-align: middle;
 		}
@@ -62,7 +69,7 @@
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
-			background: url('./images/bg.png') repeat;
+			background: #ffd741 url('./images/bg.png') repeat;
 			background-size: 375px 15px;
 		}
 		.loading {
@@ -2742,6 +2749,9 @@
 			background: url('./images/item_line.png') left bottom no-repeat;
 			background-size: 100% 10%;
 		}
+		.jobs-list li span {
+			display: block;
+		}
 		.jobs-list li:last-child {
 			background: none;
 		}
@@ -3745,24 +3755,22 @@
 			background: url('./images/progress.svg');
 			background-size: 100% 100%;
 		}
-		#main-page {
+		#pages {
 			position: absolute;
 			width: 100%;
 			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.page.loading-page {
+			position: absolute;
+			z-index: 2;
 		}
 
 </style>
 </head>
 <body>
-	<!-- <style>
-		@font-face {
-			font-family: mjl;
-			src: url('./font/blxqx.ttf');
-		}
-		body {
-			font-family: mjl;
-		}
-	</style> -->
 	<!-- loading -->
 	<div class="page loading-page">
 		<div class="loading">
@@ -3787,8 +3795,8 @@
 		</div>
 		<img src="./images/logo.png" class="img-logo" />
 	</div>
-	<div id="main-page animated">
-		<div class="swiper-container">
+	<div id="pages" class="animated">
+		<div class="swiper-container" id="main-page">
 			<div class="swiper-wrapper">
 				<!-- page1-->
 				<div class="swiper-slide">
@@ -3938,26 +3946,11 @@
 							<div class="paper-warp">
 								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
 								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
-								<div class="jobs-content-warp">
-									<ul class="jobs-list">
-										<li class="jobItem">
-											<span>总裁办秘书</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
-										</li>
-										<li class="jobItem">
-											<span>投融资副总监</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
-										</li>
-										<li class="jobItem">
-											<span>审计经理</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani">
-										</li>
-									</ul>
-								</div>
+								<div class="jobs-content-warp" id="group-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
-								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size animated infinite select-btn swiper-lazy" data-index=1>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size animated infinite select-btn swiper-lazy" data-index=2>
 							</div>
 						</div>
 					</div>
@@ -3968,26 +3961,11 @@
 							<div class="paper-warp">
 								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
 								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
-								<div class="jobs-content-warp">
-									<ul class="jobs-list">
-										<li class="jobItem">
-											<span>总裁办秘书</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-										<li class="jobItem">
-											<span>投融资副总监</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-										<li class="jobItem">
-											<span>审计经理</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-									</ul>
-								</div>
+								<div class="jobs-content-warp" id="eb-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=0>
-								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size animated infinite select-btn swiper-lazy" data-index=0>
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size animated infinite select-btn swiper-lazy" data-index=2>
 							</div>
 						</div>
 					</div>
@@ -3998,77 +3976,53 @@
 							<div class="paper-warp">
 								<img data-src="./images/invite_shuline.png" class="shuline swiper-lazy animated infinite shuline_animate">
 								<img data-src="./images/invite_paper.png" class="invite_paper swiper-lazy" alt="">
-								<div class="jobs-content-warp">
-									<ul class="jobs-list">
-										<li class="jobItem">
-											<span>总裁办秘书</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-										<li class="jobItem">
-											<span>投融资副总监</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-										<li class="jobItem">
-											<span>审计经理</span>
-											<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
-										</li>
-									</ul>
-								</div>
+								<div class="jobs-content-warp" id="finance-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
-								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=0>
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size animated infinite select-btn swiper-lazy" data-index=1>
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size animated infinite select-btn swiper-lazy" data-index=0>
 							</div>
 						</div>
 					</div>
+					<!-- template -->
+					<script id="jobitem" type="text/template">
+						<ul class="jobs-list">
+							{@each jobs as job,index}
+								<li class="jobItem">
+									<span class="ellipsis">${job.JobName}</span>
+									<img data-src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
+								</li>
+							{@/each}
+						</ul>
+					</script>
+					<!-- template -->
 					<!-- 公司对应的岗位列表模块 -->
 					<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
 					<div class="custom-page page3 translate-out-x">
 						<div class="page">
 							<div class="swiper-container jobs-page" id="jobs-page">
-								<div class="swiper-wrapper jobs-wrapper">
-									<div class="swiper-slide card-slide">
-										<div class="card">
-											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
-											<div class="card-content-warp">
-												<h2 class="job-name ellipsis">总裁办秘书</h2>
-												<ul class="job-desc">
-													<li class="job-desc-item">
-														<img data-src="./images/mark.png" class="mark swiper-lazy" >
-														<span>好文笔、好身手、好头脑！</span>
-													</li>
-													<li class="job-desc-item">
-														<img data-src="./images/mark.png" class="mark swiper-lazy" >
-														<span>来吧，欢迎和我们聊聊！</span>
-													</li>
-													<li class="job-desc-item">
-														<img data-src="./images/mark.png" class="mark swiper-lazy" >
-														<span>聊一聊你在秘书这条不归路上的诗和远方。</span>
-													</li>
-													<li class="job-desc-item">
-														<img data-src="./images/mark.png" class="mark swiper-lazy" >
-														<span>会议纪要、客户接待、资料归档这些真的炉火纯青，不说且熟。</span>
-													</li>
-													<li class="job-desc-item">
-														<img data-src="./images/mark.png" class="mark swiper-lazy" >
-														<span>请任性的说：放心把你们总裁交给我吧！</span>
-													</li>
-												</ul>
+								<div class="swiper-wrapper jobs-wrapper" id="jobs-warp"></div>
+								<div class="swiper-pagination"></div>
+								<script id="jobs" type="text/template">
+									{@each jobs as job}
+										<div class="swiper-slide card-slide">
+											<div class="card">
+												<img src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+												<div class="card-content-warp">
+													<h2 class="job-name ellipsis">${job.JobName}</h2>
+													<ul class="job-desc">
+														{@each job.description as dec,index}
+														<li class="job-desc-item">
+															<img src="./images/mark.png" class="mark swiper-lazy" >
+															<span>${dec}</span>
+														</li>
+														{@/each}
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="swiper-slide card-slide">
-										<div class="card">
-											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
-										</div>
-									</div>
-									<div class="swiper-slide card-slide">
-										<div class="card">
-											<img data-src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
-										</div>
-									</div>
-								</div>
-								<div class="swiper-pagination"></div>
+									{@/each}
+								</script>
 							</div>
 							<div class="mail-warp">
 								<img data-src="./images/mail.png" class="mail swiper-lazy animated infinite mail_ani">
@@ -4209,6 +4163,7 @@
 	<!-- <audio src="./audio/2744.mp3" controls></audio> -->
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
+	<script src="./js/juicer-min.js"></script>
 	<script src="./js/h5.js"></script>
 	<script>
 		(function(){
@@ -4216,25 +4171,16 @@
 			var rate = 0;
 			var progress = $("#progress");
 			var loadPage = $(".loading-page");
-			var mainPage = $("#main-page");
-			var svg = './images/progress.svg';
-			var load_thing = ['./images/logo.png', './images/loading.png', './images/bg.png', './images/focus.png', './images/ex_paper.png', './images/person.png', './images/left_hand.png',
+			var mainPage = $("#pages");
+			var music = $(".music");
+			var pullUp = $(".pull-up");
+			var load_thing = ['./images/pull_up.png', './images/music.png', './images/logo.png', './images/loading.png', './images/bg.png', './images/focus.png', './images/ex_paper.png', './images/person.png', './images/left_hand.png',
 							'./images/right_hand.png', './images/inner_center_clound.png', './images/out_left_clound.png', './images/out_right_clound.png', './images/one_outhand.png', './images/two_outhand.png',
 							'./images/three_outhand.png', './images/four_outhand.png', './images/cengceng.png', './images/b_scraps.png', './images/r_ribbon.png', './images/r_scraps.png', './images/start1.png',
 							'./images/start2.png', './images/start3.png', './images/y_ribbon.png', './images/y_start.png', './images/select1.png', './images/select_invite.png', './images/man_line1.png', './images/man_line2.png',
 						'./images/man_line3.png', './images/man_line4.png', './images/select_start1.png', './images/select_start2.png', './images/select_start3.png', './images/select2.png', './images/select_gps.png', './images/female_line1.png',
-					'./images/female_line2.png', './images/female_line3.png'];
-			
-			var loadsvg = new Image();
-			loadsvg.src = svg;
-			loadsvg.onload = function() {
-				//alert("svg loaded!")
-				loadImages(load_thing);
-			}
-			loadsvg.onerror = function() {
-				//alert("svg loaded error!")
-				loadImages(load_thing);
-			}
+					'./images/female_line2.png', './images/female_line3.png', './images/job-desc-warp.png', './images/mark.png'];
+			loadImages(load_thing);
 			function loadImages(images) {
 				for(var i=0; i<images.length; i++) {
 					(function(i){
@@ -4245,10 +4191,7 @@
 							rate = (count/images.length)*100;
 							progress.attr('width', rate + "%");
 							if(rate >= 100) {
-								loadPage.addClass('animated fadeOut');
-								setTimeout(function() {
-									loadPage.remove();
-								}, 3000);
+								showThing();
 							}
 						}
 						img.onerror = function() {
@@ -4256,14 +4199,21 @@
 							rate = (count/images.length)*100;
 							progress.attr('width', rate + "%");
 							if(rate >= 100) {
-								loadPage.addClass('animated fadeOut');
-								setTimeout(function() {
-									loadPage.remove();
-								}, 3000);
+								showThing();
 							}
 						}
 					})(i);
 				}
+			}
+
+			function showThing() {
+				loadPage.addClass('animated fadeOut');
+				mainPage.addClass('fadeInUp');
+				music.removeClass('hide');
+				pullUp.removeClass('hide');
+				setTimeout(function() {
+					loadPage.remove();
+				}, 1000);
 			}
 		})();
 	</script>
