@@ -431,8 +431,10 @@
 		 */
 		function transferCompanyAboutUs(index) {
 			var logo_group = $("#company-logo-group"),
+				mail_address = $(".mail-address"),
 				aboutUs = $("#company-aboutUs");
 			logo_group.children().addClass('hide').eq(index).removeClass('hide');
+			mail_address.addClass('hide').eq(index).removeClass('hide');
 			aboutUs.html(index)
 		}
 		
