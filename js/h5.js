@@ -1,6 +1,5 @@
 (function() {
 
-
 	var JOBS = [
 		{
 			name: '集团',
