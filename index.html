@@ -113,8 +113,10 @@
 		.hehe-warp {
 			position: absolute;
 			bottom: 0;
-			width: 100%;
-			height: 51%;
+			left: 50%;
+			margin-left: -50px;
+			width: 200px;
+			height: 338px;
 		}
 		.person-warp {
 			position: absolute;
@@ -127,15 +129,15 @@
 		.img-person {
 			position: absolute;
 			bottom: 0;
-			width: 53%;
-			left: 33%;
-			height: 99%;
+			width: 200px;
+			height: 338px;
 		}
 		.img-left-hand {
             position: absolute;
-			width: 9%;
+			width: 33px;
+			height: 44px;
 			top: -7%;
-			left: 30%;
+			left: -10px;
 		}
 		.hhs-left {
 			-webkit-animation-name: hhs-left;
@@ -165,8 +167,9 @@
 		}
 		.img-right-hand {
 		    position: absolute;
-			width: 12%;
-			right: 8%;
+			width: 43px;
+			height: 36px;
+			right: -15px;
 			top: 2%;
 		}
 		.hhs-right {
@@ -253,30 +256,49 @@
 		.img-icc {
 			position: absolute;
 			bottom: 0;
-			width: 100%;
-			height: 100%;
+			left: 50%;
+			width: 286px;
+			height: 57px;
+			margin-left: -143px;
+			z-index: 2;
+		}
+		.img-ilc {
+			position: absolute;
+			left: 0;
+			bottom: 19px;
+			width: 58px;
+			height: 118px;
+			z-index: 2;
+		}
+		.img-irc {
+			position: absolute;
+			bottom: 30px;
+			right: 0;
+			width: 47px;
+			height: 109px;
 			z-index: 2;
 		}
 		.img-olc {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			height: 50%;
-			width: 23%;
+			height: 69px;
+			width: 86px;
 			z-index: 4
 		}
 		.img-orc {
 			position: absolute;
 			bottom: 0;
 			right: 0;
-			width: 22%;
-			height: 48%;
+			width: 84px;
+			height: 66px;
 			z-index: 4;
 		} 
 		.img-ooh {
 			position: absolute;
-			width: 30%;
-			top: -10%;
+			width: 111px;
+			height: 68px;
+			bottom: 95px;
 			left: 0;
 			z-index: 1;
 			-webkit-transform-origin: left bottom;
@@ -298,8 +320,9 @@
 		}
 		.img-toh {
 			position: absolute;
-			width: 27%;
-			top: 23%;
+			width: 100px;
+			height: 82px;
+			bottom: 24px;
     		left: 35px;
 			z-index: 3;
 			-webkit-transform-origin: left bottom;
@@ -339,9 +362,10 @@
 		}
 		.img-thoh {
 			position: absolute;
-			width: 25%;
-			top: 21%;
-    		right: 9%;
+			width: 93px;
+			height: 87px;
+			bottom: 21px;
+    		right: 34px;
 			z-index: 3;
 			-webkit-transform-origin: right bottom;
 			transform-origin: right bottom;
@@ -380,9 +404,10 @@
 		}
 		.img-foh {
 			position: absolute;
-			width: 30%;
-			top: -17%;
-			right: 1%;
+			width: 110px;
+			height: 77px;
+			bottom: 82px;
+			right: 15px;
 			z-index: 1;
 			-webkit-transform-origin: right bottom;
 			transform-origin: right bottom;
@@ -403,7 +428,7 @@
 		}
 		.img-cengceng {
 			position: absolute;
-			width: 92%;
+			width: 100%;
 			top: 36%;
 			left: 50%;
 			margin-left: -46%;
@@ -428,9 +453,11 @@
 		}
 		.emb-warp {
 			position: absolute;
-			width: 100%;
-			height: 37%;
-			bottom: 15%;
+			width: 347px;
+			height: 210px;
+			bottom: 117px;
+			left: 50%;
+			margin-left: -173px;
 		}
 		.emb-warp img {
 			position: absolute;
@@ -499,7 +526,7 @@
 		}
 		.img-r-scraps {
 			top: 92%;
-			right: 35%;
+			right: 32%;
 			width: 9px;
 		}
 		.r-scraps {
@@ -662,7 +689,7 @@
 		}
 		.img-y-start {
 			top: 5%;
-			right: 21%;
+			right: 18%;
 			width: 8%	
 		}
 		.scale-amp {
@@ -3777,7 +3804,7 @@
 </style>
 </head>
 <body>
-	<audio id="audio" src="./audio/2744.mp3" autoplay loop style="display: none;"></audio> <!-- autoplay -->
+	<audio id="audio" src="./audio/2744.mp3" loop style="display: none;"></audio> <!-- autoplay -->
 	<!-- loading -->
 	<div class="page loading-page">
 		<div class="loading">
@@ -3806,7 +3833,7 @@
 		<div class="swiper-container" id="main-page">
 			<div class="swiper-wrapper">
 				<!-- page1-->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="homepage">
 						<div class="ex-paper-warp">
 							<img src="" c-data-src="./images/focus.png" class="img-focus swiper-lazy animated infinite focusFadeIn" />
@@ -3818,6 +3845,8 @@
 							<img src="" c-data-src="./images/right_hand.png" class="img-right-hand swiper-lazy animated direction infinite hhs-right" />
 						</div>
 						<div class="clound-warp">
+							<img src="" c-data-src="./images/inner_left_clound.png" class="img-ilc swiper-lazy" />
+							<img src="" c-data-src="./images/inner_right_clound.png" class="img-irc swiper-lazy" />
 							<img src="" c-data-src="./images/inner_center_clound.png" class="img-icc swiper-lazy" />
 							<img src="" c-data-src="./images/out_left_clound.png" class="img-olc swiper-lazy" />
 							<img src="" c-data-src="./images/out_right_clound.png" class="img-orc swiper-lazy" />
@@ -3840,7 +3869,7 @@
 					</div>
 				</div>
 				<!--page2 選擇 -->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="selectpage">
 						<div class="man-select" id="community-invite" >
 							<img c-data-src="./images/select1.png" class="img-select swiper-lazy"/>
@@ -3867,7 +3896,7 @@
 					</div>
 				</div>
 				<!-- page3 福利 -->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="flpage">
 						<div class="wel-text-warp">
 							<img c-data-src="./images/welfare_text.png" class="img-wel-text swiper-lazy" alt="">
@@ -3884,7 +3913,7 @@
 					</div>
 				</div>
 				<!-- page4 福利描述 -->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="giftpage">
 						<div class="wel-desc-warp">
 							<div style="text-align: center; margin: 6% auto 0;">
