@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
-		@font-face {
-			font-family: jxy;
-			src: url('./font/jxy.ttf');
-		}
 		body {
 			background: #ffd741 url('./images/bg.png') repeat;
 			background-size: 375px 15px;
-			font-family: jxy;
 		}
 		img {
 			vertical-align: middle;
@@ -86,7 +81,7 @@
 			width: 30%;
 		}
 		.loading-point {
-			width: 10%;
+			width: 2%;
 		}
 		.loading-progress {
 			width: 100%;
@@ -771,6 +766,24 @@
 			25%{  transform: scale(.98);  }
 			50%{  transform: scale(.95);  }
 			75%{  transform: scale(.92);  }
+			100%{  transform: scale(1);  }
+		}
+		.select-btn1 {
+			-webkit-animation-name: select-btn-scale-small;
+			animation-name: select-btn-scale-small;
+		}
+		@-webkit-keyframes select-btn-scale-small {
+			0%{  -webkit-transform: scale(1);  }
+			25%{  -webkit-transform: scale(.99);  }
+			50%{  -webkit-transform: scale(.98);  }
+			75%{  -webkit-transform: scale(.97);  }
+			100%{  -webkit-transform: scale(1);  }
+		}
+		@keyframes select-btn-scale-small {
+			0%{  transform: scale(1);  }
+			25%{  -webkit-transform: scale(.99);  }
+			50%{  -webkit-transform: scale(.98);  }
+			75%{  -webkit-transform: scale(.97);  }
 			100%{  transform: scale(1);  }
 		}
 		.man-select .select_start1 {
@@ -2809,7 +2822,7 @@
 			position: relative;
 			padding: 5% 0 6%;
 			width: 91%;
-			font-size: 20px;
+			font-size: 14px;
 			margin: 0 auto;
 			background: url('./images/item_line.png') left bottom no-repeat;
 			background-size: 100% 10%;
@@ -2824,7 +2837,7 @@
 			position: absolute;
 			display: block;
 			right: 2%;
-			width: 5%;
+			width: 4%;
 			top: 26%;
 		}
 		.arrow.animated{
@@ -2922,13 +2935,13 @@
 			margin-top: 2%;
 		}
 		.job-desc-item {
-			margin-top: 2%;
+			margin-top: 4%;
 			line-height: 1.5;
 			overflow: hidden;
 		}
 		.job-desc-item span {
 			float: left;
-			font-size: 16px;
+			font-size: 14px;
 			padding-left: 2%;
 			width: 93%;
 		}
@@ -2940,13 +2953,14 @@
 			position: absolute;
 			top: 7%;
 			left: 6%;
-			width: 87%;
+			width: 90%;
 			height: 82%;
 			overflow: scroll;
 		}
 		.job-name {
 			font-size: 22px;
 			color: #e94227;
+			letter-spacing: 2px;
 		}
 		.mail-warp {
 			width: 100%;
@@ -3083,10 +3097,10 @@
 			top: 65%;
 			right: -5%;
 		}
-		.group-ill-warp .introduct-clound1.animated,
-		.group-ill-warp .introduct-clound2.animated,
-		.group-ill-warp .introduct-clound3.animated {
-			-webkit-animation-duration: .6s;
+		.introduct-clound1.animated,
+		.introduct-clound2.animated,
+		.introduct-clound3.animated {
+			-webkit-animation-duration: 1s;
     		animation-duration: 1s;
 		}
 		.clound_ani {
@@ -3255,7 +3269,7 @@
 		}
 		.end_text {
 			display: block;
-			margin: 7% auto 0;
+			margin: 12% auto 0;
 			width: 70%;
 		}
 		.gaoji-warp {
@@ -3266,7 +3280,7 @@
 			z-index: 1;
 		}
 		.bottom-warp {
-			position: absolute;
+			position: relative;
 			width: 100%;
 			height: 26%;
 			bottom: 0;
@@ -3286,12 +3300,10 @@
 			width: 46%;
 		}
 		.gaoji-paper {
-			position: absolute;
+			position: relative;
 			width: 256px;
 			height: 196px;
-			top: 88px;
-			left: 50%;
-			margin-left: -128px;
+			margin: -6px auto 0;
 			z-index: 2;
 		}
 		.end_bg {
@@ -3613,7 +3625,7 @@
 				-webkit-transform: scale(.8);
 			}
 			40%, 60% {
-				-webkit-transform: scale(1.2);
+				-webkit-transform: scale(1);
 			}
 			80%, 100% {
 				-webkit-transform: scale(0.8);
@@ -3624,7 +3636,7 @@
 				transform: scale(.8);
 			}
 			40%, 60% {
-				transform: scale(1.2);
+				transform: scale(1);
 			}
 			80%, 100% {
 				transform: scale(0.8);
@@ -3654,13 +3666,25 @@
 			animation-timing-function: linear;
 		}
 		.pull-up {
-			position: fixed;
+			position: absolute;
 			width: 30px;
 			height: 30px;
 			left: 50%;
-			margin-left: -3%;
+			margin-left: -15px;
 			bottom: 2%;
+			opacity: 0;
 			z-index: 20;
+			-webkit-transition: opacity .4s ease;
+			transition: opacity .4s ease;
+			-webkit-transition-delay: 3s;
+			transition-delay: 3s;
+		}
+		.pull-up.pull_fadeIn {
+			opacity: 1;
+		}
+		.pull-up.animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
 		}
 		.pull_up_ani {
 			-webkit-animation-name: pull_up_ani;
@@ -3740,7 +3764,7 @@
 		}
 		@media screen and (max-width: 320px) {
 			.job-desc-item span {
-				font-size: 14px;
+				font-size: 12px;
 			}
 			.job-name {
 				font-size: 18px;
@@ -3761,12 +3785,12 @@
 				font-size: 12px;
 			}
 			.jobs-list li {
-				font-size: 16px;
+				font-size: 12px;
 			}
 		}
 		@media screen and (min-width: 540px) {
 			.job-desc-item span {
-				font-size: 18px;
+				font-size: 16px;
 			}
 			.job-name {
 				font-size: 18px;
@@ -3785,6 +3809,9 @@
 			}
 			.address {
 				font-size: 18px;
+			}
+			.jobs-list li {
+				font-size: 16px;
 			}
 		}
 
@@ -3851,7 +3878,9 @@
 		<div class="loading">
 			<div>
 				<img src="./images/loading.png" class="loading-text">
-				<img src="./images/point.gif" class="loading-point">
+				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/loading_point.png" class="loading-point">
+				<img src="./images/loading_point.png" class="loading-point">
 			</div>
 			<div class="progress-warp">
 				 <svg width="161" height="17">
@@ -3874,85 +3903,87 @@
 		<div class="swiper-container" id="main-page">
 			<div class="swiper-wrapper">
 				<!-- page1-->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="homepage">
 						<div class="ex-paper-warp">
-							<img src="" c-data-src="./images/focus.png" class="img-focus swiper-lazy animated infinite focusFadeIn" />
-							<img src="" c-data-src="./images/ex_paper.png" class="img-ex-paper swiper-lazy" />
+							<img c-data-src="./images/focus.png" class="img-focus" />
+							<img c-data-src="./images/ex_paper.png" class="img-ex-paper" />
 						</div>
 						<div class="hehe-warp">
-							<img src="" c-data-src="./images/person.png" class="img-person swiper-lazy" />
-							<img src="" c-data-src="./images/left_hand.png" class="img-left-hand swiper-lazy animated direction infinite hhs-left" />
-							<img src="" c-data-src="./images/right_hand.png" class="img-right-hand swiper-lazy animated direction infinite hhs-right" />
+							<img c-data-src="./images/person.png" class="img-person" />
+							<img c-data-src="./images/left_hand.png" class="img-left-hand animated direction infinite hhs-left" />
+							<img c-data-src="./images/right_hand.png" class="img-right-hand animated direction infinite hhs-right" />
 						</div>
 						<div class="clound-warp">
-							<img src="" c-data-src="./images/inner_left_clound.png" class="img-ilc swiper-lazy" />
-							<img src="" c-data-src="./images/inner_right_clound.png" class="img-irc swiper-lazy" />
-							<img src="" c-data-src="./images/inner_center_clound.png" class="img-icc swiper-lazy" />
-							<img src="" c-data-src="./images/out_left_clound.png" class="img-olc swiper-lazy" />
-							<img src="" c-data-src="./images/out_right_clound.png" class="img-orc swiper-lazy" />
-							<img src="" c-data-src="./images/one_outhand.png" class="img-ooh swiper-lazy animated infinite one-hand" />
-							<img src="" c-data-src="./images/two_outhand.png" class="img-toh swiper-lazy animated infinite two-hand" />
-							<img src="" c-data-src="./images/three_outhand.png" class="img-thoh swiper-lazy animated infinite three-hand" />
-							<img src="" c-data-src="./images/four_outhand.png" class="img-foh swiper-lazy animated infinite four-hand" />
+							<img c-data-src="./images/inner_left_clound.png" class="img-ilc" />
+							<img c-data-src="./images/inner_right_clound.png" class="img-irc" />
+							<img c-data-src="./images/inner_center_clound.png" class="img-icc" />
+							<img c-data-src="./images/out_left_clound.png" class="img-olc" />
+							<img c-data-src="./images/out_right_clound.png" class="img-orc" />
+							<img c-data-src="./images/one_outhand.png" class="img-ooh animated infinite one-hand" />
+							<img c-data-src="./images/two_outhand.png" class="img-toh animated infinite two-hand" />
+							<img c-data-src="./images/three_outhand.png" class="img-thoh animated infinite three-hand" />
+							<img c-data-src="./images/four_outhand.png" class="img-foh animated infinite four-hand" />
 						</div>
 						<div class="emb-warp">
-							<img src="" c-data-src="./images/cengceng.png" class="img-cengceng swiper-lazy animated direction infinite cengceng">
-							<img src="" c-data-src="./images/b_scraps.png" class="img-b-scraps swiper-lazy animated direction infinite bScraps">
-							<img src="" c-data-src="./images/r_ribbon.png" class="img-r-ribbon swiper-lazy animated direction infinite rRibbonMove">
-							<img src="" c-data-src="./images/r_scraps.png" class="img-r-scraps swiper-lazy animated direction infinite r-scraps">
-							<img src="" c-data-src="./images/start1.png" class="img-start1 swiper-lazy animated direction infinite lb_scale">
-							<img src="" c-data-src="./images/start2.png" class="img-start2 swiper-lazy animated direction infinite o2s">
-							<img src="" c-data-src="./images/start3.png" class="img-start3 swiper-lazy animated infinite o2s_2">
-							<img src="" c-data-src="./images/y_ribbon.png" class="img-y-ribbon swiper-lazy animated infinite yellow-ribbon">
-							<img src="" c-data-src="./images/y_start.png" class="img-y-start swiper-lazy animated direction infinite scale-amp">
+							<img c-data-src="./images/cengceng.png" class="img-cengceng animated direction infinite cengceng">
+							<img c-data-src="./images/b_scraps.png" class="img-b-scraps animated direction infinite bScraps">
+							<img c-data-src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove">
+							<img c-data-src="./images/r_scraps.png" class="img-r-scraps animated direction infinite r-scraps">
+							<img c-data-src="./images/start1.png" class="img-start1 animated direction infinite lb_scale">
+							<img c-data-src="./images/start2.png" class="img-start2 animated direction infinite o2s">
+							<img c-data-src="./images/start3.png" class="img-start3 animated infinite o2s_2">
+							<img c-data-src="./images/y_ribbon.png" class="img-y-ribbon animated infinite yellow-ribbon">
+							<img c-data-src="./images/y_start.png" class="img-y-start animated direction infinite scale-amp">
 						</div>
+						<img id="pullup_one" c-data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani" />
 					</div>
 				</div>
 				<!--page2 選擇 -->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="selectpage">
 						<div class="man-select" id="community-invite" >
-							<img c-data-src="./images/select1.png" class="img-select swiper-lazy"/>
-							<img c-data-src="./images/select_invite.png" class="img-btn swiper-lazy animated infinite select-btn">
-							<img c-data-src="./images/man_line1.png"  class="man-line1 swiper-lazy animated infinite man-line1_ani" >
-							<img c-data-src="./images/man_line2.png"  class="man-line2 swiper-lazy animated infinite man-line2_ani" >
-							<img c-data-src="./images/man_line3.png"  class="man-line3 swiper-lazy animated infinite man-line3_ani" >
-							<img c-data-src="./images/man_line4.png"  class="man-line4 swiper-lazy animated infinite man-line4_ani" >
-							<img c-data-src="./images/select_start1.png" class="select_start1 swiper-lazy animated infinite start_scale1">
-							<img c-data-src="./images/select_start2.png" class="select_start2 swiper-lazy animated infinite start_scale1">
-							<img c-data-src="./images/select_start3.png" class="select_start3 swiper-lazy animated infinite start_scale1">
+							<img c-data-src="./images/select1.png" class="img-select"/>
+							<img c-data-src="./images/select_invite.png" class="img-btn animated infinite select-btn">
+							<img c-data-src="./images/man_line1.png"  class="man-line1 animated infinite man-line1_ani" >
+							<img c-data-src="./images/man_line2.png"  class="man-line2 animated infinite man-line2_ani" >
+							<img c-data-src="./images/man_line3.png"  class="man-line3 animated infinite man-line3_ani" >
+							<img c-data-src="./images/man_line4.png"  class="man-line4 animated infinite man-line4_ani" >
+							<img c-data-src="./images/select_start1.png" class="select_start1 animated infinite start_scale1">
+							<img c-data-src="./images/select_start2.png" class="select_start2 animated infinite start_scale1">
+							<img c-data-src="./images/select_start3.png" class="select_start3 animated infinite start_scale1">
 						</div>
 						<div class="female-select">
-							<img c-data-src="./images/select2.png" class="img-select swiper-lazy"/>
-							<img c-data-src="./images/select_gps.png"  class="img-btn swiper-lazy animated infinite select-btn">
-							<img c-data-src="./images/female_line1.png" class="female-line1 swiper-lazy animated infinite female-line1_ani">
-							<img c-data-src="./images/female_line2.png" class="female-line2 swiper-lazy animated infinite female-line2_ani">
-							<img c-data-src="./images/female_line3.png" class="female-line3 swiper-lazy animated infinite female-line3_ani">
-							<img c-data-src="./images/select_start3.png" class="select_start1 swiper-lazy animated infinite start_scale_dot6">
-							<img c-data-src="./images/select_start3.png" class="select_start2 swiper-lazy animated infinite start_scale_dot4">
-							<img c-data-src="./images/select_start2.png" class="select_start3 swiper-lazy animated infinite start_scale_dot6">
-							<img c-data-src="./images/select_start3.png" class="select_start4 swiper-lazy animated infinite start_scale_dot7">
+							<img c-data-src="./images/select2.png" class="img-select"/>
+							<img c-data-src="./images/select_gps.png"  class="img-btn animated infinite select-btn">
+							<img c-data-src="./images/female_line1.png" class="female-line1 animated infinite female-line1_ani">
+							<img c-data-src="./images/female_line2.png" class="female-line2 animated infinite female-line2_ani">
+							<img c-data-src="./images/female_line3.png" class="female-line3 animated infinite female-line3_ani">
+							<img c-data-src="./images/select_start3.png" class="select_start1 animated infinite start_scale_dot6">
+							<img c-data-src="./images/select_start3.png" class="select_start2 animated infinite start_scale_dot4">
+							<img c-data-src="./images/select_start2.png" class="select_start3 animated infinite start_scale_dot6">
+							<img c-data-src="./images/select_start3.png" class="select_start4 animated infinite start_scale_dot7">
 						</div>
 					</div>
 				</div>
 				<!-- page3 福利 -->
-				<div class="swiper-slide hide">
+				<div class="swiper-slide">
 					<div class="page" id="flpage">
 						<div class="wel-text-warp">
-							<img c-data-src="./images/welfare_text.png" class="img-wel-text swiper-lazy" alt="">
+							<img c-data-src="./images/welfare_text.png" class="img-wel-text" alt="">
 						</div>
 						<div class="wel-warp">	
 							<div class="wel-sgr">
-								<img c-data-src="./images/welfare_bubble.png" class="img-wel-bubble swiper-lazy animated infinite direction bubble_roate" alt="">
-								<img c-data-src="./images/sgr.png" class="img-wel-persons swiper-lazy">
+								<img c-data-src="./images/welfare_bubble.png" class="img-wel-bubble animated infinite direction bubble_roate" alt="">
+								<img c-data-src="./images/sgr.png" class="img-wel-persons">
 							</div>
-							<img c-data-src="./images/table.png" class="img-wel-table swiper-lazy">
-							<img c-data-src="./images/welfare_start1.png" class="img-wel-start1 swiper-lazy animated direction infinite choujing-start" alt="">
-							<img c-data-src="./images/welfare_start2.png" class="img-wel-start2 swiper-lazy animated direction infinite cj-start-translate" alt="">
-							<img c-data-src="./images/welfare_money.png" class="img-wel-money swiper-lazy animated infinite money1" alt="">
-							<img c-data-src="./images/welfare_money2.png" class="img-wel-money2 swiper-lazy animated infinite money1" alt="">
+							<img c-data-src="./images/table.png" class="img-wel-table">
+							<img c-data-src="./images/welfare_start1.png" class="img-wel-start1 animated direction infinite choujing-start" alt="">
+							<img c-data-src="./images/welfare_start2.png" class="img-wel-start2 animated direction infinite cj-start-translate" alt="">
+							<img c-data-src="./images/welfare_money.png" class="img-wel-money animated infinite money1" alt="">
+							<img c-data-src="./images/welfare_money2.png" class="img-wel-money2 animated infinite money1" alt="">
 						</div>
+						<img id="pullup_two" c-data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani" />
 					</div>
 				</div>
 				<!-- page4 福利描述 -->
@@ -3961,61 +3992,62 @@
 						<div class="wel-desc-warp">
 							<div style="text-align: center; margin: 6% auto 0;">
 								<!--animated infinite fuli_rotate  -->
-								<img c-data-src="./images/wel_desc_xc.png" class="wel_desc_xc swiper-lazy animated infinite fuli_rotate">
+								<img c-data-src="./images/wel_desc_xc.png" class="wel_desc_xc animated infinite fuli_rotate">
 							</div>
 							<div class="desc-cp-warp">
 								<!--animated infinite desc-cp-ani  -->
-								<img c-data-src="./images/wel_desc_cp.png" class="img-desc-cp swiper-lazy animated infinite desc-cp-ani">
+								<img c-data-src="./images/wel_desc_cp.png" class="img-desc-cp animated infinite desc-cp-ani">
 								<!--animated infinite desc_scraps1_ani  -->
-								<img c-data-src="./images/scraps1.png" class="wel-desc-scraps1 swiper-lazy animated infinite desc_scraps1_ani">
+								<img c-data-src="./images/scraps1.png" class="wel-desc-scraps1 animated infinite desc_scraps1_ani">
 								<!--animated infinite desc_scraps2_ani  -->
-								<img c-data-src="./images/scraps2.png" class="wel-desc-scraps2 swiper-lazy animated infinite desc_scraps2_ani">
+								<img c-data-src="./images/scraps2.png" class="wel-desc-scraps2 animated infinite desc_scraps2_ani">
 								<!--animated infinite desc_scraps3_ani  -->
-								<img c-data-src="./images/scraps3.png" class="wel-desc-scraps3 swiper-lazy animated infinite desc_scraps3_ani">
+								<img c-data-src="./images/scraps3.png" class="wel-desc-scraps3 animated infinite desc_scraps3_ani">
 								<!--animated infinite desc_scraps4_ani  -->
-								<img c-data-src="./images/scraps4.png" class="wel-desc-scraps4 swiper-lazy animated infinite desc_scraps4_ani">
+								<img c-data-src="./images/scraps4.png" class="wel-desc-scraps4 animated infinite desc_scraps4_ani">
 							</div>
 							<div style="position: relative; margin: 4% auto 0;width: 86%;">
 								<!--animated infinite desc_jp_ani  -->
-								<img c-data-src="./images/wel_desc_jp.png" class="wel_desc_jp swiper-lazy animated infinite desc_jp_ani">
+								<img c-data-src="./images/wel_desc_jp.png" class="wel_desc_jp animated infinite desc_jp_ani">
 								<!--animated infinite desc_tj_ani  -->
-								<img c-data-src="./images/wel_desc_tj.png" class="wel_desc_tj swiper-lazy animated infinite desc_tj_ani">
+								<img c-data-src="./images/wel_desc_tj.png" class="wel_desc_tj animated infinite desc_tj_ani">
 							</div>
 							<div style="position: relative; margin: 4% auto 0;width: 95%;">
 								<!--animated infinite desc_tjj_ani  -->
-								<img c-data-src="./images/wel_desc_tjj.png" class="wel_desc_tjj swiper-lazy animated infinite desc_tjj_ani">
+								<img c-data-src="./images/wel_desc_tjj.png" class="wel_desc_tjj animated infinite desc_tjj_ani">
 								<!--animated infinite desc_sr_ani  -->
-								<img c-data-src="./images/wel_desc_sr.png" class="wel_desc_sr swiper-lazy animated infinite desc_sr_ani">
+								<img c-data-src="./images/wel_desc_sr.png" class="wel_desc_sr animated infinite desc_sr_ani">
 							</div>
 							<div style="position: relative; margin: 4% auto 0; text-align:center">
 								<!--animated infinite desc_nh_ani  -->
-								<img c-data-src="./images/wel_desc_nh.png" class="wel_desc_nh swiper-lazy animated infinite desc_nh_ani">
+								<img c-data-src="./images/wel_desc_nh.png" class="wel_desc_nh animated infinite desc_nh_ani">
 							</div>
 							<!--animated infinite desc_cake_ani  -->
-							<img c-data-src="./images/wel_desc_cake.png" class="wel-desc-cake swiper-lazy animated infinite desc_cake_ani">
+							<img c-data-src="./images/wel_desc_cake.png" class="wel-desc-cake animated infinite desc_cake_ani">
 							<!--animated infinite desc_muscle_ani  -->
-							<img c-data-src="./images/wel-desc-muscle.png" class="wel-desc-muscle swiper-lazy animated infinite desc_muscle_ani">
+							<img c-data-src="./images/wel-desc-muscle.png" class="wel-desc-muscle animated infinite desc_muscle_ani">
 						</div>
 						<div class="wel_gift_warp">
-							<img c-data-src="./images/wel-desc-gift.png" class="wel-desc-gift swiper-lazy">
-							<img c-data-src="./images/pop_ystart.png" class="pop_ystart swiper-lazy animated infinite pop_ystart_ani">
-							<img c-data-src="./images/pop_scraps3.png" class="pop_scraps3 swiper-lazy animated infinite pop_scraps3_ani">
-							<img c-data-src="./images/pop_scraps2.png" class="pop_scraps2 swiper-lazy animated infinite pop_scraps2_ani">
-							<img c-data-src="./images/pop_scraps1.png" class="pop_scraps1 swiper-lazy animated infinite pop_scraps1_ani">
-							<img c-data-src="./images/pop_line1.png" class="pop_line1 swiper-lazy animated infinite pop_line1_ani">
-							<img c-data-src="./images/pop_line2.png" class="pop_line2 swiper-lazy animated infinite pop_line2_ani">
-							<img c-data-src="./images/pop_line3.png" class="pop_line3 swiper-lazy animated infinite pop_line3_ani">
-							<img c-data-src="./images/pop_circle.png" class="pop_circle swiper-lazy animated infinite pop_circle_ani">
-							<img c-data-src="./images/pop_bscraps.png" class="pop_bscraps swiper-lazy animated infinite pop_bscraps_ani">
-							<img c-data-src="./images/pop_rstart.png" class="pop_rstart swiper-lazy animated infinite pop_rstart_ani">
-							<img c-data-src="./images/wel_desc_text.png" class="wel-desc-text swiper-lazy">
-							<img c-data-src="./images/gift_start.png" class="wel-desc-start swiper-lazy animated infinite desc_start_ani">
-							<img c-data-src="./images/gift_start2.png" class="wel-desc-start2 swiper-lazy animated infinite desc_start_ani">
+							<img c-data-src="./images/wel-desc-gift.png" class="wel-desc-gift">
+							<img c-data-src="./images/pop_ystart.png" class="pop_ystart animated infinite pop_ystart_ani">
+							<img c-data-src="./images/pop_scraps3.png" class="pop_scraps3 animated infinite pop_scraps3_ani">
+							<img c-data-src="./images/pop_scraps2.png" class="pop_scraps2 animated infinite pop_scraps2_ani">
+							<img c-data-src="./images/pop_scraps1.png" class="pop_scraps1 animated infinite pop_scraps1_ani">
+							<img c-data-src="./images/pop_line1.png" class="pop_line1 animated infinite pop_line1_ani">
+							<img c-data-src="./images/pop_line2.png" class="pop_line2 animated infinite pop_line2_ani">
+							<img c-data-src="./images/pop_line3.png" class="pop_line3 animated infinite pop_line3_ani">
+							<img c-data-src="./images/pop_circle.png" class="pop_circle animated infinite pop_circle_ani">
+							<img c-data-src="./images/pop_bscraps.png" class="pop_bscraps animated infinite pop_bscraps_ani">
+							<img c-data-src="./images/pop_rstart.png" class="pop_rstart animated infinite pop_rstart_ani">
+							<img c-data-src="./images/wel_desc_text.png" class="wel-desc-text">
+							<img c-data-src="./images/gift_start.png" class="wel-desc-start animated infinite desc_start_ani">
+							<img c-data-src="./images/gift_start2.png" class="wel-desc-start2 animated infinite desc_start_ani">
 						</div>
+						<img id="pullup_three" c-data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani" />
 					</div>
 				</div>
 				<!-- 切换公司对应岗位模块 -->
-				<div class="swiper-slide over-wrap">
+				<div class="swiper-slide over-wrap" id="company_module-page">
 					<!-- 公司集合模块 step1-->
 					<div class="custom-page page1">
 						<div class="page">
@@ -4130,9 +4162,10 @@
 						</div>
 					</div>
 					<!-- 岗位详情模块 -->
+					<img id="pullup_four" data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani swiper-lazy" />
 				</div>
 				<!-- 关于我们 -->
-				<div class="swiper-slide">
+				<div class="swiper-slide" id="aboutpage">
 					<div id="company-logo-group">
 						<div class="page hide">
 							<img data-src="./images/group_logo.png" class="group-logo swiper-lazy" alt="">
@@ -4200,11 +4233,12 @@
 								<img data-src="./images/introduct-clound3.png" class="introduct-clound3 swiper-lazy animated infinite clound_ani1" >
 							</div>
 						</div>
+						<img id="pullup_five" data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani swiper-lazy" />
 					</div>
 				</div>
 				<!-- 关于我们 -->
-				<!-- 切换公司对应岗位模块 -->
-				<div class="swiper-slide">
+				<!-- end -->
+				<div class="swiper-slide" id="endpage">
 					<div class="page">
 						<img data-src="./images/end_text.png" class="end_text swiper-lazy" >
 						<div style="position: relative;">
@@ -4235,8 +4269,8 @@
 						<div class="bottom-warp">
 							<img data-src="./images/contact.png" class="address swiper-lazy" />
 							<div class="sb-group-btn">
-								<img data-src="./images/back_home.png" id="backFirstPage" class="sb-btn fl swiper-lazy animated infinite select-btn">
-								<img data-src="./images/share.png" id="shareBtn" class="sb-btn swiper-lazy animated infinite select-btn fr">
+								<img data-src="./images/back_home.png" id="backFirstPage" class="sb-btn fl swiper-lazy animated infinite select-btn1">
+								<img data-src="./images/share.png" id="shareBtn" class="sb-btn swiper-lazy animated infinite select-btn1 fr">
 							</div>
 						</div>
 					</div>
@@ -4252,7 +4286,6 @@
 	</div>
 	<!-- 分享提示层 -->
 	<div class="share-layer hide" id="share-layer"></div>
-	<img src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani hide" />
 	<!-- 音乐ICON -->
 	<img src="./images/music.png" id="music" class="music animated infinite hide" >
 	<script src="./js/zepto.min.js"></script>

@@ -259,15 +259,7 @@
 				});
 				return this;
 			},
-			onSlideChangeStart: function(swiper) {
-				if( (swiper.activeIndex == 1 || (swiper.activeIndex == 4 && jobsAttr.jobPagesState!=3) || swiper.activeIndex == 6) ) {
-					pullUp.addClass('hide');
-					swiper.disableTouchControl();
-				}else {
-					pullUp.removeClass('hide');
-					swiper.enableTouchControl();
-				}
-			},
+			onSlideChangeStart: fn_onSlideChangeStart,
 			jumpSildeTo: function(index, speed) {
 				this.swiper.slideTo(index, speed ,true);
 			}	
@@ -344,6 +336,20 @@
 		renderJob("eb-jobs-warp", JOBS[1], 'jobitem');
 		renderJob("finance-jobs-warp", JOBS[2], 'jobitem');
 
+		function fn_onSlideChangeStart(swiper) {
+			if(swiper.activeIndex == 2 || swiper.activeIndex == 3) {
+				$(pullUp[swiper.activeIndex-1]).addClass('pull_fadeIn');
+			}
+			if(swiper.activeIndex == 5) {
+				$(pullUp[swiper.activeIndex-1]).addClass('pull_fadeIn');
+			}
+			if( (swiper.activeIndex == 1 || (swiper.activeIndex == 4 && jobsAttr.jobPagesState!=3) || swiper.activeIndex == 6) ) {
+				swiper.disableTouchControl();
+			}else {
+				swiper.enableTouchControl();
+			}
+		}
+		
 		function autoPlayer() {
 			if(audio != null) {
 				audio.play();
@@ -387,7 +393,7 @@
 			loadPage.addClass('animated fadeOut');
 			mainPage.addClass('fadeInUp');
 			music.removeClass('hide');
-			pullUp.removeClass('hide');
+			$(pullUp[0]).addClass('pull_fadeIn');
 			setTimeout(function() {
 				loadPage.remove();
 			}, 1000);
@@ -417,11 +423,12 @@
 		 */
 		function resetState() {
 			jobsSwiper.swiper.destroy();		//清除職位swiper對象(防止下次預覽出現的bug)
+			jobsAttr.jobPagesState = 0;
+			$(pullUp[3]).removeClass('pull_fadeIn');
 			$(".page1").removeClass('animated fadeOut').attr('style', " ");
 			$(".page2").attr('style', " ").eq(parseInt(jobsAttr.currentIndex)).removeClass('animated fadeOutLeft');
 			$(".page3").removeClass('animated fadeInRight').addClass('translate-out-x');
 		}
-
 
 		/**
 		 * 切换公司关于我们的内容
@@ -432,7 +439,7 @@
 			var logo_group = $("#company-logo-group"),
 				mail_address = $(".mail-address"),
 				aboutUs = $("#company-aboutUs");
-			logo_group.children().addClass('hide').eq(index).removeClass('hide');
+			logo_group.children('.page').addClass('hide').eq(index).removeClass('hide');
 			mail_address.addClass('hide').eq(index).removeClass('hide');
 			aboutUs.html(index)
 		}
@@ -473,7 +480,7 @@
 			$(".page2").eq(jobsAttr.oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
 			$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
 			jobsAttr.jobPagesState = 3;
-			pullUp.removeClass('hide');
+			$(pullUp[3]).addClass('pull_fadeIn');
 			var index = $(this).index();
 			jobsSwiper.jumpSildeTo(index);
 			mainSwiper.swiper.enableTouchControl();
