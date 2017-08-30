@@ -304,14 +304,14 @@
 			animation-name: one-hand;
 		}
 		@-webkit-keyframes one-hand {
-			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
-			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
-			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+			0%, 13.3%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1); }
+			43.3%, 56.6%{  -webkit-transform: translate3d(0 ,0 ,0) scale(.94);  }
+			86.6%, 100% { -webkit-transform: translate3d(0 ,0 ,0) scale(1);}
 		}
 		@keyframes one-hand {
-			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
-			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
-			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
+			0%, 13.3%{  transform: scale(1);  }
+			43.3%, 56.6%{  transform: scale(.94);  }
+			86.6%, 100%{  transform: scale(1); }
 		}
 		.img-toh {
 			position: absolute;
@@ -328,39 +328,23 @@
 			animation-name: two-hand;
 		}
 		@-webkit-keyframes two-hand {
-			0%, 6.7%{ 
-				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
-			}
-			26.7%, 40%{ 
-				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
-			}
-			60%, 73.3%{
-				-webkit-transform: translate3d(-2px ,0 ,0) scale(.95);
-			}
-			93.3%, 100%{
-				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
-			}
+			0%, 12.5%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
+			29.2%, 41.7%{  -webkit-transform: translate3d(0,0,0) scale(.94); }
+			58.4%, 70.9%{  -webkit-transform: translate3d(-1px,0,0) scale(.94);  }
+			87.6%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1); }
 		}
 		@keyframes two-hand {
-			0%, 6.7%{ 
-				transform: translate3d(0 ,0 ,0) scale(1);
-			}
-			26.7%, 40%{ 
-				transform: translate3d(0,0,0) scale(.95);
-			}
-			60%, 73.3%{
-				transform: translate3d(-2px,0,0) scale(.95);
-			}
-			93.3%, 100%{
-				transform: translate3d(0 ,0 ,0) scale(1);
-			}
+			0%, 12.5%{ transform: translate3d(0 ,0 ,0) scale(1);  }
+			29.2%, 41.7%{  transform: translate3d(0,0,0) scale(.94); }
+			58.4%, 70.9%{  transform: translate3d(-1px,0,0) scale(.94);  }
+			87.6%, 100%{  transform: translate3d(0 ,0 ,0) scale(1); }
 		}
 		.img-thoh {
 			position: absolute;
 			width: 93px;
 			height: 87px;
-			bottom: 21px;
-    		right: 34px;
+			bottom: 24px;
+    		right: 50px;
 			z-index: 3;
 			-webkit-transform-origin: right bottom;
 			transform-origin: right bottom;
@@ -370,30 +354,30 @@
 			animation-name: three-hand;
 		}
 		@-webkit-keyframes three-hand {
-			0%, 6.7%{ 
+			0%{ 
 				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
 			}
-			26.7%, 40%{ 
-				-webkit-transform: translate3d(0 ,0 ,0) scale(.95);
+			20%, 40%{ 
+				-webkit-transform: translate3d(0,0,0) scale(.94);
 			}
-			60%, 73.3%{
-				-webkit-transform: translate3d(2px ,0 ,0) scale(.95);
+			60%, 80%{
+				-webkit-transform: translate3d(2px,0,0) scale(.94);
 			}
-			93.3%, 100%{
+			100%{
 				-webkit-transform: translate3d(0 ,0 ,0) scale(1);
 			}
 		}
 		@keyframes three-hand {
-			0%, 6.7%{ 
+			0%{ 
 				transform: translate3d(0 ,0 ,0) scale(1);
 			}
-			26.7%, 40%{ 
-				transform: translate3d(0,0,0) scale(.95);
+			20%, 40%{ 
+				transform: translate3d(0,0,0) scale(.94);
 			}
-			60%, 73.3%{
-				transform: translate3d(2px,0,0) scale(.95);
+			60%, 80%{
+				transform: translate3d(2px,0,0) scale(.94);
 			}
-			93.3%, 100%{
+			100%{
 				transform: translate3d(0 ,0 ,0) scale(1);
 			}
 		}
@@ -412,14 +396,14 @@
 			animation-name: four-hand;
 		}
 		@-webkit-keyframes four-hand {
-			0%, 10%{ -webkit-transform: translate3d(0 ,0 ,0) scale(1);  }
-			40%, 60%{ -webkit-transform: translate3d(0 ,0 ,0) scale(.95);  }
-			90%, 100%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1);   }
+			0%, 30%{  -webkit-transform: translate3d(0 ,0 ,0) scale(1); }
+			60%, 90%{  -webkit-transform: translate3d(0 ,0 ,0) scale(.94);  }
+			100% { -webkit-transform: translate3d(0 ,0 ,0) scale(1);}
 		}
 		@keyframes four-hand {
-			0%, 10%{  transform: translate3d(0 ,0 ,0) scale(1); }
-			40%, 60%{  transform: translate3d(0 ,0 ,0) scale(.95);  }
-			90%, 100%{  transform: translate3d(0 ,0 ,0) scale(1);  }
+			0%, 30%{  transform: translate3d(0 ,0 ,0) scale(1); }
+			60%, 90%{  transform: translate3d(0 ,0 ,0) scale(.94);  }
+			100% {transform: translate3d(0 ,0 ,0) scale(1);}
 		}
 		.img-cengceng {
 			position: absolute;
@@ -523,6 +507,8 @@
 			top: 92%;
 			right: 32%;
 			width: 9px;
+			-webkit-transform: translate3d(5px, 5px, 0);
+			transform: translate3d(5px, 5px, 0);
 		}
 		.r-scraps {
 			-webkit-animation-name: r-scraps;
@@ -530,24 +516,24 @@
 		}
 		@-webkit-keyframes r-scraps{
 			0%, 15%{
-				-webkit-transform: translate3d(0, 0, 0);
+				-webkit-transform: translate3d(5px, 5px, 0);
 			}
 			35%, 65%{
-				-webkit-transform: translate3d(-2px, -2px, 0);
+				-webkit-transform: translate3d(3px, 3px, 0);
 			}
 			85%, 100%{
-				-webkit-transform: translate3d(0, 0, 0);
+				-webkit-transform: translate3d(5px, 5px, 0);
 			}
 		}
 		@keyframes r-scraps{
 			0%, 15%{
-				transform: translate3d(0, 0, 0);
+				transform: translate3d(5px, 5px, 0);
 			}
 			35%, 65%{
-				transform: translate3d(-2px, -2px, 0);
+				transform: translate3d(3px, 3px, 0);
 			}
 			85%, 100%{
-				transform: translate3d(0, 0, 0);
+				transform: translate3d(5px, 5px, 0);
 			}
 		}
 		.img-start1 {
@@ -626,42 +612,44 @@
 			top: 68%;
 			right: 28%;
 			width: 18px;
+			-webkit-transform: translate3d(5px, 5px, 0);
+			transform: translate3d(5px, 5px, 0);
 		}
 		.o2s_2 {
 			-webkit-animtaion-name: o2s_2;
     		animation-name: o2s_2;
 		}
 		@-webkit-keyframes o2s_2{
-			0%, 15%{ 
+			0%, 30%{
 				opacity: 1;
-				-webkit-transform: translate3d(0, 0, 0);
+				-webkit-transform: translate3d(5px, 5px, 0);
 			}
-			35%, 65%{
+			60%, 90%{
 				opacity: .5;
-				-webkit-transform: translate3d(2px, 2px, 0);
+				-webkit-transform: translate3d(3px, 3px, 0);
 			}
-			85%, 100%{
+			100% {
 				opacity: 1;
-				-webkit-transform: translate3d(0, 0, 0);
+				-webkit-transform: translate3d(5px, 5px, 0);
 			}
 		}
 		@keyframes o2s_2{
-			0%, 15%{ 
+			0%, 30%{
 				opacity: 1;
-				transform: translate3d(0, 0, 0);
+				transform: translate3d(5px, 5px, 0);
 			}
-			35%, 65%{
+			60%, 90%{
 				opacity: .5;
-				transform: translate3d(2px, 2px, 0);
+				transform: translate3d(3px, 3px, 0);
 			}
-			85%, 100%{
+			100% {
 				opacity: 1;
-				transform: translate3d(0, 0, 0);
+				transform: translate3d(5px, 5px, 0);
 			}
 		}
 		.img-y-ribbon {
-			top: 49%;
-			right: 19%;
+			top: 50%;
+			right: 15%;
 			width: 25px;
 		}
 		.yellow-ribbon {
@@ -3920,21 +3908,25 @@
 							<img c-data-src="./images/inner_center_clound.png" class="img-icc" />
 							<img c-data-src="./images/out_left_clound.png" class="img-olc" />
 							<img c-data-src="./images/out_right_clound.png" class="img-orc" />
+							<!--animated infinite one-hand  -->
 							<img c-data-src="./images/one_outhand.png" class="img-ooh animated infinite one-hand" />
+							<!--animated infinite two-hand  -->
 							<img c-data-src="./images/two_outhand.png" class="img-toh animated infinite two-hand" />
+							<!--animated infinite three-hand  -->
 							<img c-data-src="./images/three_outhand.png" class="img-thoh animated infinite three-hand" />
+							<!--animated infinite four-hand  -->
 							<img c-data-src="./images/four_outhand.png" class="img-foh animated infinite four-hand" />
 						</div>
 						<div class="emb-warp">
-							<img c-data-src="./images/cengceng.png" class="img-cengceng animated direction infinite cengceng">
-							<img c-data-src="./images/b_scraps.png" class="img-b-scraps animated direction infinite bScraps">
-							<img c-data-src="./images/r_ribbon.png" class="img-r-ribbon animated direction infinite rRibbonMove">
-							<img c-data-src="./images/r_scraps.png" class="img-r-scraps animated direction infinite r-scraps">
-							<img c-data-src="./images/start1.png" class="img-start1 animated direction infinite lb_scale">
-							<img c-data-src="./images/start2.png" class="img-start2 animated direction infinite o2s">
+							<img c-data-src="./images/cengceng.png" class="img-cengceng animated infinite cengceng">
+							<img c-data-src="./images/b_scraps.png" class="img-b-scraps animated infinite bScraps">
+							<img c-data-src="./images/r_ribbon.png" class="img-r-ribbon animated infinite rRibbonMove">
+							<img c-data-src="./images/r_scraps.png" class="img-r-scraps animated infinite r-scraps">
+							<img c-data-src="./images/start1.png" class="img-start1 animated infinite lb_scale">
+							<img c-data-src="./images/start2.png" class="img-start2 animated infinite o2s">
 							<img c-data-src="./images/start3.png" class="img-start3 animated infinite o2s_2">
 							<img c-data-src="./images/y_ribbon.png" class="img-y-ribbon animated infinite yellow-ribbon">
-							<img c-data-src="./images/y_start.png" class="img-y-start animated direction infinite scale-amp">
+							<img c-data-src="./images/y_start.png" class="img-y-start animated infinite scale-amp">
 						</div>
 						<img id="pullup_one" c-data-src="./images/pull_up.png" class="pull-up animated infinite pull_up_ani" />
 					</div>
