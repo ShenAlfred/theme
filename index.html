@@ -4100,6 +4100,7 @@
 						</div>
 					</div>
 					<!-- template -->
+					<!-- htmlmin:ignore -->
 					<script id="jobitem" type="text/template">
 						<ul class="jobs-list">
 							{@each jobs as job,index}
@@ -4110,6 +4111,7 @@
 							{@/each}
 						</ul>
 					</script>
+					<!-- htmlmin:ignore -->
 					<!-- template -->
 					<!-- 公司对应的岗位列表模块 -->
 					<!-- 岗位详情模块 step3 -->																			<!-- 记得加上translate-out-x  -->
@@ -4118,26 +4120,6 @@
 							<div class="swiper-container jobs-page" id="jobs-page">
 								<div class="swiper-wrapper jobs-wrapper" id="jobs-warp"></div>
 								<div class="swiper-pagination"></div>
-								<script id="jobs" type="text/template">
-									{@each jobs as job}
-										<div class="swiper-slide card-slide">
-											<div class="card">
-												<img src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
-												<div class="card-content-warp">
-													<h2 class="job-name ellipsis">${job.JobName}</h2>
-													<ul class="job-desc">
-														{@each job.description as dec,index}
-														<li class="job-desc-item">
-															<img src="./images/mark.png" class="mark swiper-lazy" >
-															<span>${dec}</span>
-														</li>
-														{@/each}
-													</ul>
-												</div>
-											</div>
-										</div>
-									{@/each}
-								</script>
 							</div>
 							<div class="mail-warp">
 								<img data-src="./images/mail.png" class="mail swiper-lazy animated infinite mail_ani">
@@ -4151,6 +4133,28 @@
 									<img data-src="./images/finance_hr.png" class="mail_hr swiper-lazy " >
 								</span>
 							</div>
+							<!-- htmlmin:ignore -->
+							<script id="jobs" type="text/template">
+								{@each jobs as job}
+									<div class="swiper-slide card-slide">
+										<div class="card">
+											<img src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
+											<div class="card-content-warp">
+												<h2 class="job-name ellipsis">${job.JobName}</h2>
+												<ul class="job-desc">
+													{@each job.description as dec,index}
+													<li class="job-desc-item">
+														<img src="./images/mark.png" class="mark swiper-lazy" >
+														<span>${dec}</span>
+													</li>
+													{@/each}
+												</ul>
+											</div>
+										</div>
+									</div>
+								{@/each}
+							</script>
+							<!-- htmlmin:ignore -->
 						</div>
 					</div>
 					<!-- 岗位详情模块 -->

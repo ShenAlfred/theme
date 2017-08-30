@@ -1,8 +1,9 @@
 var gulp = require('gulp');
-var server = require('gulp-server-livereload');
 var webserver = require('gulp-webserver');
 var uglify = require('gulp-uglify');
 var uglifyCss = require('gulp-uglifycss');
+var htmlmin = require('gulp-htmlmin');
+
 
 gulp.task('webserver', function() {
     gulp.src('')
@@ -14,19 +15,17 @@ gulp.task('webserver', function() {
             fallback: 'index.html'
         }));
 });
-// gulp.task('webserver', function() {
-// 	gulp.src('')
-// 		.pipe(server({
-//             host: '10.52.30.105',
-// 			port: '9000',
-// 			livereload: true,
-//             open: true,
-//             defaultFile: 'index.html'
-// 		}));
-// });
 
 gulp.task("buildHtml", function() { 
-	gulp.src(['index.html'])
+    gulp.src(['index.html'])
+        .pipe(htmlmin({
+            removeComments: true,
+            collapseWhitespace: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            minifyJS: true,
+            minifyCSS: true
+        }))
         .pipe(gulp.dest('dist'));
 });
 gulp.task("buildCss", function() {
@@ -53,5 +52,5 @@ gulp.task("buildFont", function() {
 });
 
 gulp.task('build', ['buildHtml', 'buildCss', 'buildJs', 'buildImages', 'buildAudio', 'buildFont'], function(e) {
-    console.log(e);
+    console.log("build complate!");
 });
