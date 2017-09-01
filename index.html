@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="./images/shangying.ico"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> 
 	<title>商赢集团招聘</title>
     <link rel="stylesheet" href="./css/common.css" />
@@ -2920,7 +2919,6 @@
 		.mark {
 			float: left;
 			width: 5%;
-			margin-top: 2%;
 		}
 		.job-desc-item {
 			margin-top: 4%;
@@ -3630,22 +3628,25 @@
 				transform: scale(0.8);
 			}
 		}
-		.share-layer {
-			position: fixed;
+		.layer {
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
+			background: rgba(0, 0, 0, .75);
+			z-index: 99;
+		}
+		.layer.share-layer {
 			background: rgba(0, 0, 0, .75) url('./images/share_layer.png') 80% top no-repeat;
 			background-size: 181px 110px;
-			z-index: 99;
 		}
 		.music {
 			position: fixed;
 			right: 4%;
 			top: 2%;
 			width: 8%;
-			z-index: 10;
+			z-index: 99;
 		}
 		.music.animated {
 			-webkit-animation-duration: 2s;
@@ -3748,6 +3749,352 @@
 			}
 			100% {
 				transform: rotate(360deg);
+			}
+		}
+		.m-page {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: #ffd741 url(./images/bg.png) repeat;
+			background-size: 375px 15px;
+		}
+		.img-ceo {
+			margin-top: 20px;
+			width: 90%;
+		}
+		.school-warp {
+			position: relative;
+			width: 99%;
+			margin: 20% auto 0;
+		}
+		.img-school {
+			width: 100%;
+		}
+		.stu2ceo {
+			position: absolute;
+			left: 50%;
+			bottom: -45px;
+			width: 66%;
+			-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+		}
+		.img-stu2ceo {
+			width: 100%;
+		}
+		.img-student-hand {
+			position: absolute;
+			width: 26%;
+			top: 28%;
+			left: 6%;
+			-webkit-transform: rotate(-4deg) scale(1);
+			transform: rotate(-4deg) scale(1);
+		}
+		.student-hand-ani {
+			-webkit-animation-name: student-hand-ani;
+			animation-name: student-hand-ani;
+		}
+		@-webkit-keyframes student-hand-ani {
+			0% {
+				-webkit-transform: rotate(0deg) scale(1);
+			}
+			30% {
+				-webkit-transform: rotate(-3deg) scale(1);
+			}
+			60% {
+				-webkit-transform: rotate(-4deg) scale(.95);
+			}
+			90% {
+				-webkit-transform: rotate(0deg) scale(.95);
+			}
+			100% {
+				-webkit-transform: rotate(0deg) scale(1);
+			}
+		}
+		@keyframes student-hand-ani {
+			0% {
+				transform: rotate(0deg) scale(1);
+			}
+			30% {
+				transform: rotate(-3deg) scale(1);
+			}
+			60% {
+				transform: rotate(-4deg) scale(.95);
+			}
+			90% {
+				transform: rotate(0deg) scale(.95);
+			}
+			100% {
+				transform: rotate(0deg) scale(1);
+			}
+		}
+		.img-ceo-hand {
+			position: absolute;
+			width: 12%;
+			top: 21%;
+			right: 4%;
+			z-index: 1;
+			-webkit-transform-origin: left bottom;
+			transform-origin: left bottom;
+			-webkit-transform: rotate(2deg);
+			transform: rotate(2deg);
+		}
+		.ceo-hand-ani {
+			-webkit-aniamtion-name: ceo-hand-ani;
+			animation-name: ceo-hand-ani;
+		}
+		@-webkit-keyframes ceo-hand-ani {
+			0% {
+				-webkit-transform: rotate(-1deg) scale(1);
+			}
+			60% {
+				-webkit-transform: rotate(2deg) scale(1);
+			}
+			90% {
+				-webkit-transform: rotate(0deg) scale(1);
+			}
+			90% {
+				-webkit-transform: rotate(3deg) scale(1);
+			}
+			100% {
+				-webkit-transform: rotate(3deg) scale(1);
+			}
+		} 
+		@keyframes ceo-hand-ani {
+			0% {
+				transform: rotate(-1deg) scale(1);
+			}
+			60% {
+				transform: rotate(2deg) scale(1);
+			}
+			90% {
+				transform: rotate(0deg) scale(1);
+			}
+			90% {
+				transform: rotate(3deg) scale(1);
+			}
+			100% {
+				transform: rotate(3deg) scale(1);
+			}
+		} 
+		.m-clound {
+			position: absolute;
+			width: 12%;
+			-webkit-animation-duration: 1.5s;
+    		animation-duration: 1.5s;
+		}
+		.m-clound.m-l-c {
+			left: 2%;
+			bottom: 49%;
+		}
+		.m-clound.m-r-c {
+			right: 1%;
+			bottom: 65%;
+		}
+		.second-layer {
+			margin-top: 60px;
+		}
+		.third-layer {
+			margin-top: 68px;
+		}
+		.img-intro {
+			width: 108px;
+			margin-bottom: 12px;
+		}
+		.img-cluond-ng {
+			width: 100%;
+		}
+		.joinus-title {
+			width: 67%;
+		}
+		.fl-one {
+			position: relative;
+			margin: 12px auto 0;
+			width: 75%;
+			text-align: left;
+		}
+		.img-fl1 {
+			width: 88%;
+		}
+		.img-hart-b {
+			position: absolute;
+			width: 7%;
+			bottom: 8%;
+			right: 2%;
+		}
+		.img-hart-s {
+			position: absolute;
+			width: 4%;
+			bottom: 30%;
+			right: 0;
+			-webkit-transform-origin: right top;
+			transform-origin: right top;
+			
+		}
+		.img-hart-b.animated {
+			-webkit-animation-duration: 1.5s;
+			animation-duration: 1.5s;
+		}
+		.img-hart-s.animated {
+			-webkit-animation-duration: 1.5s;
+			animation-duration: 1.5s;
+		}
+		.hart-b-ani {
+			-webkit-animation-name: hart-b-ani;
+			animation-name: hart-b-ani;
+		}
+		.hart-s-ani {
+			-webkit-animation-name: hart-s-ani;
+			animation-name: hart-s-ani;
+		}
+		@keyframes hart-b-ani {
+			0% {
+				transform: translate(0,0) scale(.95);
+			}
+			50% {
+				transform: translate(0,0) scale(1.02);
+			}
+			100% {
+				transform: translate(0,0) scale(.95);	
+			}
+		}
+		@keyframes hart-s-ani {
+			0% {
+				transform: translate(0,0) scale(1);
+			}
+			50% {
+				transform: translate(-2px, 2px) scale(1.2);
+			}
+			100% {
+				transform: translate(0,0) scale(1);
+			}
+		}
+		.img-fl2 {
+			margin: 50px 0 0 -12%;
+			width: 70%;
+		}
+		.img-fl3 {
+			width: 93%;
+			margin: 10px auto 0;
+		}
+		.img-fl4 {
+			width: 88%;
+			margin: 50px auto 0 -6%;
+		}
+		.fl-five {
+			position: relative;
+			margin: 50px auto 0;
+			width: 78%;
+		}
+		.img-fl5 {
+			width: 100%;
+		}
+		.fl-six {
+			position: relative;
+			margin: 40px auto 0;
+			width: 86%;
+		}
+		.img-fl6 {
+			width: 100%;
+		}
+		.gift-box {
+			position: relative;
+			width: 13%;
+			margin: 26px auto 0;
+		}
+		.gift-l {
+			width: 100%;
+		}
+		.img-gift-ceng {
+			position: absolute;
+			width: 98%;
+			left: 50%;
+			bottom: 75%;
+			-webkit-transform: translate(-80%, 0);
+			transform: translate(-80%, 0);
+		}
+		.img-gift-ceng.animated {
+			-webkit-aniamtion-duration: 1s;
+			animation-duration: 1s;
+		}
+		.gift-ceng-ani {
+			-webkit-animation-name: gift-ceng-ani;
+			animation-name: gift-ceng-ani; 
+		}
+		@-webkit-keyframes gift-ceng-ani{
+			0% {
+				-webkit-transform: translate(-80%, -3px);
+			} 
+			80%, 100% {
+				-webkit-transform: translate(-80%, 0);
+			}
+		}
+		@keyframes gift-ceng-ani{
+			0% {
+				transform: translate(-80%, -3px);
+			} 
+			80%, 100% {
+				transform: translate(-80%, 0);
+			}
+		}
+		.fourty-layer {
+			margin-top: 35px;
+		}
+		.img-howperson {
+			width: 91%;
+		}
+		.img-dm {
+			margin-top: 40px;
+			width: 70%;
+		}
+		.contact-warp {
+			margin-top: 40px;
+		}
+		.img-contactus {
+			width: 300px;
+		}
+		.img-phone {
+			width: 18px;
+			height: 24px;
+		}
+		.img-phone.animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+		}
+		.send-resume {
+			display: block;
+			margin: 35px auto 0;
+			width: 294px;
+			height: 62px;
+			background: url('./images/send-resume.png') no-repeat;
+			background-size: 294px 62px;
+		}
+		.m-start {
+			position: absolute;
+			width: 4%;
+			left: -3%;
+			bottom: 48%;
+		}
+		.m-muscle {
+			position: absolute;
+			width: 10%;
+			right: -6%;
+			top: 58%;
+			-webkit-transform: rotate(8deg);
+			transform: rotate(8deg);
+		}
+		.phone-rotate {
+			-webkit-animation-name: phone-rotate;
+			animation-name: phone-rotate;
+		}
+		@keyframes phone-rotate {
+			0% {
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: rotate(-10deg);
+			}
+			100% {
+				transform: rotate(0deg);
 			}
 		}
 		@media screen and (max-width: 320px) {
@@ -3856,11 +4203,85 @@
 			position: absolute;
 			z-index: 2;
 		}
-
-</style>
+		.management-page {
+			position: absolute; 
+			top: 0; 
+			background: #ffd741 url(./images/bg.png) repeat;
+   			background-size: 375px 15px;
+			width: 100%;
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			z-index: 99;
+			-webkit-transition: all .2s linear;
+			transition: all .2s linear;
+			-webkit-overflow-scrolling: scroll;
+		}
+		.management-page.overflow {
+			overflow: hidden;
+		}
+		.management-page.hidepage {
+			-webkit-transform: translate3d(0,100%,0);
+			transform: translate3d(0,100%,0);
+			opacity: 0;
+		}
+		.management-page.showpage {
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+			opacity: 1;
+		}
+		.pop {
+			position: absolute;
+			width: 308px;
+			height: 381px;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			background: url('./images/pop.png') no-repeat;
+			background-size: contain;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			z-index: 999;
+		}
+		.pop h2{
+			padding: 25px 0 15px 0;
+			font-size: 18px;
+		}
+		.pop p {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		.pop p:nth-child(2) {
+			padding-top: 25px;
+		}
+		.pop .pop-content {
+			text-align: left;
+			padding: 0 30px;
+			margin-bottom: 35px;
+			height: 280px;
+			letter-spacing: 2px;
+			overflow: scroll;
+		}
+		.pop-close {
+			position: absolute;
+			width: 29px;
+			height: 29px;
+			right: -8px;
+			top: -8px;
+			background: url('./images/close.png') no-repeat;
+			background-size: 29px 29px;
+		}
+		.img-cloth {
+			position: absolute;
+			width: 12%;
+			bottom: 59%;
+			left: 26%;
+			z-index: 5;
+		}
+	</style>
 </head>
 <body>
-	<audio id="audio" src="./audio/2744.mp3" loop style="display: none;"></audio> <!-- autoplay -->
+	<audio id="audio" src="./audio/ibelieve.mp3" loop style="display: none;"></audio> <!-- autoplay -->
 	<!-- loading -->
 	<div class="page loading-page">
 		<div class="loading">
@@ -3945,7 +4366,7 @@
 							<img c-data-src="./images/select_start2.png" class="select_start2 animated infinite start_scale1">
 							<img c-data-src="./images/select_start3.png" class="select_start3 animated infinite start_scale1">
 						</div>
-						<div class="female-select">
+						<div class="female-select" id="management-invite">
 							<img c-data-src="./images/select2.png" class="img-select"/>
 							<img c-data-src="./images/select_gps.png"  class="img-btn animated infinite select-btn">
 							<img c-data-src="./images/female_line1.png" class="female-line1 animated infinite female-line1_ani">
@@ -4275,13 +4696,74 @@
 		</div>
 	</div>
 	<!-- 管培生模块 -->
-	<div id="management" style="display:none; position: absolute; top: 0; background: #ccc; width: 100%;z-index: 99;height: 100%;overflow: scroll">
-		<div>
-				
+	<div id="management" class="management-page hidepage">
+		<div style="text-align: center;padding-bottom: 30px;" id="managementpage">
+			<img c-data-src="./images/ceo.png" class="img-ceo" />
+			<div class="school-warp">
+				<img c-data-src="./images/school.png" class="img-school" />
+				<div class="stu2ceo">
+					<img c-data-src="./images/cloth.png" class="img-cloth">
+					<img c-data-src="./images/stu2ceo.png" class="img-stu2ceo" />
+					<img c-data-src="./images/student-hand.png" class="img-student-hand animated infinite student-hand-ani">
+					<img c-data-src="./images/ceo-hand.png" class="img-ceo-hand animated infinite ceo-hand-ani">
+				</div>
+				<img c-data-src="./images/m-clound.png" class="m-clound m-l-c animated infinite clound_ani" />
+				<img c-data-src="./images/m-clound.png" class="m-clound m-r-c animated infinite clound_ani1" />
+			</div>
+			<div class="second-layer">
+				<img c-data-src="./images/intro.png" class="img-intro" id="intro" />
+				<img c-data-src="./images/cluond-ng.png" class="img-cluond-ng" />
+			</div>
+			<div class="third-layer">
+				<img c-data-src="./images/joinus-title.png" class="joinus-title">
+				<div class="fl-one">
+					<img c-data-src="./images/fl1.png" class="img-fl1" />
+					<img c-data-src="./images/hart-b.png" class="img-hart-b animated infinite hart-b-ani" />
+					<img c-data-src="./images/hart-s.png" class="img-hart-s animated infinite hart-s-ani" />
+				</div>
+			</div>
+			<img c-data-src="./images/fl2.png" class="img-fl2">
+			<img c-data-src="./images/fl3.png" class="img-fl3">
+			<img c-data-src="./images/fl4.png" class="img-fl4">
+			<div class="fl-five">
+				<img c-data-src="./images/fl5.png" class="img-fl5">
+				<img c-data-src="./images/m-start.png" class="m-start animated infinite start_scale_dot6">
+				<img c-data-src="./images/wel-desc-muscle.png" class="m-muscle animated infinite desc_muscle_ani">
+			</div>
+			<div class="fl-six">
+				<img c-data-src="./images/fl6.png" class="img-fl6">
+				<div class="gift-box">
+					<img c-data-src="./images/gift-l.png" class="gift-l" />
+					<img c-data-src="./images/gift-ceng.png" class="img-gift-ceng animated infinite gift-ceng-ani">
+				</div>
+			</div>
+			<div class="fourty-layer">
+				<img c-data-src="./images/howperson.png" class="img-howperson">
+				<img c-data-src="./images/dm.png" class="img-dm">
+				<div class="contact-warp">
+					<img c-data-src="./images/phone.png" class="img-phone animated infinite phone-rotate">
+					<img c-data-src="./images/contactUs.png" class="img-contactus">
+				</div>
+				<a href="http://m.51job.com/search/jobdetail.php?jobtype=0&jobid=90275898" class="send-resume" target="_blank"></a>
+			</div>
+		</div>
+		<div class="layer" id="pop-layer">
+			<div class="pop" id="aboutUs-pop">
+				<h2>关于我们</h2>
+				<a href="javascript:;" class="pop-close"></a>
+				<div class="pop-content">
+					<p>
+						&nbsp;&nbsp;商赢控股集团有限公司成立于2014年9月，总部位于上海，集团通过资本助力，科技创新，以打造消费新生态，金融新生态为企业使命，把成为公众信赖，值得托付的全球化、多平台产融集团作为发展目标，构建了全球布局、多地联动的上市公司、“让投融资更简单、更全面、更智能”的商赢金控、以“供应链服务+社区化电商+线下体验中心”为模式的商赢电商等多个平台，形成了全球化布局、多平台共进的发展模式。
+					</p>
+					<p>
+						&nbsp;&nbsp;商赢集团围绕“消费新生态，金融新生态”，通过商赢环球（600146）资本助力，在中国，香港、美国、欧美等地进行了全球化业务战略布局，构建了金融、儿童、时尚、体育、健康、文化等六大产业，打造了商赢电商、商赢金服（SY8）两大线上平台，以及健身房、物流提货中心、金融服务中心等线下平台，建立了线上线下平台相融合的消费金融生态圈。
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- 分享提示层 -->
-	<div class="share-layer hide" id="share-layer"></div>
+	<div class="layer share-layer hide" id="share-layer"></div>
 	<!-- 音乐ICON -->
 	<img src="./images/music.png" id="music" class="music animated infinite hide" >
 	<script src="./js/zepto.min.js"></script>

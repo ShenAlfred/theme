@@ -318,6 +318,8 @@
 		var secondSereenImages = $("#selectpage").find('img'); 
 		var thiredSereenImages = $("#flpage").find('img');
 		var fourScreenImages = $("#giftpage").find('img');
+		var managementImages = $("#managementpage").find('img');
+		var managementpage = $(".management-page");
 		var images = [];
 		
 		/**
@@ -327,6 +329,7 @@
 		saveImages(images, secondSereenImages);
 		saveImages(images, thiredSereenImages);
 		saveImages(images, fourScreenImages);
+		saveImages(images, managementImages);
 
 		loadImages2(images);
 		autoPlayer();
@@ -375,6 +378,7 @@
 						progress.attr('width', rate + "%");
 						if(rate >= 100) {
 							showThing();
+							managementpage.addClass('overflow');
 						}
 					}
 					images[i].onerror = function() {
@@ -383,6 +387,7 @@
 						progress.attr('width', rate + "%");
 						if(rate >= 100) {
 							showThing();
+							managementpage.addClass('overflow');
 						}
 					}
 				})(i);
@@ -491,7 +496,9 @@
 		 */
 		$("#community-invite").on('click', function() {
 			mainSwiper.jumpSildeTo(2);
-
+		});
+		$("#management-invite").on('click', function() {
+			$("#management").removeClass('hidepage').addClass('showpage');
 		});
 
 		music.on('click', function() {
@@ -518,7 +525,29 @@
 		});
 		$('#share-layer').on('click', function() {
 			$(this).hide();
-		})
+		});
+
+		//关于我们层
+		(function(){
+			var pop = $("#aboutUs-pop"),
+				pop_layer = $("#pop-layer"),
+				intro = $("#intro");
+
+			pop.find('.pop-close').on('click', function() {
+				pop.hide();
+				pop_layer.hide();
+				managementpage.removeClass('overflow');
+			});
+
+			intro.on('click', function() {
+				var scrollTop = managementpage.scrollTop();
+				pop_layer.css('top', scrollTop);
+				pop.show();
+				pop_layer.show();
+				managementpage.addClass('overflow');
+			});
+
+		})();
 
 	});
 
