@@ -279,7 +279,7 @@
 					watchSlidesProgress: true,
 					slidesPerView: 'auto',
 					pagination : '.swiper-pagination',
-					spaceBetween: 40,
+					spaceBetween: 20,  //40
 					onSlideChangeStart: this.onSlideChangeStart,
 					onSetTransition: this.onSetTransition,
 					onProgress: this.onProgress
@@ -287,20 +287,20 @@
 				return this;
 			},
 			onProgress: function(swiper) {
-				var i, slide, progress;
-				for (i = 0; i < swiper.slides.length; i++) {
-					slide = swiper.slides[i];
-					progress = slide.progress;
-					slide.style.opacity = 1 - Math.min(Math.abs(progress / 2), 1);
-					slide.style.webkitTransform = slide.style.transform = "translate3d(0,0," + -Math.abs(150 * progress) + "px)";
-				}
+				// var i, slide, progress;
+				// for (i = 0; i < swiper.slides.length; i++) {
+				// 	slide = swiper.slides[i];
+				// 	progress = slide.progress;
+				// 	slide.style.opacity = 1 - Math.min(Math.abs(progress / 2), 1);
+				// 	slide.style.webkitTransform = slide.style.transform = "translate3d(0,0," + -Math.abs(150 * progress) + "px)";
+				// }
 			},
 			onSetTransition: function(swiper, transition) {
-				var slide;
-				for (var i = 0; i < swiper.slides.length; i++){
-					slide = swiper.slides[i].style;
-					slide.webkitTransitionDuration = slide.transitionDuration = transition + "ms";
-				}
+				// var slide;
+				// for (var i = 0; i < swiper.slides.length; i++){
+				// 	slide = swiper.slides[i].style;
+				// 	slide.webkitTransitionDuration = slide.transitionDuration = transition + "ms";
+				// }
 			},
 			jumpSildeTo: function(index, speed) {
 				this.swiper.slideTo(index, speed ,true);
@@ -378,7 +378,6 @@
 						progress.attr('width', rate + "%");
 						if(rate >= 100) {
 							showThing();
-							managementpage.addClass('overflow');
 						}
 					}
 					images[i].onerror = function() {
@@ -387,7 +386,6 @@
 						progress.attr('width', rate + "%");
 						if(rate >= 100) {
 							showThing();
-							managementpage.addClass('overflow');
 						}
 					}
 				})(i);
@@ -534,16 +532,16 @@
 				intro = $("#intro");
 
 			pop.find('.pop-close').on('click', function() {
-				pop.hide();
-				pop_layer.hide();
+				pop.addClass('hide');
+				pop_layer.addClass('hide');
 				managementpage.removeClass('overflow');
 			});
 
 			intro.on('click', function() {
 				var scrollTop = managementpage.scrollTop();
 				pop_layer.css('top', scrollTop);
-				pop.show();
-				pop_layer.show();
+				pop.removeClass('hide');
+				pop_layer.removeClass('hide');
 				managementpage.addClass('overflow');
 			});
 

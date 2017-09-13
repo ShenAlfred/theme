@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> 
 	<title>商赢集团招聘</title>
+	<meta name="keywords" content="商赢集团招聘" />
+	<meta name="description" content="商赢集团招聘" /> 
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
@@ -77,7 +79,46 @@
 			margin-left: -80px;
 		}
 		.loading-text {
-			width: 30%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -25px;
+			width: 50px;
+			height: 15px;
+			background: url('./images/loading.png') no-repeat;
+			background-size: 50px 15px;
+		}
+		.loading-ani {
+			-webkit-animation: loading-ani 1s steps(1) infinite;
+			animation: loading-ani 1s steps(1) infinite;
+		}
+		@-webkit-keyframes loading-ani {
+			0% {
+				width: 40px;
+			}
+			25% {
+				width: 43px;
+			}
+			50% {
+				width: 47px;
+			}
+			75%,100% {
+				width: 50px;
+			}
+		}
+		@keyframes loading-ani {
+			0% {
+				width: 40px;
+			}
+			25% {
+				width: 43px;
+			}
+			50% {
+				width: 47px;
+			}
+			75%,100% {
+				width: 50px;
+			}
 		}
 		.loading-point {
 			width: 2%;
@@ -90,7 +131,7 @@
 			position: relative;
 			width: 165px;
 			height: 17px;
-			margin-top: 3%;
+			margin-top: 12%;
 			background: url(./images/bgwai.png) no-repeat;
 			background-size: 165px 17px;
 		}
@@ -4285,12 +4326,7 @@
 	<!-- loading -->
 	<div class="page loading-page">
 		<div class="loading">
-			<div>
-				<img src="./images/loading.png" class="loading-text">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
-				<img src="./images/loading_point.png" class="loading-point">
-			</div>
+			<div class="loading-text loading-ani"></div>
 			<div class="progress-warp">
 				 <svg width="161" height="17">
 					<defs>
@@ -4747,8 +4783,8 @@
 				<a href="http://m.51job.com/search/jobdetail.php?jobtype=0&jobid=90275898" class="send-resume" target="_blank"></a>
 			</div>
 		</div>
-		<div class="layer" id="pop-layer">
-			<div class="pop" id="aboutUs-pop">
+		<div class="layer hide" id="pop-layer">
+			<div class="pop hide" id="aboutUs-pop">
 				<h2>关于我们</h2>
 				<a href="javascript:;" class="pop-close"></a>
 				<div class="pop-content">
@@ -4766,9 +4802,64 @@
 	<div class="layer share-layer hide" id="share-layer"></div>
 	<!-- 音乐ICON -->
 	<img src="./images/music.png" id="music" class="music animated infinite hide" >
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 	<script src="./js/zepto.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
 	<script src="./js/juicer-min.js"></script>
-	<script src="./js/h5.js"></script>
+	<script src="./js/h5.js"></script> 
+	<script>
+
+		$(function() {
+
+			var token,
+			appid = 'wxdd2bd054c2ede8b1';
+
+			wx.config({
+				debug: true,
+				appId: appid,
+				timestamp: 1505267632,
+				nonceStr: 'N4lGdhrW312MQ8as',
+				signature: '00c093472f141438b9b86250b7c54c5b20c428c1',
+				jsApiList: [
+					'onMenuShareTimeline', 'onMenuShareAppMessage'
+				]
+			});
+			
+			var title = "上海长宽神游戏“神龟不掉线”，千万别小看它！";
+			var des = "我玩过了上海长宽的游戏神作“神龟不掉线”，真的比想象中更难，你快来试试并领取电影红包吧！";
+
+			// alert(window.location.href);
+			// alert(encodeURIComponent(window.location.href));
+
+			wx.ready(function() {
+
+				wx.onMenuShareAppMessage({
+					title: title,
+					desc: des,
+					link: location.protocol+"//"+location.host,
+					imgUrl: 'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg',
+					type: '',
+					dataUrl: '',
+					success: function() {
+						alert("success")
+					},
+					cancel: function() {
+						alert("cancel")
+					}
+				});
+				wx.onMenuShareTimeline({
+					title: title,
+					link: location.protocol+"//"+location.host,
+					imgUrl: 'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg',
+					success: function() {
+						alert("success")
+					},
+					cancel: function() {
+						alert("cancel")
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>
