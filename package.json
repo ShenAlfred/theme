@@ -19,10 +19,14 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
+    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-inject": "^4.3.0",
+    "gulp-order2": "^2.0.5",
     "gulp-server-livereload": "^1.9.2",
     "gulp-uglify": "^3.0.0",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "stream-series": "^0.1.1"
   },
   "dependencies": {
     "gulp-uglifycss": "^1.0.8"

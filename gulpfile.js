@@ -3,9 +3,12 @@ var webserver = require('gulp-webserver');
 var uglify = require('gulp-uglify');
 var uglifyCss = require('gulp-uglifycss');
 var htmlmin = require('gulp-htmlmin');
+var inject = require('gulp-inject');
+var series = require('stream-series');
+var concat = require('gulp-concat');
 
 
-gulp.task('webserver', function() {
+gulp.task('webserver', ['injectJs'], function() {
     gulp.src('')
         .pipe(webserver({
             host: '10.52.30.105',
@@ -14,6 +17,20 @@ gulp.task('webserver', function() {
             open: true,
             fallback: 'index.html'
         }));
+});
+
+var jquery_source = gulp.src(['./js/jquery.min.js'], {read: false});
+
+var other_soucre = gulp.src(['./js/other_*.js'], {read: false});
+
+var depend_jqeury = gulp.src(['./js/swiper.min.js'], {read: false});
+
+var h5_soucre = gulp.src(['./js/h5.js'], {read: false});
+
+gulp.task('injectJs', function() {
+    gulp.src('./index.html')
+        .pipe(inject(series(other_soucre, jquery_source, depend_jqeury, h5_soucre)))
+        .pipe(gulp.dest('./js'));
 });
 
 gulp.task("buildHtml", function() { 
