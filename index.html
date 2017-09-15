@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> 
 	<title>商赢集团招聘</title>
-	<meta name="keywords" content="商赢集团招聘" />
-	<meta name="description" content="商赢集团招聘" /> 
+	<!-- <meta name="keywords" content="我玩过了上海长宽的游戏神作“神龟不掉线”，真的比想象中更难，你快来试试并领取电影红包吧！" />
+	<meta name="description" content="我玩过了上海长宽的游戏神作“神龟不掉线”，真的比想象中更难，你快来试试并领取电影红包吧！" />  -->
     <link rel="stylesheet" href="./css/common.css" />
 	<link rel="stylesheet" href="./css/swiper.3.0.css" />
 	<style>
@@ -4503,9 +4503,9 @@
 							<img data-src="./images/company_text.png" class="company-text swiper-lazy" alt="">
 							<img data-src="./images/company_mid_text.png" class="company-mid-text swiper-lazy" alt="">
 							<div class="company-btn-group">
-								<img data-src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems swiper-lazy" data-index=0>
-								<img data-src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems swiper-lazy" data-index=1>
-								<img data-src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems swiper-lazy" data-index=2>
+								<img data-src="./images/company_btn1.png" id="Group-company" class="company-btn changeJobItems swiper-lazy" data-index=0 data-type="group">
+								<img data-src="./images/company_btn2.png" id="EB-company" class="company-btn changeJobItems swiper-lazy" data-index=1 data-type="eb">
+								<img data-src="./images/company_btn3.png" id="Finance-company" class="company-btn changeJobItems swiper-lazy" data-index=2 data-type="finance">
 							</div>
 						</div> 
 					</div> 
@@ -4521,8 +4521,8 @@
 								<div class="jobs-content-warp" id="group-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
-								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1 data-type="eb">
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2 data-type="finance">
 							</div>
 						</div>
 					</div>
@@ -4536,8 +4536,8 @@
 								<div class="jobs-content-warp" id="eb-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=0>
-								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2>
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=0 data-type="group">
+								<img data-src="./images/finance.png" id="Finance-company-2" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=2 data-type="finance">
 							</div>
 						</div>
 					</div>
@@ -4551,8 +4551,8 @@
 								<div class="jobs-content-warp" id="finance-jobs-warp"></div>
 							</div>
 							<div class="btn-group">
-								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1>
-								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=0>
+								<img data-src="./images/e-commerce.png" id="EB-company-1" class="changeJobItems-btn l-btn btn-size swiper-lazy" data-index=1 data-type="eb">
+								<img data-src="./images/group.png" id="Group-company-0" class="changeJobItems-btn r-btn btn-size swiper-lazy" data-index=0 data-type="group">
 							</div>
 						</div>
 					</div>
@@ -4562,7 +4562,7 @@
 						<ul class="jobs-list">
 							{@each jobs as job,index}
 								<li class="jobItem">
-									<span class="ellipsis">${job.JobName}</span>
+									<span class="ellipsis">${job.name}</span>
 									<img src="./images/arrow.png" class="arrow swiper-lazy animated infinite arrow_ani" alt="">
 								</li>
 							{@/each}
@@ -4597,9 +4597,9 @@
 										<div class="card">
 											<img src="./images/job-desc-warp.png" class="job-desc-warp swiper-lazy" alt="">
 											<div class="card-content-warp">
-												<h2 class="job-name ellipsis">${job.JobName}</h2>
+												<h2 class="job-name ellipsis">${job.name}</h2>
 												<ul class="job-desc">
-													{@each job.description as dec,index}
+													{@each job.jobsName as dec,index}
 													<li class="job-desc-item">
 														<img src="./images/mark.png" class="mark swiper-lazy" >
 														<span>${dec}</span>
@@ -4802,64 +4802,10 @@
 	<div class="layer share-layer hide" id="share-layer"></div>
 	<!-- 音乐ICON -->
 	<img src="./images/music.png" id="music" class="music animated infinite hide" >
-	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-	<script src="./js/zepto.min.js"></script>
+	<script src="./js/jweixin-1.0.0.js"></script>
+	<script src="./js/jquery.min.js"></script>
 	<script src="./js/swiper.min.js"></script>
 	<script src="./js/juicer-min.js"></script>
-	<script src="./js/h5.js"></script> 
-	<script>
-
-		$(function() {
-
-			var token,
-			appid = 'wxdd2bd054c2ede8b1';
-
-			wx.config({
-				debug: true,
-				appId: appid,
-				timestamp: 1505267632,
-				nonceStr: 'N4lGdhrW312MQ8as',
-				signature: '00c093472f141438b9b86250b7c54c5b20c428c1',
-				jsApiList: [
-					'onMenuShareTimeline', 'onMenuShareAppMessage'
-				]
-			});
-			
-			var title = "上海长宽神游戏“神龟不掉线”，千万别小看它！";
-			var des = "我玩过了上海长宽的游戏神作“神龟不掉线”，真的比想象中更难，你快来试试并领取电影红包吧！";
-
-			// alert(window.location.href);
-			// alert(encodeURIComponent(window.location.href));
-
-			wx.ready(function() {
-
-				wx.onMenuShareAppMessage({
-					title: title,
-					desc: des,
-					link: location.protocol+"//"+location.host,
-					imgUrl: 'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg',
-					type: '',
-					dataUrl: '',
-					success: function() {
-						alert("success")
-					},
-					cancel: function() {
-						alert("cancel")
-					}
-				});
-				wx.onMenuShareTimeline({
-					title: title,
-					link: location.protocol+"//"+location.host,
-					imgUrl: 'http://images.cnitblog.com/i/340216/201404/301756448922305.jpg',
-					success: function() {
-						alert("success")
-					},
-					cancel: function() {
-						alert("cancel")
-					}
-				});
-			});
-		});
-	</script>
+	<script src="./js/h5.js"></script>  
 </body>
 </html>

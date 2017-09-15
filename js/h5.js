@@ -213,6 +213,25 @@
 		}
 	]
 
+
+	var Company_Jobs = [
+		{
+			group: {
+				jobs: []
+			},
+		},
+		{
+			eb: {
+			jobs: []
+			}
+		},
+		{
+			finance: {
+				jobs: []
+			}
+		}
+	];
+
 	/**
 	 * 顺序  集团->电商->金控
 	 */
@@ -230,6 +249,115 @@
 	};
 
 	$(function() {
+
+		var sessionStorage = window.sessionStorage;
+		sessionStorage.setItem('group', '');
+		sessionStorage.setItem('e_ommerce', '');
+		sessionStorage.setItem('finance', '');
+
+		var api = {
+			getJsConfig: '/api/getJSConfig',
+			recruit: '/api/recruit'
+		};
+
+		/**
+		 * 微信配置和调用微信分享接口
+		 */
+		;(function() {
+
+			window.shareInfo = {
+				title: '商赢集团招聘',
+				desc: '商赢集团招聘-desc',
+				imgUrl: 'http://zp.shangyingjt.com:9000/images/jt.png',
+			}
+
+			var locationUrl = location.href;
+			var params = {
+        		"url": locationUrl
+			};
+		
+			$.ajax({
+				type: 'post',
+				contentType: 'application/json',
+				url: 'http://syjt.ngrok.io' + api.getJsConfig,
+				data: JSON.stringify(params),
+				dataType: 'json',
+				timeout: 10000,
+				success: function(result) {
+					if(result.data) {
+						var r = result.data;
+						wx.config({
+							debug: false,
+							appId: r.appId,
+							timestamp: r.timestamp,
+							nonceStr: r.nonceStr,
+							signature: r.signature,
+							jsApiList: [
+								'onMenuShareTimeline', 'onMenuShareAppMessage'
+							]
+						});
+					}
+				}
+			});
+
+			wx.ready(function() {
+				wx.onMenuShareAppMessage({
+					title: window.shareInfo.title,
+					desc: window.shareInfo.desc,
+					link: location.href,
+					imgUrl: window.shareInfo.imgUrl,
+					type: '',
+					dataUrl: '',
+					success: function() {
+						alert("success")
+					},
+					cancel: function() {
+						alert("cancel")
+					}
+				});
+				wx.onMenuShareTimeline({
+					title: window.shareInfo.title,
+					link: location.href,
+					imgUrl: window.shareInfo.imgUrl,
+					success: function() {
+						alert("success")
+					},
+					cancel: function() {
+						alert("cancel")
+					}
+				});
+			});
+
+		})(); 
+
+		function getJobsData(num, type) {
+			var CompanyListData;
+			var def = $.Deferred();
+			$.ajax({
+				type: 'get',
+				url: 'http://syjt.ngrok.io' + api.recruit,
+				data: {
+					companyId: num
+				},
+				success: function(result) {
+					if(result.resultList) {
+						var resultList = result.resultList;
+						for(var i=0, len=resultList.length; i<len; i++) {
+							var json = {};
+							json.name = resultList[i].position;
+							json.jobsName = resultList[i].requirement;
+							Company_Jobs[num-1][type].jobs.push(json);
+						} 
+						renderJob(type+"-jobs-warp", Company_Jobs[num-1][type], 'jobitem');
+						def.resolve('data');
+					}else {
+						def.reject('no-data')
+					}
+				}
+			});
+			return def.promise();
+		}
+
 
 		var windowHeight = document.documentElement.clientHeight,
 			windowWidth = document.documentElement.clientWidth,
@@ -335,9 +463,19 @@
 		autoPlayer();
 
 		mainSwiper.newSwiper();
-		renderJob("group-jobs-warp", JOBS[0], 'jobitem');
-		renderJob("eb-jobs-warp", JOBS[1], 'jobitem');
-		renderJob("finance-jobs-warp", JOBS[2], 'jobitem');
+
+		$.when(getJobsData(1, 'group'), getJobsData(2, 'eb'), getJobsData(3, 'finance')).done(function(result1, result2, result3){
+			//職位點擊事件
+			$(".jobItem").click(function() {
+				$(".page2").eq(jobsAttr.oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
+				$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
+				jobsAttr.jobPagesState = 3;
+				$(pullUp[3]).addClass('pull_fadeIn');
+				var index = $(this).index();
+				jobsSwiper.jumpSildeTo(index);
+				mainSwiper.swiper.enableTouchControl();
+			});
+		});
 
 		function fn_onSlideChangeStart(swiper) {
 			if(swiper.activeIndex == 2 || swiper.activeIndex == 3) {
@@ -449,12 +587,13 @@
 		
 		//集團 電商 金服大按鈕點擊事件
 		$(".changeJobItems").click(function() {
+			var type = $(this).attr("data-type");
 			jobsAttr.currentIndex = jobsAttr.oldIndex = $(this).attr("data-index"); 
 			$(".page1").addClass('animated fadeOut');
 			setTimeout(function() {
 				$(".page1").hide();
 			}, 1000);
-			renderJob('jobs-warp',JOBS[jobsAttr.currentIndex], 'jobs');
+			renderJob("jobs-warp", Company_Jobs[jobsAttr.currentIndex][type], 'jobs');
 			jobsSwiper.newSwiper();				//牛一個swiper
 			transferJob(jobsAttr.oldIndex);
 			transferCompanyAboutUs(jobsAttr.currentIndex)
@@ -469,24 +608,14 @@
 				'transition': 'all .5s ease',
 				'-webkit-transition': 'all .5s ease'
 			});
-			var index = parseInt($(this).attr('data-index'));
+			var index = parseInt($(this).attr('data-index')),
+				type = $(this).attr('data-type');
 			jobsAttr.currentIndex = index;
 			jobsSwiper.swiper.destroy();
-			renderJob('jobs-warp',JOBS[jobsAttr.currentIndex], 'jobs');
+			renderJob("jobs-warp", Company_Jobs[jobsAttr.currentIndex][type], 'jobs');
 			jobsSwiper.newSwiper();				//先銷毀之前的再牛一個
 			transferJob(index);
 			transferCompanyAboutUs(index);
-		});
-
-		//職位點擊事件
-		$(".jobItem").click(function() {
-			$(".page2").eq(jobsAttr.oldIndex).removeClass('fadeInUp').addClass('animated fadeOutLeft');
-			$(".page3").removeClass('translate-out-x').addClass("animated fadeInRight");
-			jobsAttr.jobPagesState = 3;
-			$(pullUp[3]).addClass('pull_fadeIn');
-			var index = $(this).index();
-			jobsSwiper.jumpSildeTo(index);
-			mainSwiper.swiper.enableTouchControl();
 		});
 
 		/**
